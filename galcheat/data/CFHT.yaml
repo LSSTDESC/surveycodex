@@ -1,0 +1,25 @@
+# pixel_scale, sky_brightness: http://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html
+# exp_time, fwhm: https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf
+# zeropoint: http://www1.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/community/CFHTLS-SG/docs/extra/filters.html
+name: "CFHT"
+effective_area: 8.022
+mirror_diameter: 3.592
+airmass: 1.2
+zeropoint_airmass: 1.0
+filters:
+  r:
+    name: "r"
+    pixel_scale: 0.187
+    sky_brightness: 20.8
+    exp_time: 2000
+    zeropoint: 26.74
+    extinction: 0.10
+    psf_fwhm: 0.71
+  i:
+    name: "i"
+    pixel_scale: 0.187
+    sky_brightness: 20.3
+    exp_time: 4300
+    zeropoint: 26.22
+    extinction: 0.07
+    psf_fwhm: 0.64

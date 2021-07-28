@@ -2,8 +2,7 @@ import pathlib
 
 from galcheat.survey import Survey
 
-# SURVEYS = ['CFHT', 'DES', 'Euclid', 'HSC', 'HST', 'Rubin']
-SUPPORTED_SURVEYS = ['Rubin']
+SUPPORTED_SURVEYS = ('CFHT', 'DES', 'Euclid', 'HSC', 'HST', 'Rubin')
 _datadir = pathlib.Path('galcheat/data')
 
 survey_info = {
