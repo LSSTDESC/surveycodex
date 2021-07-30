@@ -7,6 +7,24 @@ The goal of this project is to provide a centralised library containing galaxy s
 
 **WORK IN PROGRESS**
 
+[**Setup**](#setup) | [**API**](#api) | [**Acknowledgements**](#acknowledgements) | [**License**](#license)
+
+Setup
+-----
+1. Create a virtual environment
+    ```
+    python -m venv venv
+    source venv/bin/activate
+    ```
+2.  Install the library with its requirements
+    ```
+    python -m pip install git+https://github.com/aboucaud/galcheat
+    ```
+3. Run the demo = print the available surveys and associated filters
+    ```
+    python -m galcheat
+    ```
+
 API
 ---
 ```python
@@ -28,19 +46,18 @@ import astropy.units as u
 print(fwhm.to_value(u.arcmin))
 ```
 
-Demo
-----
-1. clone the project
-    ```
-    git clone https://github.com/aboucaud/galcheat && cd galcheat
-    ```
-2. create a virtual environment and install the requirements
-    ```
-    python -m venv venv
-    source venv/bin/activate
-    python -m pip install -r requirements.txt
-    ```
-3. run the demo = print the available surveys and associated filters
-    ```
-    python -m galcheat
-    ```
+Acknowledgements
+----------------
+This project was started in the context of the [BlendingToolKit (BTK)][github-btk] and has initialy received contributions from (alphabetical order)
+
+- Alexandre Boucaud
+- Rémy Joseph
+- Ismael Mendoza
+- Maxime Paillassa
+- Thomas Sainrat
+
+[github-btk]: https://github.com/LSSTDESC/BlendingToolKit
+
+License
+-------
+This project is developed under an MIT-license. See [LICENSE file](LICENSE) for more information.
