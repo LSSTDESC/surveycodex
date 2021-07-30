@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="galcheat",
-    version="0.0.2",
+    version="0.0.1",
     url="https://github.com/aboucaud/galcheat/",
     description="Tiny library of galaxy surveys most useful parameters (with units)",
     long_description=open("README.md").read(),
@@ -20,20 +20,14 @@ setup(
     python_requires=">=3.7",
     license="MIT",
     project_urls={
-        # 'Documentation':
         "Source": "https://github.com/aboucaud/galcheat/",
         "Bug Tracker": "https://github.com/aboucaud/galcheat/issues",
     },
     classifiers=[
-        # How mature is this project? Common values are
-        #   3 - Alpha
-        #   4 - Beta
-        #   5 - Production/Stable
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Science/Research",
         "Topic :: Scientific/Engineering :: Physics",
         "License :: OSI Approved :: MIT License",
-        # Specify the Python versions you support here.
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
