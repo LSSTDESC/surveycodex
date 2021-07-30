@@ -22,14 +22,14 @@ The goal of this project is to provide a centralised library containing galaxy s
 
 Setup
 -----
-1. Create and activate a virtual environment
+1. Create and activate a virtual environment (optional)
     ```sh
     python -m venv venv
     source venv/bin/activate
     ```
 2.  Install the library with its requirements
     ```sh
-    python -m pip install --upgrade galcheat
+    python -m pip install galcheat
     ```
 3. Run the demo = print the available surveys and associated filters
     ```sh
