@@ -44,4 +44,13 @@ class Filter:
         wavelength = filter_info.get("central_wavelength")
         wavelength = wavelength if wavelength is None else wavelength * u.nm
 
-        return cls(name, pixel_scale, psf_fwhm, zeropoint, extinction, sky_brightness, exposure_time, wavelength)
+        return cls(
+            name,
+            pixel_scale,
+            psf_fwhm,
+            zeropoint,
+            extinction,
+            sky_brightness,
+            exposure_time,
+            wavelength,
+        )

@@ -31,7 +31,7 @@ class Survey:
         The Survey object filled with the info
 
         """
-        with open(yaml_file, 'r') as f:
+        with open(yaml_file) as f:
             data = yaml.safe_load(f)
 
         filters = Survey._construct_filter_list(data)
@@ -40,7 +40,14 @@ class Survey:
         airmass = data.get("airmass")
         zeropoint_airmass = data.get("zeropoint_airmass")
 
-        return cls(data["name"], filters, effective_area, mirror_diameter, airmass, zeropoint_airmass)
+        return cls(
+            data["name"],
+            filters,
+            effective_area,
+            mirror_diameter,
+            airmass,
+            zeropoint_airmass,
+        )
 
     @staticmethod
     def _construct_filter_list(survey_dict):
@@ -61,9 +68,14 @@ class Survey:
             for fname, fdict in survey_dict["filters"].items()
         }
         FList = make_dataclass(
-            survey_dict["name"] + 'FilterList',
+            survey_dict["name"] + "FilterList",
             [(filter_name, Filter) for filter_name in filter_data.keys()],
-            namespace={'__repr__': lambda self: '(' + ','.join([filt for filt in self.__dict__.keys()]) + ')'})
+            namespace={
+                "__repr__": lambda self: "("
+                + ",".join([filt for filt in self.__dict__.keys()])
+                + ")"
+            },
+        )
 
         return FList(**filter_data)
 
