@@ -33,6 +33,7 @@ class Filter:
         A Filter object filled with the given information
 
         """
+        name = filter_info["name"]
         pixel_scale = filter_info["pixel_scale"] * (u.arcsec / u.pix)
         psf_fwhm = filter_info["psf_fwhm"] * u.arcsec
         zeropoint = filter_info["zeropoint"] * u.mag
@@ -43,4 +44,4 @@ class Filter:
         wavelength = filter_info.get("central_wavelength")
         wavelength = wavelength if wavelength is None else wavelength * u.nm
 
-        return cls(filter_info["name"], pixel_scale, psf_fwhm, zeropoint, extinction, sky_brightness, exposure_time, wavelength)
+        return cls(name, pixel_scale, psf_fwhm, zeropoint, extinction, sky_brightness, exposure_time, wavelength)
