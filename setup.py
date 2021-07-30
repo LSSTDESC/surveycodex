@@ -8,7 +8,6 @@ setup(
     version='0.0.2',
     url='https://github.com/aboucaud/galcheat/',
     description="Tiny library of galaxy surveys most useful parameters (with units)",
-    long_description="Tiny library of galaxy surveys most useful parameters (with units)",
     long_description=open("README.md", "r").read(),
     long_description_content_type="text/markdown",
     author='BlendingToolKit developers',
