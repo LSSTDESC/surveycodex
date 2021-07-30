@@ -18,7 +18,7 @@ setup(
     package_data={'galcheat': ['data/*.yaml']},
     include_package_data=True,
     install_requires=['astropy', 'pyyaml'],
-    python_requires='>=3.6',
+    python_requires='>=3.7',
     license='MIT',
     project_urls={
         # 'Documentation':
@@ -35,7 +35,6 @@ setup(
         'Topic :: Scientific/Engineering :: Physics',
         'License :: OSI Approved :: MIT License',
         # Specify the Python versions you support here.
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
