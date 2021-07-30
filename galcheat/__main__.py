@@ -1,5 +1,3 @@
-from dataclasses import asdict
-
 from galcheat import survey_info
 
 for survey, info in survey_info.items():
