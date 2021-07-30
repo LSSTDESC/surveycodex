@@ -29,7 +29,6 @@ filters:
     zeropoint: 28.10
     extinction: 0.10
     psf_fwhm: 0.781
-  
   i:
     name: "i"
     pixel_scale: 0.2
