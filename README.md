@@ -1,6 +1,17 @@
 Galaxy Surveys cheatsheet
 =========================
 
+[![Python package][gh-workflow-badge]][gh-workflow]
+[![License][license-badge]](LICENSE)
+[![PyPI][pypi-badge]][pypi]
+
+[gh-workflow]: https://github.com/aboucaud/galcheat/actions/workflows/python-package.yml
+[gh-workflow-badge]: https://github.com/aboucaud/galcheat/actions/workflows/python-package.yml/badge.svg
+[license-badge]: https://img.shields.io/github/license/aboucaud/galcheat?color=blue
+[pypi-badge]: https://img.shields.io/pypi/pyversions/galcheat?color=yellow&logo=pypi
+[pypi]: https://pypi.org/project/galcheat/
+
+
 Tiny package containing useful parameters from main galaxy surveys (with units)
 
 The goal of this project is to provide a centralised library containing galaxy survey properties often required for simulations. Such information tends to be scattered in many places or is often copy/pasted without all of the relevant information like units or sources.
@@ -11,17 +22,17 @@ The goal of this project is to provide a centralised library containing galaxy s
 
 Setup
 -----
-1. Create a virtual environment
-    ```
+1. Create and activate a virtual environment (optional)
+    ```sh
     python -m venv venv
     source venv/bin/activate
     ```
 2.  Install the library with its requirements
-    ```
-    python -m pip install git+https://github.com/aboucaud/galcheat
+    ```sh
+    python -m pip install galcheat
     ```
 3. Run the demo = print the available surveys and associated filters
-    ```
+    ```sh
     python -m galcheat
     ```
 
