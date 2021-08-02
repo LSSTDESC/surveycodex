@@ -14,3 +14,4 @@ filters:
     zeropoint: 25.91
     extinction: 0.0
     psf_fwhm: 0.16
+    central_wavelength: 713.50

@@ -13,6 +13,7 @@ filters:
     zeropoint: 26.40
     extinction: 0.451
     psf_fwhm: 0.859
+    central_wavelength: 359.213
   g:
     name: "g"
     pixel_scale: 0.2
@@ -21,6 +22,7 @@ filters:
     zeropoint: 28.26
     extinction: 0.163
     psf_fwhm: 0.814
+    central_wavelength: 478.998
   r:
     name: "r"
     pixel_scale: 0.2
@@ -29,6 +31,7 @@ filters:
     zeropoint: 28.10
     extinction: 0.10
     psf_fwhm: 0.781
+    central_wavelength: 619.952
   i:
     name: "i"
     pixel_scale: 0.2
@@ -37,6 +40,7 @@ filters:
     zeropoint: 27.78
     extinction: 0.07
     psf_fwhm: 0.748
+    central_wavelength: 752.851
   z:
     name: "z"
     pixel_scale: 0.2
@@ -45,6 +49,7 @@ filters:
     zeropoint: 27.39
     extinction: 0.043
     psf_fwhm: 0.725
+    central_wavelength: 868.983
   y:
     name: "y"
     pixel_scale: 0.2
@@ -53,3 +58,4 @@ filters:
     zeropoint: 26.56
     extinction: 0.138
     psf_fwhm: 0.703
+    central_wavelength: 967.405
