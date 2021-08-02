@@ -4,12 +4,12 @@ from setuptools import setup
 
 setup(
     name="galcheat",
-    version="0.0.2",
+    version="0.0.3",
     url="https://github.com/aboucaud/galcheat/",
     description="Tiny library of galaxy surveys most useful parameters (with units)",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    author="BlendingToolKit developers",
+    author="Alexandre Boucaud",
     author_email="aboucaud@apc.in2p3.fr",
     packages=["galcheat"],
     package_data={"galcheat": ["data/*.yaml"]},
