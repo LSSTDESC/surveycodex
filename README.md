@@ -33,6 +33,8 @@ Setup
     ```
 3. Run the demo = print the available surveys and associated filters
     ```sh
+    python -m galcheat
+    # or
     galcheat
     ```
 
