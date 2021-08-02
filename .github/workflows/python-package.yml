@@ -40,3 +40,6 @@ jobs:
     - name: Test the code demo
       run: |
         python -m galcheat
+    - name: Test the console script
+      run: |
+        galcheat
