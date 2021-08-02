@@ -1,4 +1,5 @@
 # Euclid definition study report: https://arxiv.org/abs/1110.3193
+# VIS PSF : https://ui.adsabs.harvard.edu/abs/2018SPIE10698E..28C
 # effective_area takes into account 13% obscuration: https://arxiv.org/abs/1608.08603
 # exp_time: https://arxiv.org/abs/1608.08603
 # sky brightness: http://www.mssl.ucl.ac.uk/~smn2/instrument.html
@@ -13,4 +14,4 @@ filters:
     exp_time: 565
     zeropoint: 25.91
     extinction: 0.0
-    psf_fwhm: 0.16
+    psf_fwhm: 0.17
