@@ -14,5 +14,5 @@ filters:
     exp_time: 565
     zeropoint: 25.91
     extinction: 0.0
-    psf_fwhm: 0.16
+    psf_fwhm: 0.17
     central_wavelength: 713.50
