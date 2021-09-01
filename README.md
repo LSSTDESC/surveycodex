@@ -12,26 +12,21 @@ Galaxy Surveys cheatsheet
 [pypi]: https://pypi.org/project/galcheat/
 
 
-Tiny package containing useful parameters from main galaxy surveys (with units)
+Tiny package containing useful parameters from main galaxy surveys (with units).
 
-The goal of this project is to provide a centralised library containing galaxy survey properties often required for simulations. Such information tends to be scattered in many places or is often copy/pasted without all of the relevant information like units or sources.
+The goal of this project is to provide a Python library with minimal dependencies that centralises galaxy survey properties with adequate reference. Such information tends to be scattered in many places or is often copy/pasted without all of the relevant information like units or sources.
 
 **WORK IN PROGRESS**
 
-[**Setup**](#setup) | [**API**](#api) | [**Acknowledgements**](#acknowledgements) | [**License**](#license)
+[**Getting started**](#getting-started) | [**API**](#api) | [**Contributing**](#contributing) | [**Acknowledgements**](#acknowledgements) | [**License**](#license)
 
-Setup
------
-1. Create and activate a virtual environment (optional)
+Getting started
+---------------
+1.  Install the latest version of the library
     ```sh
-    python -m venv venv
-    source venv/bin/activate
+    pip install -U galcheat
     ```
-2.  Install the library with its requirements
-    ```sh
-    python -m pip install galcheat
-    ```
-3. Run the demo = print the available surveys and associated filters
+2. Run the demo = print the available surveys and associated filters
     ```sh
     python -m galcheat
     # or
@@ -58,6 +53,12 @@ print(fwhm.value)
 import astropy.units as u
 print(fwhm.to_value(u.arcmin))
 ```
+
+Contributing
+------------
+A number is missing? An error slipped into the files? A survey is not included in the list and you can provide the relevant information or some of it?
+
+Head over to the [contributing guidelines](CONTRIBUTING.md) to learn how to participate into making this library more robust and complete.
 
 Acknowledgements
 ----------------
