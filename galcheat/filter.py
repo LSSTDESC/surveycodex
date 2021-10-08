@@ -35,7 +35,7 @@ class Filter:
         name = filter_info["name"]
         psf_fwhm = filter_info["psf_fwhm"] * u.arcsec
         zeropoint = filter_info["zeropoint"] * u.mag
-        extinction = filter_info["extinction"] * u.dimensionless_unscaled
+        extinction = filter_info["extinction"] * u.mag
         sky_brightness = filter_info["sky_brightness"] * (u.mag / u.arcsec ** 2)
         exposure_time = filter_info["exp_time"] * u.s
         wavelength = filter_info.get("central_wavelength")
