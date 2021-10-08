@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="galcheat",
-    version="0.0.4",
+    version="0.1.1",
     url="https://github.com/aboucaud/galcheat/",
     description="Tiny library of galaxy surveys most useful parameters (with units)",
     long_description=open("README.md").read(),
