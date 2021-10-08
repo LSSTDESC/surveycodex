@@ -89,5 +89,5 @@ class Survey:
         return FList(**filter_data)
 
     def get_filters(self):
-        """Getter method to retrieve the filters as a list"""
-        return list(self.filters.__dict__.values())
+        """Getter method to retrieve the filters as a dictionary"""
+        return self.filters.__dict__

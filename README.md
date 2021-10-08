@@ -36,22 +36,29 @@ Getting started
 API
 ---
 ```python
-from galcheat import survey_info
+# A list of available surveys
+from galcheat import available_surveys
+# Getter methods to retrieve a Survey of a Filter dataclass
+from galcheat import get_survey, get_filters
+Rubin = get_survey("Rubin")
+u_band = get_filter("u", Rubin)
 
-# Available surveys
-print(list(survey_info.keys()))
+# Get a dictionary of all available filters
+Rubin.get_filters()
 
-# Rubin U band PSF FWHM
-Rubin = survey_info["Rubin"]
-fwhm = Rubin.filters.u.psf_fwhm  # Quantity object with units
-print(fwhm)
+# Both Survey and Filter classes have physical attributes
+Rubin.mirror_diameter
+u_band.exposure_time
+# Filters are also attributes of a Survey
+Rubin.filters.u.exposure_time  # same as above
 
-# Retrieve the value in the original units
-print(fwhm.value)
-
-# Or convert to other units
+# These attributes are Astropy Quantity objects with units
+fwhm = u_band.psf_fwhm
+# The value in the original units is obtained as
+fwhm.value
+# or it can be converted to other units
 import astropy.units as u
-print(fwhm.to_value(u.arcmin))
+fwhm.to_value(u.arcmin)
 ```
 
 Contributing
