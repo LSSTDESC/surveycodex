@@ -12,7 +12,7 @@ class Filter:
     zeropoint: Quantity
     extinction: Quantity
     sky_brightness: Quantity
-    exposure_time: Optional[Quantity] = None
+    exposure_time: Quantity
     central_wavelength: Optional[Quantity] = None
 
     @classmethod
@@ -37,8 +37,7 @@ class Filter:
         zeropoint = filter_info["zeropoint"] * u.mag
         extinction = filter_info["extinction"] * u.dimensionless_unscaled
         sky_brightness = filter_info["sky_brightness"] * (u.mag / u.arcsec ** 2)
-        exposure_time = filter_info.get("exposure_time")
-        exposure_time = exposure_time if exposure_time is None else exposure_time * u.s
+        exposure_time = filter_info["exp_time"] * u.s
         wavelength = filter_info.get("central_wavelength")
         wavelength = wavelength if wavelength is None else wavelength * u.nm
 
