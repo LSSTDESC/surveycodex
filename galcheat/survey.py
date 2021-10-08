@@ -15,8 +15,8 @@ class Survey:
     pixel_scale: Quantity
     effective_area: Quantity
     mirror_diameter: Quantity
-    airmass: Optional[float] = None
-    zeropoint_airmass: Optional[float] = None
+    airmass: Optional[Quantity] = None
+    zeropoint_airmass: Optional[Quantity] = None
 
     @classmethod
     def from_yaml(cls, yaml_file):
@@ -40,7 +40,13 @@ class Survey:
         effective_area = data["effective_area"] * u.m ** 2
         mirror_diameter = data["mirror_diameter"] * u.m
         airmass = data.get("airmass")
+        airmass = airmass if airmass is None else airmass * u.dimensionless_unscaled
         zeropoint_airmass = data.get("zeropoint_airmass")
+        zeropoint_airmass = (
+            zeropoint_airmass
+            if zeropoint_airmass is None
+            else zeropoint_airmass * u.dimensionless_unscaled
+        )
 
         return cls(
             data["name"],
