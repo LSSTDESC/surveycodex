@@ -1,13 +1,16 @@
-from galcheat import survey_info
+from galcheat import available_surveys, get_survey
 
 
 def main():
-    for survey, info in survey_info.items():
-        print(survey, ":")
-        print("  ", info)
+    for survey_name in available_surveys:
+        survey = get_survey(survey_name)
+        print(survey_name, ":")
+        print("  ", survey)
+
+        survey_filters = survey.get_filters()
         print("   Filters :")
-        for filtinfo in info.get_filters():
-            print("     ", filtinfo)
+        for info in survey_filters.values():
+            print("     ", info)
         print()
 
 
