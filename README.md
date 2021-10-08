@@ -16,7 +16,7 @@ Tiny package containing useful parameters from main galaxy surveys (with units).
 
 The goal of this project is to provide a Python library with minimal dependencies that centralises galaxy survey properties with adequate reference. Such information tends to be scattered in many places or is often copy/pasted without all of the relevant information like units or sources.
 
-**WORK IN PROGRESS**
+**WORK IN PROGRESS: the API is still unstable, expect backward incompatibilities**
 
 [**Getting started**](#getting-started) | [**API**](#api) | [**Contributing**](#contributing) | [**Acknowledgements**](#acknowledgements) | [**License**](#license)
 
@@ -36,10 +36,12 @@ Getting started
 API
 ---
 ```python
-# A list of available surveys
+# The list of available surveys
 from galcheat import available_surveys
+
 # Getter methods to retrieve a Survey of a Filter dataclass
-from galcheat import get_survey, get_filters
+from galcheat import get_survey, get_filter
+
 Rubin = get_survey("Rubin")
 u_band = get_filter("u", Rubin)
 
@@ -49,8 +51,9 @@ Rubin.get_filters()
 # Both Survey and Filter classes have physical attributes
 Rubin.mirror_diameter
 u_band.exposure_time
+
 # Filters are also attributes of a Survey
-Rubin.filters.u.exposure_time  # same as above
+Rubin.filters.u.exposure_time  # same attribute as above
 
 # These attributes are Astropy Quantity objects with units
 fwhm = u_band.psf_fwhm
