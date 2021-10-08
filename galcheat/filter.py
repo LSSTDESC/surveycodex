@@ -8,7 +8,6 @@ from astropy.units import Quantity
 @dataclass
 class Filter:
     name: str
-    pixel_scale: Quantity
     psf_fwhm: Quantity
     zeropoint: Quantity
     extinction: Quantity
@@ -34,7 +33,6 @@ class Filter:
 
         """
         name = filter_info["name"]
-        pixel_scale = filter_info["pixel_scale"] * (u.arcsec / u.pix)
         psf_fwhm = filter_info["psf_fwhm"] * u.arcsec
         zeropoint = filter_info["zeropoint"] * u.mag
         extinction = filter_info["extinction"] * u.dimensionless_unscaled
@@ -46,7 +44,6 @@ class Filter:
 
         return cls(
             name,
-            pixel_scale,
             psf_fwhm,
             zeropoint,
             extinction,

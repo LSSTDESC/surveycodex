@@ -12,6 +12,7 @@ from galcheat.filter import Filter
 class Survey:
     name: str
     filters: Any
+    pixel_scale: Quantity
     effective_area: Quantity
     mirror_diameter: Quantity
     airmass: Optional[float] = None
@@ -35,6 +36,7 @@ class Survey:
             data = yaml.safe_load(f)
 
         filters = Survey._construct_filter_list(data)
+        pixel_scale = data["pixel_scale"] * u.arcsec
         effective_area = data["effective_area"] * u.m ** 2
         mirror_diameter = data["mirror_diameter"] * u.m
         airmass = data.get("airmass")
@@ -43,6 +45,7 @@ class Survey:
         return cls(
             data["name"],
             filters,
+            pixel_scale,
             effective_area,
             mirror_diameter,
             airmass,

@@ -1,6 +1,7 @@
 # exp_time and seeing: https://hsc-release.mtk.nao.ac.jp/doc/
 # sky_brightness: https://www.naoj.org/Observing/Instruments/SCam/exptime.html
 name: HSC
+pixel_scale: 0.167
 effective_area: 52.81
 mirror_diameter: 8.2
 airmass: 1.0
@@ -8,7 +9,6 @@ zeropoint_airmass: 1.2
 filters:
   g:
     name: "g"
-    pixel_scale: 0.167
     sky_brightness: 21.4
     exp_time: 600
     zeropoint: 28.90
@@ -16,7 +16,6 @@ filters:
     psf_fwhm: 0.77
   r:
     name: "r"
-    pixel_scale: 0.167
     sky_brightness: 20.6
     exp_time: 600
     zeropoint: 28.86
@@ -24,7 +23,6 @@ filters:
     psf_fwhm: 0.76
   i:
     name: "i"
-    pixel_scale: 0.167
     sky_brightness: 19.7
     exp_time: 1200
     zeropoint: 28.61
@@ -32,7 +30,6 @@ filters:
     psf_fwhm: 0.58
   z:
     name: "z"
-    pixel_scale: 0.167
     sky_brightness: 18.3
     exp_time: 1200
     zeropoint: 27.68
@@ -40,7 +37,6 @@ filters:
     psf_fwhm: 0.68
   y:
     name: "y"
-    pixel_scale: 0.167
     sky_brightness: 17.9
     exp_time: 1200
     zeropoint: 27.33

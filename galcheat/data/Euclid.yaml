@@ -3,13 +3,12 @@
 # effective_area takes into account 13% obscuration: https://arxiv.org/abs/1608.08603
 # exp_time: https://arxiv.org/abs/1608.08603
 # sky brightness: http://www.mssl.ucl.ac.uk/~smn2/instrument.html
-name: "Euclid"
+pixel_scale: 0.10
 effective_area: 0.98
 mirror_diameter: 1.2
 filters:
   VIS:
     name: "VIS"
-    pixel_scale: 0.10
     sky_brightness: 22.3203
     exp_time: 565
     zeropoint: 25.91
