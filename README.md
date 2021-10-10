@@ -3,12 +3,14 @@ Galaxy Surveys cheatsheet
 
 [![Python package][gh-workflow-badge]][gh-workflow]
 [![License][license-badge]](LICENSE)
+![Python supported versions][pyversion-badge]
 [![PyPI][pypi-badge]][pypi]
 
 [gh-workflow]: https://github.com/aboucaud/galcheat/actions/workflows/python-package.yml
 [gh-workflow-badge]: https://github.com/aboucaud/galcheat/actions/workflows/python-package.yml/badge.svg
 [license-badge]: https://img.shields.io/github/license/aboucaud/galcheat?color=blue
-[pypi-badge]: https://img.shields.io/pypi/pyversions/galcheat?color=yellow&logo=pypi
+[pyversion-badge]: https://img.shields.io/pypi/pyversions/galcheat?color=yellow&logo=pypi
+[pypi-badge]: https://badge.fury.io/py/galcheat.svg
 [pypi]: https://pypi.org/project/galcheat/
 
 
