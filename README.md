@@ -43,9 +43,14 @@ from galcheat import available_surveys
 from galcheat import get_survey, get_filter
 
 Rubin = get_survey("Rubin")
-u_band = get_filter("u", Rubin)
+u_band = get_filter("u", "Rubin")
+# which is a proxy for
+u_band = Rubin.get_filter("u")
 
-# Get a dictionary of all available filters
+# Get the list of available filters
+Rubin.available_filters
+
+# or as a dictionary with all `Filter` objects
 Rubin.get_filters()
 
 # Both Survey and Filter classes have physical attributes
