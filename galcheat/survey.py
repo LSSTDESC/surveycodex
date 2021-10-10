@@ -1,5 +1,5 @@
-from dataclasses import dataclass, make_dataclass
-from typing import Any, Optional
+from dataclasses import dataclass, field, make_dataclass
+from typing import Any, List, Optional
 
 import astropy.units as u
 import yaml
@@ -17,6 +17,7 @@ class Survey:
     mirror_diameter: Quantity
     airmass: Optional[Quantity] = None
     zeropoint_airmass: Optional[Quantity] = None
+    available_filters: List[str] = field(init=False)
 
     @classmethod
     def from_yaml(cls, yaml_file):
@@ -69,7 +70,7 @@ class Survey:
 
         Returns
         -------
-        Dynamically created dataclass whose attributes are the survey filter
+        Dynamically created dataclass whose attributes are the survey filters
 
         """
         filter_data = {
@@ -81,13 +82,27 @@ class Survey:
             [(filter_name, Filter) for filter_name in filter_data.keys()],
             namespace={
                 "__repr__": lambda self: "("
-                + ",".join([filt for filt in self.__dict__.keys()])
+                + ", ".join([filt for filt in self.__dict__.keys()])
                 + ")"
             },
         )
 
         return FList(**filter_data)
 
+    def __post_init__(self):
+        self.available_filters = list(self.filters.__dict__.keys())
+
     def get_filters(self):
         """Getter method to retrieve the filters as a dictionary"""
         return self.filters.__dict__
+
+    def get_filter(self, filter_name):
+        """Getter method to retrieve a Filter object"""
+        if filter_name not in self.available_filters:
+            raise ValueError(
+                "Please check the filter name. "
+                f"The available filters for {self.name} "
+                f"are {self.available_filters}"
+            )
+
+        return self.filters.__dict__[filter_name]
