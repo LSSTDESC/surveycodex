@@ -3,12 +3,14 @@ Galaxy Surveys cheatsheet
 
 [![Python package][gh-workflow-badge]][gh-workflow]
 [![License][license-badge]](LICENSE)
+![Python supported versions][pyversion-badge]
 [![PyPI][pypi-badge]][pypi]
 
 [gh-workflow]: https://github.com/aboucaud/galcheat/actions/workflows/python-package.yml
 [gh-workflow-badge]: https://github.com/aboucaud/galcheat/actions/workflows/python-package.yml/badge.svg
 [license-badge]: https://img.shields.io/github/license/aboucaud/galcheat?color=blue
-[pypi-badge]: https://img.shields.io/pypi/pyversions/galcheat?color=yellow&logo=pypi
+[pyversion-badge]: https://img.shields.io/pypi/pyversions/galcheat?color=yellow&logo=pypi
+[pypi-badge]: https://badge.fury.io/py/galcheat.svg
 [pypi]: https://pypi.org/project/galcheat/
 
 
@@ -43,9 +45,14 @@ from galcheat import available_surveys
 from galcheat import get_survey, get_filter
 
 Rubin = get_survey("Rubin")
-u_band = get_filter("u", Rubin)
+u_band = get_filter("u", "Rubin")
+# which is a proxy for
+u_band = Rubin.get_filter("u")
 
-# Get a dictionary of all available filters
+# Get the list of available filters
+Rubin.available_filters
+
+# or as a dictionary with all `Filter` objects
 Rubin.get_filters()
 
 # Both Survey and Filter classes have physical attributes

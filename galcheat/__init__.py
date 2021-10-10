@@ -21,18 +21,27 @@ To access the quantities, retrieve the
     >>> Rubin.mirror_diameter
     <Quantity 8.36 m>
 
-Each `Survey` contains its own `Filter` list
-accessible from the `Survey`
+Each `Survey` contains a list of filters
+whose names can be obtained as
+
+    >>> Rubin.available_filters
+
+Each `Filter` class is then accessible either
+as an attribute from the `Survey`
 
     >>> u_filter = Rubin.filters.u
 
-or as a dictionary
+or through a method
 
-    >>> filters = Rubin.get_filters()
-    >>> u_filter = filters['u']
+    >>> u_filter = Rubin.get_filter('u')
 
-And parameter values can be converted to any
-physical units using the `astropy.units` scheme
+For a given survey, a dictionary of the available
+filters is returned by
+
+    >>> Rubin.get_filters()
+
+Parameter values can be converted to any physical
+units using the `astropy.units` scheme
 
     >>> u_filter.psf_fwhm
     <Quantity 0.859 arcsec>
@@ -55,56 +64,11 @@ from pathlib import Path
 
 from galcheat.survey import Survey
 
+__all__ = ["available_surveys", "get_filter", "get_survey"]
+
 _BASEDIR = Path(__file__).parent.resolve()
 _survey_info = {
     path.stem: Survey.from_yaml(path) for path in _BASEDIR.glob("data/*.yaml")
 }
 
-available_surveys = list(_survey_info.keys())
-
-
-def get_survey(survey_name: str):
-    """Get the dataclass corresponding to the survey
-
-    Raises
-    ------
-    ValueError: when the input survey is not (currently) available
-
-    """
-    if survey_name not in available_surveys:
-        raise ValueError(
-            "Please check the survey name. "
-            f"The available surveys are {available_surveys}"
-        )
-
-    return _survey_info[survey_name]
-
-
-def get_filter(filter_name: str, survey: Survey):
-    """
-    Parameters
-    ----------
-    filter_name: str
-        Name of a filter
-
-
-    Returns
-    -------
-    a filter dataclass
-
-    Raises
-    ------
-    ValueError: when the input filter is not available
-
-    """
-    filter_dict = survey.get_filters()
-    available_filters = list(filter_dict.keys())
-
-    if filter_name not in available_filters:
-        raise ValueError(
-            "Please check the filter name. "
-            f"The available filters for {survey.name} "
-            f"are {available_filters}"
-        )
-
-    return filter_dict[filter_name]
+from galcheat.helpers import available_surveys, get_filter, get_survey  # noqa

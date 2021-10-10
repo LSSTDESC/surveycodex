@@ -1,4 +1,4 @@
-from galcheat import available_surveys, get_survey
+from galcheat.helpers import available_surveys, get_survey
 
 
 def main():
