@@ -29,7 +29,9 @@ To create an issue, go to https://github.com/aboucaud/galcheat/issues/new, provi
 
 ## Pull-requests
 
-To add, update or correct information, the first step is to setup a development environment for `galcheat`
+To add, update or correct information, the first step is to setup a development environment for `galcheat`.
+
+> Note that you will have to [fork the project](https://guides.github.com/activities/forking/) to contribute.
 
 ### Getting a development environment (do once)
 
@@ -49,6 +51,14 @@ To add, update or correct information, the first step is to setup a development 
     pre-commit install
     ```
 
+### Create [a fork](https://guides.github.com/activities/forking/) for the feature branches (do once)
+
+- [Fork the galcheat project](https://guides.github.com/activities/forking/)
+- Add the fork to the list of remote servers
+    ```sh
+    git remote add fork git@github.com:<your username>/galcheat.git
+    ```
+
 ### Code in a feature branch
 
 1. Don't forget to activate the development environment: `source dev-venv/bin/activate`.
@@ -56,4 +66,8 @@ To add, update or correct information, the first step is to setup a development 
     `git checkout -b <feat-branch>`.
 3. Commit your code into `<feat-branch>` (sometimes the commit will be rejected because of the `pre-commit` checks, just add the files a second time).
 4. Make sure to integrate the latest changes by regularly incorporating the latest work of the main branch into yours: `git rebase origin/main` and solve the conflicts, if any.
-5. Push your feature branch and create a pull-request.
+5. Push your feature branch to your fork
+    ```sh
+    git push -u fork <feat-branch>
+    ```
+6. Create the pull-request and iterate from 3. until it is merged.
