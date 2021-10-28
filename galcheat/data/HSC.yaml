@@ -11,7 +11,7 @@
 # ** to be confirmed **
 #
 # exp_time and psf_fwhm
-# Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
+# "Wide" in Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
 #
 # sky_brightness
 # https://www.naoj.org/Observing/Instruments/SCam/exptime.html.
