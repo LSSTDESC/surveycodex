@@ -23,7 +23,7 @@
 # flux = exp_time * Z_{24} * 10^(-0.4 * (mag-24))
 # , but here we converted it to a more useful convention
 # flux = exp_time * 10^(-0.4 * (mag-Z))
-# . Note that is assumes an atmosphere airmass of 1.2.
+# . Note that it assumes an atmosphere airmass of 1.2.
 # We found that our zeropoints are close to the ones in the Subaru
 # website (see mag for 1e-/s in
 # https://www.naoj.org/Observing/Instruments/HSC/sensitivity.html).
