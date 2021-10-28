@@ -1,10 +1,16 @@
 # pixel_scale
 # https://hsc-release.mtk.nao.ac.jp/doc/index.php/survey/
 #
+# gain
+# https://www.naoj.org/Observing/Instruments/HSC/parameters.html
+#
 # mirror_diameter
 # https://subarutelescope.org/Observing/Telescope/Parameters/
 #
-# exp_time and seeing
+# obscuration
+# ** to be confirmed **
+#
+# exp_time and psf_fwhm
 # Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
 #
 # sky_brightness
@@ -16,7 +22,7 @@
 # could update the numbers to this version, although we need to
 # convert the unit from ADU/sec to mag/arcsec^2.
 #
-# zeropoint
+# zeropoint and zeropoint_airmass
 # The zeropoints are inhereted from WeakLensingDeblending
 # (https://github.com/LSSTDESC/WeakLensingDeblending/blob/master/descwl/survey.py#L315).
 # In WeakLensingDeblending, a zeropoint is defined with respect to mag = 24 as
@@ -40,44 +46,39 @@
 # - https://github.com/aboucaud/galcheat/pull/32
 
 name: HSC
-pixel_scale: 0.168	# arcsec/pixel
-effective_area: 52.81	# m
-mirror_diameter: 8.2	# m
-airmass: 1.0
+pixel_scale: 0.168		# arcsec/pixel
+gain: 3.0    			# 3e-/ADU
+mirror_diameter: 8.2		# m
+obscuration: 0.0 		# obscured_area/total_area
 zeropoint_airmass: 1.2
 filters:
   g:
     name: "g"
     sky_brightness: 21.4	# mag/arcsec^2
     exp_time: 600		# sec
-    zeropoint: 28.90		# 1e-/s
-    extinction: 0.13
     psf_fwhm: 0.79		# arcsec
+    zeropoint: 28.90		# 1e-/s
   r:
     name: "r"
     sky_brightness: 20.6	# mag/arcsec2^
     exp_time: 600		# sec
-    zeropoint: 28.86		# 1e-/s
-    extinction: 0.11
     psf_fwhm: 0.75		# arcsec
+    zeropoint: 28.86		# 1e-/s
   i:
     name: "i"
     sky_brightness: 19.7	# mag/arcsec2^
     exp_time: 1200		# sec
-    zeropoint: 28.61		# 1e-/s
-    extinction: 0.07
     psf_fwhm: 0.61		# arcsec
+    zeropoint: 28.61		# 1e-/s
   z:
     name: "z"
     sky_brightness: 18.3	# mag/arcsec2^
     exp_time: 1200		# sec
-    zeropoint: 27.68		# 1e-/s
-    extinction: 0.05
     psf_fwhm: 0.68		# arcsec
+    zeropoint: 27.68		# 1e-/s
   y:
     name: "y"
     sky_brightness: 17.9	# mag/arcsec2^
     exp_time: 1200		# sec
     zeropoint: 27.33		# 1e-/s
-    extinction: 0.05
     psf_fwhm: 0.68		# arcsec
