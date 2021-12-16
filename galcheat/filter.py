@@ -10,9 +10,9 @@ class Filter:
     name: str
     psf_fwhm: Quantity
     zeropoint: Quantity
-    extinction: Quantity
     sky_brightness: Quantity
     exposure_time: Quantity
+    extinction: Optional[Quantity] = None
     central_wavelength: Optional[Quantity] = None
 
     @classmethod
@@ -35,9 +35,10 @@ class Filter:
         name = filter_info["name"]
         psf_fwhm = filter_info["psf_fwhm"] * u.arcsec
         zeropoint = filter_info["zeropoint"] * u.mag
-        extinction = filter_info["extinction"] * u.mag
         sky_brightness = filter_info["sky_brightness"] * (u.mag / u.arcsec ** 2)
         exposure_time = filter_info["exp_time"] * u.s
+        extinction = filter_info.get("extinction")
+        extinction = extinction if extinction is None else extinction * u.mag
         wavelength = filter_info.get("central_wavelength")
         wavelength = wavelength if wavelength is None else wavelength * u.nm
 
@@ -45,8 +46,8 @@ class Filter:
             name,
             psf_fwhm,
             zeropoint,
-            extinction,
             sky_brightness,
             exposure_time,
+            extinction,
             wavelength,
         )

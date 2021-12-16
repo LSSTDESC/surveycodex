@@ -1,3 +1,4 @@
+import math
 from dataclasses import dataclass, field, make_dataclass
 from typing import Any, List, Optional
 
@@ -13,11 +14,13 @@ class Survey:
     name: str
     filters: Any
     pixel_scale: Quantity
-    effective_area: Quantity
     mirror_diameter: Quantity
-    airmass: Optional[Quantity] = None
+    # TODO remove the optional when all values are added
+    gain: Optional[Quantity] = None
+    obscuration: Optional[Quantity] = None
     zeropoint_airmass: Optional[Quantity] = None
     available_filters: List[str] = field(init=False)
+    effective_area: Quantity = field(init=False)
 
     @classmethod
     def from_yaml(cls, yaml_file):
@@ -38,10 +41,15 @@ class Survey:
 
         filters = Survey._construct_filter_list(data)
         pixel_scale = data["pixel_scale"] * u.arcsec
-        effective_area = data["effective_area"] * u.m ** 2
         mirror_diameter = data["mirror_diameter"] * u.m
-        airmass = data.get("airmass")
-        airmass = airmass if airmass is None else airmass * u.dimensionless_unscaled
+        gain = data.get("gain")
+        gain = gain if gain is None else gain * u.electron / u.adu
+        obscuration = data.get("obscuration")
+        obscuration = (
+            obscuration
+            if obscuration is None
+            else obscuration * u.dimensionless_unscaled
+        )
         zeropoint_airmass = data.get("zeropoint_airmass")
         zeropoint_airmass = (
             zeropoint_airmass
@@ -53,9 +61,9 @@ class Survey:
             data["name"],
             filters,
             pixel_scale,
-            effective_area,
             mirror_diameter,
-            airmass,
+            gain,
+            obscuration,
             zeropoint_airmass,
         )
 
@@ -91,6 +99,12 @@ class Survey:
 
     def __post_init__(self):
         self.available_filters = list(self.filters.__dict__.keys())
+
+        total_area = math.pi * (self.mirror_diameter * 0.5) ** 2
+        if self.obscuration is None:
+            self.effective_area = total_area
+        else:
+            self.effective_area = (1 - self.obscuration) * total_area
 
     def get_filters(self):
         """Getter method to retrieve the filters as a dictionary"""
