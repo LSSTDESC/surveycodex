@@ -79,7 +79,7 @@ Head over to the [contributing guidelines](CONTRIBUTING.md) to learn how to part
 
 Acknowledgements
 ----------------
-This project was started in the context of the [BlendingToolKit (BTK)][github-btk] and has initialy received contributions from (alphabetical order)
+This project was started in the context of the [BlendingToolKit (BTK)][github-btk] and [WeakLensingDeblending][github-wld] projects and has initialy received contributions from (alphabetical order)
 
 - Alexandre Boucaud
 - Rémy Joseph
@@ -87,6 +87,7 @@ This project was started in the context of the [BlendingToolKit (BTK)][github-bt
 - Maxime Paillassa
 - Thomas Sainrat
 
+[github-wld]: https://github.com/LSSTDESC/WeakLensingDeblending
 [github-btk]: https://github.com/LSSTDESC/BlendingToolKit
 
 License
