@@ -2,8 +2,7 @@
 # http://www.ctio.noao.edu/noao/content/DECam-What
 # sky brightness: http://www.ctio.noao.edu/noao/node/1218
 # fwhm: https://arxiv.org/abs/1407.3801 table 2
-# extinction: https://arxiv.org/abs/1701.00502 table 4
-name: DES
+sname: DES
 pixel_scale: 0.263
 effective_area: 10.014
 mirror_diameter: 3.934
@@ -15,26 +14,22 @@ filters:
     sky_brightness: 22.3
     exp_time: 800
     zeropoint: 26.72
-    extinction: 0.17
     psf_fwhm: 1.24
   r:
     name: "r"
     sky_brightness: 21.4
     exp_time: 800
     zeropoint: 26.99
-    extinction: 0.09
     psf_fwhm: 1.03
   i:
     name: "i"
     sky_brightness: 20.5
     exp_time: 1000
     zeropoint: 26.86
-    extinction: 0.05
     psf_fwhm: 0.96
   z:
     name: "z"
     sky_brightness: 18.7
     exp_time: 800
     zeropoint: 26.58
-    extinction: 0.06
     psf_fwhm: 1.12
