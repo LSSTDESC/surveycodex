@@ -2,7 +2,7 @@
 # http://www.ctio.noao.edu/noao/content/DECam-What
 # sky brightness: http://www.ctio.noao.edu/noao/node/1218
 # fwhm: https://arxiv.org/abs/1407.3801 table 2
-sname: DES
+name: DES
 pixel_scale: 0.263
 effective_area: 10.014
 mirror_diameter: 3.934
