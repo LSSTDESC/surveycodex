@@ -46,39 +46,39 @@
 # - https://github.com/aboucaud/galcheat/pull/32
 
 name: HSC
-pixel_scale: 0.168		# arcsec/pixel
-gain: 3.0    			# 3e-/ADU
-mirror_diameter: 8.2		# m
-obscuration: 0.0 		# obscured_area/total_area
+pixel_scale: 0.168
+gain: 3.0
+mirror_diameter: 8.2
+obscuration: 0.0
 zeropoint_airmass: 1.2
 filters:
   g:
     name: "g"
-    sky_brightness: 21.4	# mag/arcsec^2
-    exp_time: 600		# sec
-    psf_fwhm: 0.79		# arcsec
-    zeropoint: 28.90		# 1e-/s
+    sky_brightness: 21.4
+    exp_time: 600
+    psf_fwhm: 0.79
+    zeropoint: 28.90
   r:
     name: "r"
-    sky_brightness: 20.6	# mag/arcsec2^
-    exp_time: 600		# sec
-    psf_fwhm: 0.75		# arcsec
-    zeropoint: 28.86		# 1e-/s
+    sky_brightness: 20.6
+    exp_time: 600
+    psf_fwhm: 0.75
+    zeropoint: 28.86
   i:
     name: "i"
-    sky_brightness: 19.7	# mag/arcsec2^
-    exp_time: 1200		# sec
-    psf_fwhm: 0.61		# arcsec
-    zeropoint: 28.61		# 1e-/s
+    sky_brightness: 19.7
+    exp_time: 1200
+    psf_fwhm: 0.61
+    zeropoint: 28.61
   z:
     name: "z"
-    sky_brightness: 18.3	# mag/arcsec2^
-    exp_time: 1200		# sec
-    psf_fwhm: 0.68		# arcsec
-    zeropoint: 27.68		# 1e-/s
+    sky_brightness: 18.3
+    exp_time: 1200
+    psf_fwhm: 0.68
+    zeropoint: 27.68
   y:
     name: "y"
-    sky_brightness: 17.9	# mag/arcsec2^
-    exp_time: 1200		# sec
-    zeropoint: 27.33		# 1e-/s
-    psf_fwhm: 0.68		# arcsec
+    sky_brightness: 17.9
+    exp_time: 1200
+    zeropoint: 27.33
+    psf_fwhm: 0.68
