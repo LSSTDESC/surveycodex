@@ -7,7 +7,6 @@ name: "HST_COSMOS"
 pixel_scale: 0.03
 effective_area: 1.0 # TODO: placeholder
 mirror_diameter: 2.4
-airmass: 0.0
 zeropoint_airmass: 0.0
 filters:
   f814w:

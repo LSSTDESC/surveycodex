@@ -4,7 +4,6 @@ name: HSC
 pixel_scale: 0.167
 effective_area: 52.81
 mirror_diameter: 8.2
-airmass: 1.0
 zeropoint_airmass: 1.2
 filters:
   g:

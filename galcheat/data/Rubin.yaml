@@ -3,7 +3,6 @@ name: "Rubin"
 pixel_scale: 0.2
 effective_area: 32.4
 mirror_diameter: 8.36
-airmass: 1.2
 zeropoint_airmass: 1.2
 filters:
   u:
