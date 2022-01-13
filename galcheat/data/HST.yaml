@@ -7,7 +7,6 @@ name: "HST_COSMOS"
 pixel_scale: 0.03
 effective_area: 1.0 # TODO: placeholder
 mirror_diameter: 2.4
-airmass: 0.0
 zeropoint_airmass: 0.0
 filters:
   f814w:
@@ -15,5 +14,4 @@ filters:
     sky_brightness: 22
     exp_time: 2028
     zeropoint: 25.94
-    extinction: 0
     psf_fwhm: 0.074

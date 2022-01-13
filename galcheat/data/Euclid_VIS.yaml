@@ -13,6 +13,5 @@ filters:
     sky_brightness: 22.3203
     exp_time: 565
     zeropoint: 25.91
-    extinction: 0.0
     psf_fwhm: 0.17
     central_wavelength: 713.50

@@ -1,44 +1,84 @@
-# exp_time and seeing: https://hsc-release.mtk.nao.ac.jp/doc/
-# sky_brightness: https://www.naoj.org/Observing/Instruments/SCam/exptime.html
+# pixel_scale
+# https://hsc-release.mtk.nao.ac.jp/doc/index.php/survey/
+#
+# gain
+# https://www.naoj.org/Observing/Instruments/HSC/parameters.html
+#
+# mirror_diameter
+# https://subarutelescope.org/Observing/Telescope/Parameters/
+#
+# obscuration
+# ** to be confirmed **
+#
+# exp_time and psf_fwhm
+# "Wide" in Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
+#
+# sky_brightness
+# https://www.naoj.org/Observing/Instruments/SCam/exptime.html.
+# Note:
+# The link is for Suprime-Cam, which should be approximately
+# okay. Here is the updated version for HSC as of July 2021
+# https://www.subarutelescope.org/Observing/Instruments/HSC/hsc_etc_report.html. We
+# could update the numbers to this version, although we need to
+# convert the unit from ADU/sec to mag/arcsec^2.
+#
+# zeropoint and zeropoint_airmass
+# The zeropoints are inhereted from WeakLensingDeblending
+# (https://github.com/LSSTDESC/WeakLensingDeblending/blob/master/descwl/survey.py#L315).
+# In WeakLensingDeblending, a zeropoint is defined with respect to mag = 24 as
+# flux = exp_time * Z_{24} * 10^(-0.4 * (mag-24))
+# , but here we converted it to a more useful convention
+# flux = exp_time * 10^(-0.4 * (mag-Z))
+# . Note that it assumes an atmosphere airmass of 1.2.
+# We found that our zeropoints are close to the ones in the Subaru
+# website (see mag for 1e-/s in
+# https://www.naoj.org/Observing/Instruments/HSC/sensitivity.html).
+# Note:
+# The zeropoints in WeakLensingDeblending used the speclite package
+# (https://github.com/desihub/speclite), where they seemed to use the
+# official filter responses
+# (https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters)
+# and convolved them with a reference magnitude
+# (https://speclite.readthedocs.io/en/latest/api/speclite.filters.ab_reference_flux.html#speclite.filters.ab_reference_flux)
+# to obtain the zeropoints.
+# You may find detailed discussions at
+# - https://github.com/LSSTDESC/WeakLensingDeblending/issues/19
+# - https://github.com/aboucaud/galcheat/pull/32
+
 name: HSC
-pixel_scale: 0.167
-effective_area: 52.81
+pixel_scale: 0.168
+gain: 3.0
 mirror_diameter: 8.2
-airmass: 1.0
+obscuration: 0.0
 zeropoint_airmass: 1.2
 filters:
   g:
     name: "g"
     sky_brightness: 21.4
     exp_time: 600
+    psf_fwhm: 0.79
     zeropoint: 28.90
-    extinction: 0.13
-    psf_fwhm: 0.77
   r:
     name: "r"
     sky_brightness: 20.6
     exp_time: 600
+    psf_fwhm: 0.75
     zeropoint: 28.86
-    extinction: 0.11
-    psf_fwhm: 0.76
   i:
     name: "i"
     sky_brightness: 19.7
     exp_time: 1200
+    psf_fwhm: 0.61
     zeropoint: 28.61
-    extinction: 0.07
-    psf_fwhm: 0.58
   z:
     name: "z"
     sky_brightness: 18.3
     exp_time: 1200
-    zeropoint: 27.68
-    extinction: 0.05
     psf_fwhm: 0.68
+    zeropoint: 27.68
   y:
     name: "y"
     sky_brightness: 17.9
     exp_time: 1200
     zeropoint: 27.33
-    extinction: 0.05
     psf_fwhm: 0.68
