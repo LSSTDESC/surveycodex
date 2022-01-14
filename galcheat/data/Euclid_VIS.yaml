@@ -1,6 +1,12 @@
 # gain
 # https://www.mssl.ucl.ac.uk/~smn2/instrument.html
 #
+# mirror_diameter
+# https://arxiv.org/pdf/1608.08603.pdf (section 3.1)
+#
+# obscuration
+# https://arxiv.org/pdf/1608.08603.pdf (section 3.1)
+# 
 # Euclid definition study report: https://arxiv.org/abs/1110.3193
 # VIS PSF : https://ui.adsabs.harvard.edu/abs/2018SPIE10698E..28C
 # effective_area takes into account 13% obscuration: https://arxiv.org/abs/1608.08603
@@ -9,8 +15,8 @@
 name: "Euclid_VIS"
 pixel_scale: 0.10
 gain: 3.1
-effective_area: 0.98
 mirror_diameter: 1.2
+obscuration: 0.13
 filters:
   VIS:
     name: "VIS"
