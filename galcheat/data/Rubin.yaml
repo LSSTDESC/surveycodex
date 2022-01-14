@@ -1,6 +1,10 @@
+# gain
+# https://github.com/LSSTDESC/imSim/blob/main/imsim/stamp.py#L416
+#
 # https://www.lsst.org/about/camera/features
 name: "Rubin"
 pixel_scale: 0.2
+gain: 1.0
 effective_area: 32.4
 mirror_diameter: 8.36
 zeropoint_airmass: 1.2
