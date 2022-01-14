@@ -74,8 +74,6 @@ Average exposure time of the filter on the same spot in the sky over the course 
 
 Average full width at half-maximum (FWHM) of the point spread function (PSF) over the filter.
 
-This parameter is traditionally computed with the [`speclite`][speclite] library.
-
 #### `zeropoint`
 
 Zero point magnitude for the filter, computed using the [`speclite`][speclite] library with a classical atmosphere, at the airmass indicated in the survey parameters: `zeropoint_airmass`
