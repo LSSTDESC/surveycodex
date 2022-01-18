@@ -35,7 +35,7 @@ class Filter:
         psf_fwhm = filter_info["psf_fwhm"] * u.arcsec
         zeropoint = filter_info["zeropoint"] * u.mag
         sky_brightness = filter_info["sky_brightness"] * (u.mag / u.arcsec ** 2)
-        exposure_time = filter_info["exp_time"] * u.s
+        exposure_time = filter_info["exposure_time"] * u.s
         wavelength = filter_info.get("central_wavelength")
         wavelength = wavelength if wavelength is None else wavelength * u.nm
 

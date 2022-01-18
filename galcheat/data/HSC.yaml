@@ -10,7 +10,7 @@
 # obscuration
 # ** to be confirmed **
 #
-# exp_time and psf_fwhm
+# exposure_time and psf_fwhm
 # "Wide" in Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
 #
 # sky_brightness
@@ -26,9 +26,9 @@
 # The zeropoints are inhereted from WeakLensingDeblending
 # (https://github.com/LSSTDESC/WeakLensingDeblending/blob/master/descwl/survey.py#L315).
 # In WeakLensingDeblending, a zeropoint is defined with respect to mag = 24 as
-# flux = exp_time * Z_{24} * 10^(-0.4 * (mag-24))
+# flux = exposure_time * Z_{24} * 10^(-0.4 * (mag-24))
 # , but here we converted it to a more useful convention
-# flux = exp_time * 10^(-0.4 * (mag-Z))
+# flux = exposure_time * 10^(-0.4 * (mag-Z))
 # . Note that it assumes an atmosphere airmass of 1.2.
 # We found that our zeropoints are close to the ones in the Subaru
 # website (see mag for 1e-/s in
@@ -55,30 +55,30 @@ filters:
   g:
     name: "g"
     sky_brightness: 21.4
-    exp_time: 600
+    exposure_time: 600
     psf_fwhm: 0.79
     zeropoint: 28.90
   r:
     name: "r"
     sky_brightness: 20.6
-    exp_time: 600
+    exposure_time: 600
     psf_fwhm: 0.75
     zeropoint: 28.86
   i:
     name: "i"
     sky_brightness: 19.7
-    exp_time: 1200
+    exposure_time: 1200
     psf_fwhm: 0.61
     zeropoint: 28.61
   z:
     name: "z"
     sky_brightness: 18.3
-    exp_time: 1200
+    exposure_time: 1200
     psf_fwhm: 0.68
     zeropoint: 27.68
   y:
     name: "y"
     sky_brightness: 17.9
-    exp_time: 1200
+    exposure_time: 1200
     zeropoint: 27.33
     psf_fwhm: 0.68
