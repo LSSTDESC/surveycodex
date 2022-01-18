@@ -10,7 +10,7 @@
 # Euclid definition study report: https://arxiv.org/abs/1110.3193
 # VIS PSF : https://ui.adsabs.harvard.edu/abs/2018SPIE10698E..28C
 # effective_area takes into account 13% obscuration: https://arxiv.org/abs/1608.08603
-# exp_time: https://arxiv.org/abs/1608.08603
+# exposure_time: https://arxiv.org/abs/1608.08603
 # sky brightness: http://www.mssl.ucl.ac.uk/~smn2/instrument.html
 name: "Euclid_VIS"
 pixel_scale: 0.10
@@ -21,7 +21,7 @@ filters:
   VIS:
     name: "VIS"
     sky_brightness: 22.3203
-    exp_time: 565
+    exposure_time: 565
     zeropoint: 25.91
     psf_fwhm: 0.17
     central_wavelength: 713.50

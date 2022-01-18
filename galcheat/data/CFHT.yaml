@@ -10,7 +10,7 @@
 # https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/specsinformation.html (section 2.3)
 # using the given effective area in cm^2, the obscuration is 1-80216/(pi*358*358/4)
 #
-# exp_time, fwhm: https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf
+# exposure_time, fwhm: https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf
 # zeropoint: http://www1.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/community/CFHTLS-SG/docs/extra/filters.html
 name: "CFHT"
 pixel_scale: 0.187
@@ -22,12 +22,12 @@ filters:
   r:
     name: "r"
     sky_brightness: 20.8
-    exp_time: 2000
+    exposure_time: 2000
     zeropoint: 26.74
     psf_fwhm: 0.71
   i:
     name: "i"
     sky_brightness: 20.3
-    exp_time: 4300
+    exposure_time: 4300
     zeropoint: 26.22
     psf_fwhm: 0.64
