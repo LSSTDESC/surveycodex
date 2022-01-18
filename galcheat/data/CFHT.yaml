@@ -3,13 +3,20 @@
 # gain
 # https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html
 #
+# mirror_diameter
+# https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/specsinformation.html (section 2.3)
+#
+# obscuration
+# https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/specsinformation.html (section 2.3)
+# using the given effective area in cm^2, the obscuration is 1-80216/(pi*358*358/4)
+#
 # exp_time, fwhm: https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf
 # zeropoint: http://www1.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/community/CFHTLS-SG/docs/extra/filters.html
 name: "CFHT"
 pixel_scale: 0.187
 gain: 1.67
-effective_area: 8.022
-mirror_diameter: 3.592
+mirror_diameter: 3.58
+obscuration: 0.20309772
 zeropoint_airmass: 1.0
 filters:
   r:
