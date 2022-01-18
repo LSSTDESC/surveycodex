@@ -1,12 +1,22 @@
 # gain
 # https://github.com/LSSTDESC/imSim/blob/main/imsim/stamp.py#L416
 #
+# mirror_diameter
+# https://www.lsst.org/about/tel-site/optical_design
+#
+# obscuration
+# the current value is computed from the effective area found in WLD
+# https://github.com/LSSTDESC/WeakLensingDeblending/blob/master/descwl/survey.py#L192
+# 1-32.4/(pi*8.36*8.36/4)
+# you can also find information at
+# https://github.com/aboucaud/galcheat/issues/38
+#
 # https://www.lsst.org/about/camera/features
 name: "Rubin"
 pixel_scale: 0.2
 gain: 1.0
-effective_area: 32.4
 mirror_diameter: 8.36
+obscuration: 0.40974106
 zeropoint_airmass: 1.2
 filters:
   u:
