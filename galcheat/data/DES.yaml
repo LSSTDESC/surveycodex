@@ -15,7 +15,7 @@
 # sky brightness
 # https://arxiv.org/pdf/1801.03181.pdf (table 1)
 #
-# exp_time
+# exposure_time
 # https://arxiv.org/pdf/1801.03181.pdf
 # coadds of 10 90s exposures from section 2.2 page 5
 #
@@ -36,24 +36,24 @@ filters:
   g:
     name: "g"
     sky_brightness: 22.01
-    exp_time: 900
+    exposure_time: 900
     zeropoint: 26.72
     psf_fwhm: 1.12
   r:
     name: "r"
     sky_brightness: 21.15
-    exp_time: 900
+    exposure_time: 900
     zeropoint: 26.99
     psf_fwhm: 0.96
   i:
     name: "i"
     sky_brightness: 19.89
-    exp_time: 900
+    exposure_time: 900
     zeropoint: 26.86
     psf_fwhm: 0.88
   z:
     name: "z"
     sky_brightness: 18.72
-    exp_time: 900
+    exposure_time: 900
     zeropoint: 26.58
     psf_fwhm: 0.84

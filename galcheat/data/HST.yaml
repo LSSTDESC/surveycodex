@@ -10,7 +10,7 @@
 # obscuration
 # https://arxiv.org/pdf/1203.0002.pdf (page 8)
 #
-# exp_time: https://hst-docs.stsci.edu/acsdhb/chapter-1-acs-overview/1-2-basic-instrument-operations
+# exposure_time: https://hst-docs.stsci.edu/acsdhb/chapter-1-acs-overview/1-2-basic-instrument-operations
 # fwhm: https://hst-docs.stsci.edu/display/WFC3IHB/6.6+UVIS+Optical+Performance#id-6
 # zeropoint : https://galsim-developers.github.io/GalSim/_build/html/real_gal.html
 # .6UVISOpticalPerformance-6.6.1 800nm
@@ -24,6 +24,6 @@ filters:
   f814w:
     name: "f814w"
     sky_brightness: 22
-    exp_time: 2028
+    exposure_time: 2028
     zeropoint: 25.94
     psf_fwhm: 0.074
