@@ -1,3 +1,6 @@
+# pixel_scale
+# https://arxiv.org/pdf/1110.3193.pdf (page 3)
+#
 # gain
 # https://www.mssl.ucl.ac.uk/~smn2/instrument.html
 #
@@ -7,11 +10,22 @@
 # obscuration
 # https://arxiv.org/pdf/1608.08603.pdf (section 3.1)
 #
-# Euclid definition study report: https://arxiv.org/abs/1110.3193
-# VIS PSF : https://ui.adsabs.harvard.edu/abs/2018SPIE10698E..28C
-# effective_area takes into account 13% obscuration: https://arxiv.org/abs/1608.08603
-# exposure_time: https://arxiv.org/abs/1608.08603
-# sky brightness: http://www.mssl.ucl.ac.uk/~smn2/instrument.html
+# sky_brightness
+# https://www.mssl.ucl.ac.uk/~smn2/instrument.html
+#
+# exposure_time
+# https://arxiv.org/pdf/1608.08603.pdf (section 6)
+#
+# zeropoint
+# computed with speclite: I guess we should add a reference to a shared speclite
+# resource among surveys once we have it
+#
+# psf_fwhm
+# https://arxiv.org/pdf/1608.08603.pdf (section 8)
+#
+# central_wavelength
+# value from BTK and WLD
+
 name: "Euclid_VIS"
 pixel_scale: 0.10
 gain: 3.1
