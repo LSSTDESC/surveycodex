@@ -26,7 +26,7 @@
 # https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf
 # roughly taken from figure 25
 
-name: "CFHT"
+name: "CFHTLS"
 pixel_scale: 0.187
 gain: 1.67
 mirror_diameter: 3.58
