@@ -16,7 +16,8 @@
 # taken as "grey sky": at zenith, 30% moon
 #
 # exposure_time
-# https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html
+# https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf
+# taken as modes in table 31
 #
 # zeropoint
 # https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html
@@ -35,30 +36,30 @@ filters:
   u:
     name: "u"
     sky_brightness: 21.20
-    exposure_time: 300
+    exposure_time: 3000
     zeropoint: 25.78
     psf_fwhm: 0.81
   g:
     name: "g"
     sky_brightness: 21.30
-    exposure_time: 300
+    exposure_time: 2500
     zeropoint: 27.11
     psf_fwhm: 0.84
   r:
     name: "r"
     sky_brightness: 20.80
-    exposure_time: 300
+    exposure_time: 2000
     zeropoint: 26.74
     psf_fwhm: 0.73
   i:
     name: "i"
     sky_brightness: 20.30
-    exposure_time: 300
+    exposure_time: 4305
     zeropoint: 26.22
     psf_fwhm: 0.66
   z:
     name: "z"
     sky_brightness: 19.40
-    exposure_time: 300
+    exposure_time: 3600
     zeropoint: 25.05
     psf_fwhm: 0.66
