@@ -64,7 +64,8 @@ Name of the filter
 
 #### `sky_brightness`
 
-Average sky brightness computed for the survey and this filter.
+Average sky brightness computed for the survey and this filter.  
+The moon conditions under which this number was computed will be given as a comment in the yaml file.
 
 #### `exp_time`
 
