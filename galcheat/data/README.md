@@ -12,7 +12,7 @@ Survey parameters
 | name              | str   | –              |
 | pixel_scale       | float | arcsec / pixel |
 | gain              | float | e- / ADU       |
-| mirror_diameter   | float | m         |
+| mirror_diameter   | float | m              |
 | obscuration       | float | dimensionless  |
 | zeropoint_airmass | float | dimensionless  |
 
@@ -53,7 +53,7 @@ Filter parameters
 | -------------- | --------- | -------------- |
 | name           | str       | –              |
 | sky_brightness | float     | mag / arcsec^2 |
-| exp_time       | int/float | s              |
+| exposure_time  | int/float | s              |
 | psf_fwhm       | float     | arcsec         |
 | zeropoint      | float     | e- / s         |
 
@@ -67,7 +67,7 @@ Name of the filter
 Average sky brightness computed for the survey and this filter.  
 The moon conditions under which this number was computed will be given as a comment in the yaml file.
 
-#### `exp_time`
+#### `exposure_time`
 
 Average exposure time of the filter on the same spot in the sky over the course of the survey.
 
@@ -105,13 +105,13 @@ filters:
   a:
     name: "a"
     sky_brightness: 19.4
-    exp_time: 500
+    exposure_time: 500
     psf_fwhm: 1.1
     zeropoint: 26.90
   b:
     name: "b"
     sky_brightness: 18.6
-    exp_time: 500
+    exposure_time: 500
     psf_fwhm: 1.2
     zeropoint: 27.36
 ```
