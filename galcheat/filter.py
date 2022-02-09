@@ -12,7 +12,7 @@ class Filter:
     zeropoint: Quantity
     sky_brightness: Quantity
     exposure_time: Quantity
-    central_wavelength: Optional[Quantity] = None
+    effective_wavelength: Optional[Quantity] = None
 
     @classmethod
     def from_dict(cls, filter_info):
@@ -36,7 +36,7 @@ class Filter:
         zeropoint = filter_info["zeropoint"] * u.mag
         sky_brightness = filter_info["sky_brightness"] * (u.mag / u.arcsec**2)
         exposure_time = filter_info["exposure_time"] * u.s
-        wavelength = filter_info.get("central_wavelength")
+        wavelength = filter_info.get("effective_wavelength")
         wavelength = wavelength if wavelength is None else wavelength * u.nm
 
         return cls(

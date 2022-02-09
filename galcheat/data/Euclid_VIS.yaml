@@ -24,4 +24,4 @@ filters:
     exposure_time: 565
     zeropoint: 25.91
     psf_fwhm: 0.17
-    central_wavelength: 713.50
+    effective_wavelength: 713.50
