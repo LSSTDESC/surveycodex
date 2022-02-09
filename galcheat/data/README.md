@@ -49,13 +49,14 @@ Filter parameters
 -----------------
 ### Units and types
 
-| parameter name | type      | units          |
-| -------------- | --------- | -------------- |
-| name           | str       | –              |
-| sky_brightness | float     | mag / arcsec^2 |
-| exposure_time  | int/float | s              |
-| psf_fwhm       | float     | arcsec         |
-| zeropoint      | float     | e- / s         |
+| parameter name       | type      | units          |
+| -------------------- | --------- | -------------- |
+| name                 | str       | –              |
+| sky_brightness       | float     | mag / arcsec^2 |
+| exposure_time        | int/float | s              |
+| psf_fwhm             | float     | arcsec         |
+| zeropoint            | float     | e- / s         |
+| effective_wavelength | float     | nm             |
 
 ### Description
 #### `name`
@@ -81,6 +82,11 @@ Zero point magnitude for the filter, computed using the [`speclite`][speclite] l
 
 
 [speclite]: https://github.com/desihub/speclite
+
+#### `effective_wavelength` – ***optional***
+
+Wavelength computed as a weighted average of the full passband throughput over the wavelength range.  
+The throughput takes into account the transmission of the filter, the transmittance of the optics, the CCD efficiency as well as a standard atmospheric extinction model.
 
 YAML file layout
 ----------------
@@ -108,10 +114,12 @@ filters:
     exposure_time: 500
     psf_fwhm: 1.1
     zeropoint: 26.90
+    effective_wavelength: 500.00
   b:
     name: "b"
     sky_brightness: 18.6
     exposure_time: 500
     psf_fwhm: 1.2
     zeropoint: 27.36
+    effective_wavelength: 600.00
 ```
