@@ -77,6 +77,8 @@ A number is missing? An error slipped into the files? A survey is not included i
 
 Head over to the [contributing guidelines](CONTRIBUTING.md) to learn how to participate into making this library more robust and complete.
 
+The current parameters and the corresponding units are specified in the [data README](galcheat/data/README.md).
+
 Acknowledgements
 ----------------
 This project was started in the context of the [BlendingToolKit (BTK)][github-btk] and [WeakLensingDeblending][github-wld] projects and has initialy received contributions from (alphabetical order)
