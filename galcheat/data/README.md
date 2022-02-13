@@ -43,7 +43,8 @@ This parameter is used to compute the effective area of the telescope.
 
 #### `zeropoint_airmass`
 
-Airmass value at which the zeropoint is computed.
+Airmass value at which the zeropoint is computed.  
+The airmass is commonly defined as the optical path length through the atmosphere relative to the zenith path length.
 
 Filter parameters
 -----------------
@@ -55,7 +56,7 @@ Filter parameters
 | sky_brightness       | float     | mag / arcsec^2 |
 | exposure_time        | int/float | s              |
 | psf_fwhm             | float     | arcsec         |
-| zeropoint            | float     | e- / s         |
+| zeropoint            | float     | mag            |
 | effective_wavelength | float     | nm             |
 
 ### Description
@@ -78,7 +79,7 @@ Average full width at half-maximum (FWHM) of the point spread function (PSF) ove
 
 #### `zeropoint`
 
-Zero point magnitude for the filter, computed using the [`speclite`][speclite] library with a classical atmosphere, at the airmass indicated in the survey parameters: `zeropoint_airmass`
+The zeropoint is the magnitude of an object that produces 1 e- per second on the detector. It is computed for a given filter, using the [`speclite`][speclite] library with a classical atmosphere, at the airmass indicated in the survey parameters: `zeropoint_airmass`.
 
 
 [speclite]: https://github.com/desihub/speclite
