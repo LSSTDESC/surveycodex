@@ -30,7 +30,7 @@ name: DES
 pixel_scale: 0.2637
 gain: 4.0
 mirror_diameter: 3.934
-obscuration: 0.1761267
+obscuration: 0.17612680
 zeropoint_airmass: 1.2
 filters:
   g:
