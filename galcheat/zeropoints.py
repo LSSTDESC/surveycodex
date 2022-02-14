@@ -40,7 +40,7 @@ def check_zeropoints():
                     * 1
                     * u.s
                 )
-                zp_btk = (math.log10(zp_24) + 0.4 * 24) / 0.4
+                zp_btk = (math.log10(zp_24) + 0.4 * 24) / 0.4 * u.mag
 
                 filt = survey.get_filter(filt_name)
                 current_zp = filt.zeropoint
