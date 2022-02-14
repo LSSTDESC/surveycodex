@@ -5,10 +5,14 @@
 # https://www.naoj.org/Observing/Instruments/HSC/parameters.html
 #
 # mirror_diameter
-# https://subarutelescope.org/Observing/Telescope/Parameters/
+# https://carlkop.home.xs4all.nl/subaru.html#:~:text=The%20National%20Astronomical%20Observatory%20of,construction%20atop%20Mauna%20Kea%2C%20Hawaii.
 #
 # obscuration
-# ** to be confirmed **
+# https://carlkop.home.xs4all.nl/subaru.html#:~:text=The%20National%20Astronomical%20Observatory%20of,construction%20atop%20Mauna%20Kea%2C%20Hawaii.
+# central hole of 1.2m so that the obscuration is 1.2^2/8.3^2 (confirmed by an expert contacted by H. Miyatake)
+# which is consistent with the 8.2 effective diameter value that can be found in many places
+# https://subarutelescope.org/Observing/Telescope/Parameters/
+# https://subarutelescope.org/en/about/
 #
 # exposure_time and psf_fwhm
 # "Wide" in Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
@@ -48,8 +52,8 @@
 name: HSC
 pixel_scale: 0.168
 gain: 3.0
-mirror_diameter: 8.2
-obscuration: 0.0
+mirror_diameter: 8.3
+obscuration: 0.02090289
 zeropoint_airmass: 1.2
 filters:
   g:
