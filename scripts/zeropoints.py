@@ -3,7 +3,7 @@ import math
 from astropy import units as u
 from speclite.filters import ab_reference_flux, load_filter
 
-from galcheat.helpers import available_surveys, get_survey
+from galcheat import available_surveys, get_survey
 
 speclite_survey_prefixes = {
     "DES": "decam2014-",
