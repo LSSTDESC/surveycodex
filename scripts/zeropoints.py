@@ -38,8 +38,7 @@ def check_zeropoints(survey_name):
             zp_24 = (
                 calculate_zero_point(speclite_filt_name)
                 * survey.effective_area
-                * 1
-                * u.s
+                * 1 * u.s
             )
             zp_btk = (math.log10(zp_24) + 0.4 * 24) / 0.4 * u.mag
 
