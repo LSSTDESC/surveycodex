@@ -5,8 +5,12 @@ from speclite.filters import ab_reference_flux, load_filter
 
 from galcheat.helpers import available_surveys, get_survey
 
-speclite_available_surveys = ["DES", "Euclid_VIS", "HSC", "Rubin"]
-speclite_survey_prefixes = ["decam2014-", "Euclid-", "hsc2017-", "lsst2016-"]
+speclite_survey_prefixes = {
+    "DES": "decam2014-",
+    "Euclid_VIS": "Euclid-",
+    "HSC": "hsc2017-",
+    "Rubin": "lsst2016-",
+}
 
 
 def calculate_zero_point(band_name, B0=24):
@@ -23,13 +27,11 @@ def check_zeropoints():
     """
 
     for survey_name in available_surveys:
-        if survey_name in speclite_available_surveys:
+        if survey_name in speclite_survey_prefixes.keys():
             survey = get_survey(survey_name)
             print(survey_name, ":")
 
-            speclite_prefix = speclite_survey_prefixes[
-                speclite_available_surveys.index(survey_name)
-            ]
+            speclite_prefix = speclite_survey_prefixes[survey_name]
 
             survey_filters = survey.get_filters()
             for filt_name in survey_filters:
