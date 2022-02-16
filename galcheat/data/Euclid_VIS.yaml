@@ -17,8 +17,8 @@
 # https://arxiv.org/pdf/1608.08603.pdf (section 6)
 #
 # zeropoint
-# computed with speclite: I guess we should add a reference to a shared speclite
-# resource among surveys once we have it
+# computed with speclite: for more information you may want to check
+# https://github.com/aboucaud/galcheat/issues/48 and the zeropoints.py script
 #
 # psf_fwhm
 # https://arxiv.org/pdf/1608.08603.pdf (section 8)
