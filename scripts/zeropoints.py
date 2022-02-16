@@ -13,12 +13,12 @@ speclite_survey_prefixes = {
 }
 
 
-def calculate_zero_point(band_name, B0=24):
+def calculate_zero_point(band_name, reference_mag=24):
     """Compute the zeropoint of a given filter with speclite"""
     filt = load_filter(band_name)
-    return (filt.convolve_with_function(ab_reference_flux) * 10 ** (-0.4 * B0)).to(
-        1 / (u.s * u.m**2)
-    )
+    return (
+        filt.convolve_with_function(ab_reference_flux) * 10 ** (-0.4 * reference_mag)
+    ).to(1 / (u.s * u.m**2))
 
 
 def check_zeropoints():
