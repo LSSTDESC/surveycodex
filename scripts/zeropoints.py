@@ -33,8 +33,7 @@ def check_zeropoints(survey_name):
 
         speclite_prefix = speclite_survey_prefixes[survey_name]
 
-        survey_filters = survey.get_filters()
-        for filt_name in survey_filters:
+        for filt_name in survey.available_filters:
             speclite_filt_name = f"{speclite_prefix}{filt_name}"
             zp_24 = (
                 calculate_zero_point(speclite_filt_name)
