@@ -10,6 +10,9 @@
 # obscuration
 # https://arxiv.org/pdf/1608.08603.pdf (section 3.1)
 #
+# zeropoint_airmass
+# space telescope
+#
 # sky_brightness
 # https://www.mssl.ucl.ac.uk/~smn2/instrument.html
 #
@@ -31,6 +34,7 @@ pixel_scale: 0.10
 gain: 3.1
 mirror_diameter: 1.2
 obscuration: 0.13
+zeropoint_airmass: 0.0
 filters:
   VIS:
     name: "VIS"
