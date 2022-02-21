@@ -14,6 +14,9 @@
 # https://subarutelescope.org/Observing/Telescope/Parameters/
 # https://subarutelescope.org/en/about/
 #
+# zeropoint_aimass
+# https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters
+#
 # exposure_time and psf_fwhm
 # "Wide" in Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
 #
@@ -26,28 +29,9 @@
 # could update the numbers to this version, although we need to
 # convert the unit from ADU/sec to mag/arcsec^2.
 #
-# zeropoint and zeropoint_airmass
-# The zeropoints are inhereted from WeakLensingDeblending
-# (https://github.com/LSSTDESC/WeakLensingDeblending/blob/master/descwl/survey.py#L315).
-# In WeakLensingDeblending, a zeropoint is defined with respect to mag = 24 as
-# flux = exposure_time * Z_{24} * 10^(-0.4 * (mag-24))
-# , but here we converted it to a more useful convention
-# flux = exposure_time * 10^(-0.4 * (mag-Z))
-# . Note that it assumes an atmosphere airmass of 1.2.
-# We found that our zeropoints are close to the ones in the Subaru
-# website (see mag for 1e-/s in
-# https://www.naoj.org/Observing/Instruments/HSC/sensitivity.html).
-# Note:
-# The zeropoints in WeakLensingDeblending used the speclite package
-# (https://github.com/desihub/speclite), where they seemed to use the
-# official filter responses
-# (https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters)
-# and convolved them with a reference magnitude
-# (https://speclite.readthedocs.io/en/latest/api/speclite.filters.ab_reference_flux.html#speclite.filters.ab_reference_flux)
-# to obtain the zeropoints.
-# You may find detailed discussions at
-# - https://github.com/LSSTDESC/WeakLensingDeblending/issues/19
-# - https://github.com/aboucaud/galcheat/pull/32
+# zeropoint
+# computed with speclite: for more information you may want to check
+# https://github.com/aboucaud/galcheat/issues/48 and the zeropoints.py script
 
 name: HSC
 pixel_scale: 0.168
