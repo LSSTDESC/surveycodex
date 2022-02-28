@@ -33,13 +33,9 @@ def mag2counts(magnitude, survey_name, filter_name):
     else:
         magnitude = magnitude.value * u.mag(u.ct / u.s)
 
-    survey = get_survey(survey_name)
     filter = get_filter(filter_name, survey_name)
 
-    delta_airmass = survey.airmass - survey.zeropoint_airmass
-    mag = magnitude + filter.extinction * delta_airmass
-
-    flux = (mag - filter.zeropoint).to(u.ct / u.s)
+    flux = (magnitude - filter.zeropoint).to(u.ct / u.s)
     counts = flux * filter.exposure_time
 
     return counts
