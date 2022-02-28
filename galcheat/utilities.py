@@ -6,8 +6,13 @@ from galcheat.helpers import get_filter, get_survey
 def mag2counts(magnitude, survey_name, filter_name):
     """Convert source magnitude to counts for a given filter of a survey
 
-    The calculation includes the effects of atmospheric extinction as
-    well as exposure time.
+    To perform the computation, we use the filter zeropoint computed
+    with `speclite` under classical atmospheric conditions and at a
+    given airmass and we integrate over the survey lifetime using the
+    full filter exposure time.
+
+    Expect a rough estimate from this calculation since e.g. it does not
+    take into account the atmospheric extinction.
 
     Parameters
     ----------
@@ -43,6 +48,10 @@ def mag2counts(magnitude, survey_name, filter_name):
 
 def mean_sky_level(survey_name, filter_name):
     """Computes the mean sky level for a given survey and a filter
+
+    This computation uses the sky brightness parameter from galcheat,
+    expressed as a magnitude per square arcminute, weights it by the
+    pixel area and converts it to counts.
 
     Parameters
     ----------
