@@ -12,7 +12,7 @@ setup(
     author="Alexandre Boucaud",
     author_email="aboucaud@apc.in2p3.fr",
     packages=["galcheat"],
-    package_data={"galcheat": ["data/*.yaml"]},
+    package_data={"galcheat": ["data/*.yaml", "data/README.md"]},
     include_package_data=True,
     entry_points={"console_scripts": ["galcheat = galcheat.__main__:main"]},
     install_requires=["astropy", "pyyaml"],

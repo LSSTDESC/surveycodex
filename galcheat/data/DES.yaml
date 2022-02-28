@@ -1,40 +1,59 @@
-# http://www.ctio.noao.edu/noao/content/Basic-Optical-Parameters
-# http://www.ctio.noao.edu/noao/content/DECam-What
-# sky brightness: http://www.ctio.noao.edu/noao/node/1218
-# fwhm: https://arxiv.org/abs/1407.3801 table 2
-# extinction: https://arxiv.org/abs/1701.00502 table 4
+# pixel_scale
+# http://www.ctio.noirlab.edu/noao/content/DECam-What
+#
+# gain
+# http://www.ctio.noirlab.edu/noao/content/DECam-What
+#
+# mirror_diameter
+# http://www.ctio.noirlab.edu/noao/content/Basic-Optical-Parameters
+#
+# obscuration
+# http://www.ctio.noirlab.edu/noao/content/Basic-Optical-Parameters
+# disk of 1.651m so that the obscuration is 1.651^2/3.934^2
+# which gives back the 10.014m² effective area given by the webpage
+#
+# sky brightness
+# https://arxiv.org/pdf/1801.03181.pdf (table 1)
+#
+# exposure_time
+# https://arxiv.org/pdf/1801.03181.pdf
+# coadds of 10 90s exposures from section 2.2 page 5
+#
+# zeropoint
+# computed with speclite: I guess we should add a reference to a shared speclite
+# resource among surveys once we have it
+#
+# psf_fwhm
+# https://arxiv.org/pdf/1801.03181.pdf (table 1)
+
 name: DES
-pixel_scale: 0.263
-effective_area: 10.014
+pixel_scale: 0.2637
+gain: 4.0
 mirror_diameter: 3.934
-airmass: 1.0
-zeropoint_airmass: 1.3
+obscuration: 0.17612680
+zeropoint_airmass: 1.2
 filters:
   g:
     name: "g"
-    sky_brightness: 22.3
-    exp_time: 800
+    sky_brightness: 22.01
+    exposure_time: 900
     zeropoint: 26.72
-    extinction: 0.17
-    psf_fwhm: 1.24
+    psf_fwhm: 1.12
   r:
     name: "r"
-    sky_brightness: 21.4
-    exp_time: 800
+    sky_brightness: 21.15
+    exposure_time: 900
     zeropoint: 26.99
-    extinction: 0.09
-    psf_fwhm: 1.03
+    psf_fwhm: 0.96
   i:
     name: "i"
-    sky_brightness: 20.5
-    exp_time: 1000
+    sky_brightness: 19.89
+    exposure_time: 900
     zeropoint: 26.86
-    extinction: 0.05
-    psf_fwhm: 0.96
+    psf_fwhm: 0.88
   z:
     name: "z"
-    sky_brightness: 18.7
-    exp_time: 800
+    sky_brightness: 18.72
+    exposure_time: 900
     zeropoint: 26.58
-    extinction: 0.06
-    psf_fwhm: 1.12
+    psf_fwhm: 0.84
