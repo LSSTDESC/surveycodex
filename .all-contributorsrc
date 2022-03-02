@@ -27,6 +27,16 @@
         "review",
         "data"
       ]
+    },
+    {
+      "login": "ismael-mendoza",
+      "name": "Ismael Mendoza",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11745764?v=4",
+      "profile": "https://ismael-mendoza.github.io/",
+      "contributions": [
+        "ideas",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
