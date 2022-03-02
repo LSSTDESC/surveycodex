@@ -12,7 +12,8 @@ def mag2counts(magnitude, survey_name, filter_name):
     full filter exposure time.
 
     Expect a rough estimate from this calculation since e.g. it does not
-    take into account the atmospheric extinction.
+    take into account the atmospheric extinction. Therefore the result
+    is casted to an integer.
 
     Parameters
     ----------
@@ -43,7 +44,7 @@ def mag2counts(magnitude, survey_name, filter_name):
     flux = (magnitude - filter.zeropoint).to(u.ct / u.s)
     counts = flux * filter.exposure_time
 
-    return counts
+    return counts.astype(int)
 
 
 def mean_sky_level(survey_name, filter_name):
