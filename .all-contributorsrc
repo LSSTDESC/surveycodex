@@ -16,6 +16,16 @@
         "maintenance",
         "review"
       ]
+    },
+    {
+      "login": "mpaillassa",
+      "name": "mpaillassa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9745094?v=4",
+      "profile": "https://github.com/mpaillassa",
+      "contributions": [
+        "code",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
