@@ -1,42 +1,50 @@
 from astropy import units as u
 from speclite.filters import load_filter
 
-from galcheat import available_surveys, get_survey
+import galcheat
 
-speclite_survey_prefixes = {
-    "DES": "decam2014-",
-    "Euclid_VIS": "Euclid-",
-    "HSC": "hsc2017-",
-    "Rubin": "lsst2016-",
+SPECLITE_SURVEY_PREFIXES = {
+    "DES": "decam2014",
+    "Euclid_VIS": "Euclid",
+    "HSC": "hsc2017",
+    "Rubin": "lsst2016",
 }
 
 
 def check_effective_wavelengths(survey_name):
-    """Check the current effective wavelengths with speclite
-    and compare them to their current values
+    """Compare current effective wavelengths with speclite
+
+    Parameters
+    ----------
+    survey_name : str
+        Name of the survey
+
     """
+    if survey_name in SPECLITE_SURVEY_PREFIXES.keys():
+        survey = galcheat.get_survey(survey_name)
+        speclite_prefix = SPECLITE_SURVEY_PREFIXES[survey_name]
 
-    if survey_name in speclite_survey_prefixes.keys():
-        survey = get_survey(survey_name)
-        print(survey_name, ":")
+        print(f"-- {survey_name} --\t({speclite_prefix} in speclite)\n")
+        print("filters |  speclite |  galcheat")
+        print("------- | --------- | ---------")
 
-        speclite_prefix = speclite_survey_prefixes[survey_name]
+        for filter_name in survey.available_filters:
+            speclite_filter_name = f"{speclite_prefix}-{filter_name}"
+            speclite_filter = load_filter(speclite_filter_name)
+            speclite_eff_wl = speclite_filter.effective_wavelength.to(u.nm)
+            current_eff_wl = survey.get_filter(filter_name).effective_wavelength
 
-        for filt_name in survey.available_filters:
-            speclite_filt_name = f"{speclite_prefix}{filt_name}"
-            speclite_filt = load_filter(speclite_filt_name)
-            speclite_eff_wl = speclite_filt.effective_wavelength.to(u.nm)
-            current_eff_wl = survey.get_filter(filt_name).effective_wavelength
-            print(f"  Filter {filt_name} ({speclite_filt_name} in speclite)")
-            print(f"    Speclite effective wavelength: {speclite_eff_wl:.3f}")
-            if current_eff_wl is not None:
-                print(f"    Current effective wavelength: {current_eff_wl:.3f}")
+            if current_eff_wl is None:
+                print(f"{filter_name:^7} | {speclite_eff_wl:.2f} | {current_eff_wl:^9}")
             else:
-                print("    No current value for effective wavelength")
+                print(
+                    f"{filter_name:^7} | {speclite_eff_wl:.2f} | {current_eff_wl:.2f}"
+                )
     else:
-        print(survey_name, ": filters are not available in speclite")
+        print(f"{survey_name} filters are not available in speclite")
+    print("\n")
 
 
 if __name__ == "__main__":
-    for survey_name in available_surveys:
-        check_effective_wavelengths(survey_name)
+    for survey in galcheat.available_surveys:
+        check_effective_wavelengths(survey)
