@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install flake8
+        python -m pip install flake8 pytest pytest-cov
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -49,3 +49,6 @@ jobs:
     - name: Test the scripts
       run: |
         for pyscript in scripts/*.py; do python ${pyscript}; done
+    - name: Test the utility functions
+      run: |
+        pytest --cov galcheat/ --cov-branch --cov-report term-missing -vv

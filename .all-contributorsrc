@@ -1,0 +1,85 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "aboucaud",
+      "name": "Alexandre Boucaud",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3065310?v=4",
+      "profile": "https://aboucaud.github.io",
+      "contributions": [
+        "code",
+        "ideas",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "mpaillassa",
+      "name": "mpaillassa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9745094?v=4",
+      "profile": "https://github.com/mpaillassa",
+      "contributions": [
+        "code",
+        "review",
+        "data"
+      ]
+    },
+    {
+      "login": "ismael-mendoza",
+      "name": "Ismael Mendoza",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11745764?v=4",
+      "profile": "https://ismael-mendoza.github.io/",
+      "contributions": [
+        "ideas",
+        "review"
+      ]
+    },
+    {
+      "login": "HironaoMiyatake",
+      "name": "Hironao Miyatake",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1507529?v=4",
+      "profile": "https://github.com/HironaoMiyatake",
+      "contributions": [
+        "code",
+        "data"
+      ]
+    },
+    {
+      "login": "aguinot",
+      "name": "Axel Guinot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39480528?v=4",
+      "profile": "https://github.com/aguinot",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "thuiop",
+      "name": "thuiop",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1338337?v=4",
+      "profile": "https://github.com/thuiop",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "herjy",
+      "name": "Rémy Joseph",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16084926?v=4",
+      "profile": "https://remyjoseph.wordpress.com/",
+      "contributions": [
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "galcheat",
+  "projectOwner": "aboucaud",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
