@@ -44,26 +44,26 @@ filters:
     name: "g"
     sky_brightness: 21.4
     exposure_time: 600
-    psf_fwhm: 0.79
     zeropoint: 28.90
+    psf_fwhm: 0.79
   r:
     name: "r"
     sky_brightness: 20.6
     exposure_time: 600
-    psf_fwhm: 0.75
     zeropoint: 28.86
+    psf_fwhm: 0.75
   i:
     name: "i"
     sky_brightness: 19.7
     exposure_time: 1200
-    psf_fwhm: 0.61
     zeropoint: 28.61
+    psf_fwhm: 0.61
   z:
     name: "z"
     sky_brightness: 18.3
     exposure_time: 1200
-    psf_fwhm: 0.68
     zeropoint: 27.68
+    psf_fwhm: 0.68
   y:
     name: "y"
     sky_brightness: 17.9
