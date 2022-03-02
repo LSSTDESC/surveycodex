@@ -28,7 +28,10 @@ def check_effective_wavelengths(survey_name):
             current_eff_wl = survey.get_filter(filt_name).effective_wavelength
             print(f"  Filter {filt_name} ({speclite_filt_name} in speclite)")
             print(f"    Speclite effective wavelength: {speclite_eff_wl:.3f}")
-            print(f"    Current effective wavelength: {current_eff_wl:.3f}")
+            if current_eff_wl is not None:
+                print(f"    Current effective wavelength: {current_eff_wl:.3f}")
+            else:
+                print("    No current value for effective wavelength"
     else:
         print(survey_name, ": filters are not available in speclite")
 
