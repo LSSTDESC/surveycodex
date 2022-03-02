@@ -1,6 +1,6 @@
 import math
 from dataclasses import dataclass, field, make_dataclass
-from typing import Any, List, Optional
+from typing import Any, List
 
 import astropy.units as u
 import yaml
@@ -15,10 +15,9 @@ class Survey:
     filters: Any
     pixel_scale: Quantity
     mirror_diameter: Quantity
-    # TODO remove the optional when all values are added
-    gain: Optional[Quantity] = None
-    obscuration: Optional[Quantity] = None
-    zeropoint_airmass: Optional[Quantity] = None
+    gain: Quantity
+    obscuration: Quantity
+    zeropoint_airmass: Quantity
     available_filters: List[str] = field(init=False)
     effective_area: Quantity = field(init=False)
 
@@ -42,20 +41,9 @@ class Survey:
         filters = Survey._construct_filter_list(data)
         pixel_scale = data["pixel_scale"] * u.arcsec
         mirror_diameter = data["mirror_diameter"] * u.m
-        gain = data.get("gain")
-        gain = gain if gain is None else gain * u.electron / u.adu
-        obscuration = data.get("obscuration")
-        obscuration = (
-            obscuration
-            if obscuration is None
-            else obscuration * u.dimensionless_unscaled
-        )
-        zeropoint_airmass = data.get("zeropoint_airmass")
-        zeropoint_airmass = (
-            zeropoint_airmass
-            if zeropoint_airmass is None
-            else zeropoint_airmass * u.dimensionless_unscaled
-        )
+        gain = data["gain"] * u.electron / u.adu
+        obscuration = data["obscuration"] * u.dimensionless_unscaled
+        zeropoint_airmass = data["zeropoint_airmass"] * u.dimensionless_unscaled
 
         return cls(
             data["name"],
