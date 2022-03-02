@@ -25,9 +25,10 @@ def check_effective_wavelengths(survey_name):
             speclite_filt_name = f"{speclite_prefix}{filt_name}"
             speclite_filt = load_filter(speclite_filt_name)
             speclite_eff_wl = speclite_filt.effective_wavelength
-            # galcheat_eff_wl = survey.get_filter(filt_name).effective_wavelength
+            current_eff_wl = survey.get_filter(filt_name).effective_wavelength
             print(f"  Filter {filt_name} ({speclite_filt_name} in speclite)")
-            print(f"    Speclite effective wavelength: {speclite_eff_wl:.2f}")
+            print(f"    Speclite effective wavelength: {speclite_eff_wl:.3f}")
+            print(f"    Current effective wavelength: {current_eff_wl:.3f}")
     else:
         print(survey_name, ": filters are not available in speclite")
 
