@@ -46,4 +46,4 @@ jobs:
     - name: Test the scripts
       run: |
         python -m pip install -r scripts/requirements.txt
-        for script in scripts/*.py; do python $scripts; done
+        for pyscript in scripts/*.py; do python ${pyscript}; done
