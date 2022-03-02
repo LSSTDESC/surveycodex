@@ -1,13 +1,9 @@
-Galaxy Surveys cheatsheet
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-=========================
-
 [![Python package][gh-workflow-badge]][gh-workflow]
 [![License][license-badge]](LICENSE)
 ![Python supported versions][pyversion-badge]
-[![PyPI][pypi-badge]][pypi]
+[![PyPI][pypi-badge]][pypi]<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [gh-workflow]: https://github.com/aboucaud/galcheat/actions/workflows/python-package.yml
 [gh-workflow-badge]: https://github.com/aboucaud/galcheat/actions/workflows/python-package.yml/badge.svg
@@ -16,6 +12,8 @@ Galaxy Surveys cheatsheet
 [pypi-badge]: https://badge.fury.io/py/galcheat.svg
 [pypi]: https://pypi.org/project/galcheat/
 
+Galaxy Surveys cheatsheet
+=========================
 
 Tiny package containing useful parameters from main galaxy surveys (with units).
 
