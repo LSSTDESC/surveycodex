@@ -53,5 +53,7 @@ def check_zeropoints(survey_name):
 
 
 if __name__ == "__main__":
+    print("\nChecking the zeropoints with speclite")
+    print("-------------------------------------\n")
     for survey_name in galcheat.available_surveys:
         check_zeropoints(survey_name)

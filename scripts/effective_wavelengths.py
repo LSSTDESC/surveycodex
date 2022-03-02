@@ -46,5 +46,7 @@ def check_effective_wavelengths(survey_name):
 
 
 if __name__ == "__main__":
+    print("\nChecking the effective filter wavelengths with speclite")
+    print("-------------------------------------------------------\n")
     for survey in galcheat.available_surveys:
         check_effective_wavelengths(survey)
