@@ -28,6 +28,10 @@
 #
 # psf_fwhm
 # https://arxiv.org/pdf/1801.03181.pdf (table 1)
+#
+# effective_wavelength
+# computed with speclite: for more information you may want to check
+# https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
 
 name: DES
 pixel_scale: 0.2637
@@ -42,21 +46,25 @@ filters:
     exposure_time: 900
     zeropoint: 26.72
     psf_fwhm: 1.12
+    effective_wavelength: 489.004
   r:
     name: "r"
     sky_brightness: 21.15
     exposure_time: 900
     zeropoint: 26.99
     psf_fwhm: 0.96
+    effective_wavelength: 646.962
   i:
     name: "i"
     sky_brightness: 19.89
     exposure_time: 900
     zeropoint: 26.86
     psf_fwhm: 0.88
+    effective_wavelength: 784.778
   z:
     name: "z"
     sky_brightness: 18.72
     exposure_time: 900
     zeropoint: 26.58
     psf_fwhm: 0.84
+    effective_wavelength: 919.646

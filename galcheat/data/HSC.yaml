@@ -32,6 +32,10 @@
 # zeropoint
 # computed with speclite: for more information you may want to check
 # https://github.com/aboucaud/galcheat/issues/48 and the zeropoints.py script
+#
+# effective_wavelength
+# computed with speclite: for more information you may want to check
+# https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
 
 name: HSC
 pixel_scale: 0.168
@@ -46,27 +50,32 @@ filters:
     exposure_time: 600
     psf_fwhm: 0.79
     zeropoint: 28.90
+    effective_wavelength: 484.370
   r:
     name: "r"
     sky_brightness: 20.6
     exposure_time: 600
     psf_fwhm: 0.75
     zeropoint: 28.86
+    effective_wavelength: 625.889
   i:
     name: "i"
     sky_brightness: 19.7
     exposure_time: 1200
     psf_fwhm: 0.61
     zeropoint: 28.61
+    effective_wavelength: 773.009
   z:
     name: "z"
     sky_brightness: 18.3
     exposure_time: 1200
     psf_fwhm: 0.68
     zeropoint: 27.68
+    effective_wavelength: 891.239
   y:
     name: "y"
     sky_brightness: 17.9
     exposure_time: 1200
     zeropoint: 27.33
     psf_fwhm: 0.68
+    effective_wavelength: 978.695
