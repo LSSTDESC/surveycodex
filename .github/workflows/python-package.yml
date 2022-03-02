@@ -45,5 +45,5 @@ jobs:
         galcheat
     - name: Test the scripts
       run: |
-        python -m pip install scripts/requirements.txt
+        python -m pip install -r scripts/requirements.txt
         for script in scripts/*.py; do python $scripts; done
