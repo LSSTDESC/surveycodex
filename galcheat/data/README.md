@@ -113,14 +113,14 @@ filters:
     name: "a"
     sky_brightness: 19.4
     exposure_time: 500
-    psf_fwhm: 1.1
     zeropoint: 26.90
+    psf_fwhm: 1.1
     effective_wavelength: 500.00
   b:
     name: "b"
     sky_brightness: 18.6
     exposure_time: 500
-    psf_fwhm: 1.2
     zeropoint: 27.36
+    psf_fwhm: 1.2
     effective_wavelength: 600.00
 ```
