@@ -15,11 +15,11 @@
 Galaxy Surveys cheatsheet
 =========================
 
-Tiny package containing useful parameters from main galaxy surveys (with units).
+Tiny package containing useful parameters from main galaxy surveys (**with units**).
 
 The goal of this project is to provide a Python library with minimal dependencies that centralises galaxy survey properties with adequate reference. Such information tends to be scattered in many places or is often copy/pasted without all of the relevant information like units or sources.
 
-**WORK IN PROGRESS: the API is still unstable, expect backward incompatibilities**
+The current parameters and the corresponding units are specified in the [data README](galcheat/data/README.md)
 
 [**Getting started**](#getting-started) | [**API**](#api) | [**Contributing**](#contributing) | [**License**](#license)
 
