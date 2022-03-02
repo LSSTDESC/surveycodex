@@ -28,6 +28,9 @@
 # psf_fwhm
 # https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf
 # roughly taken from figure 25
+#
+# effective_wavelength
+# https://cosmos.astro.caltech.edu/page/filterset
 
 name: "CFHTLS"
 pixel_scale: 0.187
@@ -42,27 +45,32 @@ filters:
     exposure_time: 3000
     zeropoint: 25.78
     psf_fwhm: 0.81
+    effective_wavelength: 382.329
   g:
     name: "g"
     sky_brightness: 21.30
     exposure_time: 2500
     zeropoint: 27.11
     psf_fwhm: 0.84
+    effective_wavelength: 487.737
   r:
     name: "r"
     sky_brightness: 20.80
     exposure_time: 2000
     zeropoint: 26.74
     psf_fwhm: 0.73
+    effective_wavelength: 623.062
   i:
     name: "i"
     sky_brightness: 20.30
     exposure_time: 4305
     zeropoint: 26.22
     psf_fwhm: 0.66
+    effective_wavelength: 716.766
   z:
     name: "z"
     sky_brightness: 19.40
     exposure_time: 3600
     zeropoint: 25.05
     psf_fwhm: 0.66
+    effective_wavelength: 882.798

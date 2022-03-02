@@ -26,8 +26,10 @@
 # psf_fwhm
 # https://arxiv.org/pdf/1608.08603.pdf (section 8)
 #
-# central_wavelength
-# value from BTK and WLD
+# effective_wavelength
+# computed with speclite: for more information you may want to check
+# https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
+
 
 name: "Euclid_VIS"
 pixel_scale: 0.10
@@ -42,4 +44,4 @@ filters:
     exposure_time: 565
     zeropoint: 25.91
     psf_fwhm: 0.17
-    effective_wavelength: 713.50
+    effective_wavelength: 750.637
