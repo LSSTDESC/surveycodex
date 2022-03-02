@@ -17,28 +17,28 @@ To access the quantities, retrieve the
 `Survey` objects with `get_survey`.
 
     >>> from galcheat import get_survey
-    >>> Rubin = get_survey('Rubin')
-    >>> Rubin.mirror_diameter
+    >>> LSST = get_survey('LSST')
+    >>> LSST.mirror_diameter
     <Quantity 8.36 m>
 
 Each `Survey` contains a list of filters
 whose names can be obtained as
 
-    >>> Rubin.available_filters
+    >>> LSST.available_filters
 
 Each `Filter` class is then accessible either
 as an attribute from the `Survey`
 
-    >>> u_filter = Rubin.filters.u
+    >>> u_filter = LSST.filters.u
 
 or through a method
 
-    >>> u_filter = Rubin.get_filter('u')
+    >>> u_filter = LSST.get_filter('u')
 
 For a given survey, a dictionary of the available
 filters is returned by
 
-    >>> Rubin.get_filters()
+    >>> LSST.get_filters()
 
 Parameter values can be converted to any physical
 units using the `astropy.units` scheme

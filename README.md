@@ -45,23 +45,23 @@ from galcheat import available_surveys
 # Getter methods to retrieve a Survey of a Filter dataclass
 from galcheat import get_survey, get_filter
 
-Rubin = get_survey("Rubin")
-u_band = get_filter("u", "Rubin")
+LSST = get_survey("LSST")
+u_band = get_filter("u", "LSST")
 # which is a proxy for
-u_band = Rubin.get_filter("u")
+u_band = LSST.get_filter("u")
 
 # Get the list of available filters
-Rubin.available_filters
+LSST.available_filters
 
 # or as a dictionary with all `Filter` objects
-Rubin.get_filters()
+LSST.get_filters()
 
 # Both Survey and Filter classes have physical attributes
-Rubin.mirror_diameter
+LSST.mirror_diameter
 u_band.exposure_time
 
 # Filters are also attributes of a Survey
-Rubin.filters.u.exposure_time  # same attribute as above
+LSST.filters.u.exposure_time  # same attribute as above
 
 # These attributes are Astropy Quantity objects with units
 fwhm = u_band.psf_fwhm
