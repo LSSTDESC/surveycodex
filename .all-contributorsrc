@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "aboucaud",
+      "name": "Alexandre Boucaud",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3065310?v=4",
+      "profile": "https://aboucaud.github.io",
+      "contributions": [
+        "code",
+        "ideas",
+        "maintenance",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "galcheat",
+  "projectOwner": "aboucaud",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
