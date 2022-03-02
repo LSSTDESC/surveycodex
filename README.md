@@ -1,6 +1,6 @@
 Galaxy Surveys cheatsheet
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 =========================
 
@@ -111,6 +111,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://aboucaud.github.io"><img src="https://avatars.githubusercontent.com/u/3065310?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alexandre Boucaud</b></sub></a><br /><a href="https://github.com/aboucaud/galcheat/commits?author=aboucaud" title="Code">💻</a> <a href="#ideas-aboucaud" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-aboucaud" title="Maintenance">🚧</a> <a href="https://github.com/aboucaud/galcheat/pulls?q=is%3Apr+reviewed-by%3Aaboucaud" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/mpaillassa"><img src="https://avatars.githubusercontent.com/u/9745094?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mpaillassa</b></sub></a><br /><a href="https://github.com/aboucaud/galcheat/commits?author=mpaillassa" title="Code">💻</a> <a href="https://github.com/aboucaud/galcheat/pulls?q=is%3Apr+reviewed-by%3Ampaillassa" title="Reviewed Pull Requests">👀</a> <a href="#data-mpaillassa" title="Data">🔣</a></td>
     <td align="center"><a href="https://ismael-mendoza.github.io/"><img src="https://avatars.githubusercontent.com/u/11745764?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ismael Mendoza</b></sub></a><br /><a href="#ideas-ismael-mendoza" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/aboucaud/galcheat/pulls?q=is%3Apr+reviewed-by%3Aismael-mendoza" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/HironaoMiyatake"><img src="https://avatars.githubusercontent.com/u/1507529?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hironao Miyatake</b></sub></a><br /><a href="https://github.com/aboucaud/galcheat/commits?author=HironaoMiyatake" title="Code">💻</a> <a href="#data-HironaoMiyatake" title="Data">🔣</a></td>
   </tr>
 </table>
 
