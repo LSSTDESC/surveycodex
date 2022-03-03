@@ -56,19 +56,7 @@ or
 
 Feel free to contribute by submitting
 parameter values for your surveys of
-interest or reporting unconsitent
-values.
+interest or reporting inconsistent values.
 
 """
-from pathlib import Path
-
-from galcheat.survey import Survey
-
-__all__ = ["available_surveys", "get_filter", "get_survey"]
-
-_BASEDIR = Path(__file__).parent.resolve()
-_survey_info = {
-    path.stem: Survey.from_yaml(path) for path in _BASEDIR.glob("data/*.yaml")
-}
-
 from galcheat.helpers import available_surveys, get_filter, get_survey  # noqa

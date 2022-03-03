@@ -86,13 +86,11 @@ class Survey:
         return FList(**filter_data)
 
     def __post_init__(self):
+        """Set attributes computed after class is constructed"""
         self.available_filters = list(self.filters.__dict__.keys())
 
         total_area = math.pi * (self.mirror_diameter * 0.5) ** 2
-        if self.obscuration is None:
-            self.effective_area = total_area
-        else:
-            self.effective_area = (1 - self.obscuration) * total_area
+        self.effective_area = (1 - self.obscuration) * total_area
 
     def get_filters(self):
         """Getter method to retrieve the filters as a dictionary"""

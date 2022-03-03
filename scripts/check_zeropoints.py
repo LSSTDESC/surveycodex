@@ -23,10 +23,15 @@ def calculate_zero_point(band_name, reference_mag=24):
 
 
 def check_zeropoints(survey_name):
-    """Recompute the zeropoints with speclite and the effective area
-    and compare them to their current values
     """
+    Compute the zeropoints with speclite and compare with current values
 
+    Parameters
+    ----------
+    survey_name : str
+        Name of the survey
+
+    """
     if survey_name in SPECLITE_SURVEY_PREFIXES.keys():
         survey = galcheat.get_survey(survey_name)
         speclite_prefix = SPECLITE_SURVEY_PREFIXES[survey_name]
