@@ -42,9 +42,14 @@ To add, update or correct information, the first step is to setup a development 
     ```
 - Setup the virtual environment with the dev tools
     ```sh
-    python -m venv dev-venv
-    source dev-venv/bin/activate
-    python -m pip install -r requirements-dev.txt
+    python -m venv venv
+    source venv/bin/activate
+    python -m pip install -U pip
+    pip install -r requirements-dev.txt
+    ```
+- Install `galcheat`
+    ```sh
+    pip install -e .
     ```
 - Install the automated checks and code lint on git commits
     ```sh
@@ -63,7 +68,7 @@ To add, update or correct information, the first step is to setup a development 
 
 1. Activate the development environment
     ```sh
-    source dev-venv/bin/activate
+    source venv/bin/activate
     ```
 2. Create a feature branch (e.g. `featbranch` here)
     ```sh
