@@ -1,9 +1,3 @@
-astropy
-black
-flake8
-isort
-mccabe
-mypy
-mypy-extensions
 pre-commit
-pyyaml
+pytest
+pytest-cov
