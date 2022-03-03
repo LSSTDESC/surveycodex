@@ -9,7 +9,7 @@ SPECLITE_SURVEY_PREFIXES = {
     "DES": "decam2014",
     "Euclid_VIS": "Euclid",
     "HSC": "hsc2017",
-    "Rubin": "lsst2016",
+    "LSST": "lsst2016",
 }
 
 
