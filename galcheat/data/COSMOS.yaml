@@ -28,7 +28,7 @@
 # effective_wavelength
 # https://cosmos.astro.caltech.edu/page/filterset
 
-name: "HST_COSMOS"
+name: "COSMOS"
 pixel_scale: 0.03
 gain: 1.0
 mirror_diameter: 2.4
