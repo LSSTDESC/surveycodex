@@ -45,15 +45,18 @@ To add, update or correct information, the first step is to setup a development 
     python -m venv venv
     source venv/bin/activate
     python -m pip install -U pip
-    pip install -r requirements-dev.txt
     ```
-- Install `galcheat`
+- Install `galcheat` with developer libs
     ```sh
-    pip install -e .
+    pip install -e ".[dev]"
     ```
 - Install the automated checks and code lint on git commits
     ```sh
     pre-commit install
+    ```
+- Make sure to regularly run the tests and check code coverage
+    ```sh
+    pytest --cov
     ```
 
 ### Create a fork (do once)
