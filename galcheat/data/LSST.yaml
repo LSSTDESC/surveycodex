@@ -27,7 +27,7 @@
 # computed with speclite: for more information you may want to check
 # https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
 
-name: "Rubin"
+name: "LSST"
 pixel_scale: 0.2
 gain: 1.0
 mirror_diameter: 8.36
