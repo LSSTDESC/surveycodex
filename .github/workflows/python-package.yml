@@ -24,14 +24,11 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    - name: Install the library and dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r scripts/requirements.txt
-        pip install pytest pytest-cov
-    - name: Install the library
-      run: |
-        pip install .
+        pip install ".[dev]"
     - name: Test the code demo
       run: |
         python -m galcheat
