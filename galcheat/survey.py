@@ -11,18 +11,29 @@ from galcheat.filter import Filter
 
 @dataclass
 class Survey:
+    """A dataclass for storing the parameters of a survey"""
+
     name: str
+    "The survey name"
     filters: Any
+    "A dynamically created dataclass containing all the survey filters"
     pixel_scale: Quantity
+    "The pixel scale of the survey"
     mirror_diameter: Quantity
+    "The mirror diameter"
     gain: Quantity
+    "The gain in electron/ADU"
     obscuration: Quantity
+    "The total obscuration created by the instrument pieces"
     zeropoint_airmass: Quantity
+    "The zeropoint airmass"
     available_filters: List[str] = field(init=False)
+    "The list of survey filters"
     effective_area: Quantity = field(init=False)
+    "The survey instrument effective area on the sky computed from the obscuration"
 
     @classmethod
-    def from_yaml(cls, yaml_file):
+    def from_yaml(cls, yaml_file: str):
         """Constructor for the Survey class
 
         Parameters
@@ -32,7 +43,8 @@ class Survey:
 
         Returns
         -------
-        The Survey object filled with the info
+        Survey
+            A `Survey` instance filled with the information as attributes
 
         """
         with open(yaml_file) as f:
@@ -66,7 +78,8 @@ class Survey:
 
         Returns
         -------
-        Dynamically created dataclass whose attributes are the survey filters
+        FilterList
+            Dynamically created dataclass whose attributes are the survey filters
 
         """
         filter_data = {
@@ -92,12 +105,31 @@ class Survey:
         total_area = math.pi * (self.mirror_diameter * 0.5) ** 2
         self.effective_area = (1 - self.obscuration) * total_area
 
-    def get_filters(self):
-        """Getter method to retrieve the filters as a dictionary"""
+    def get_filters(self) -> dict:
+        """Getter method to retrieve the filters as a dictionary
+
+        Returns
+        -------
+        dict
+            Dictionary of all the `Filter` objects from a given `Survey`
+
+        """
         return self.filters.__dict__
 
-    def get_filter(self, filter_name):
-        """Getter method to retrieve a Filter object"""
+    def get_filter(self, filter_name) -> Filter:
+        """Getter method to retrieve a Filter object
+
+        Parameters
+        ----------
+        filter_name : str
+            Name of a filter chosen among the `available_filters` attribute
+
+        Returns
+        -------
+        Filter
+            Corresponding `Filter` dataclass
+
+        """
         if filter_name not in self.available_filters:
             raise ValueError(
                 "Please check the filter name. "

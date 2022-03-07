@@ -1,6 +1,5 @@
 from pathlib import Path
 
-from galcheat.filter import Filter
 from galcheat.survey import Survey
 
 _BASEDIR = Path(__file__).parent.resolve()
@@ -9,9 +8,10 @@ _survey_info = {
 }
 
 available_surveys = list(_survey_info.keys())
+"List of available surveys in galcheat"
 
 
-def get_survey(survey_name: str) -> Survey:
+def get_survey(survey_name):
     """Get the dataclass corresponding to the survey
 
     Parameters
@@ -21,11 +21,13 @@ def get_survey(survey_name: str) -> Survey:
 
     Returns
     -------
-    a Survey dataclass
+    Survey
+        The corresponding Survey dataclass
 
     Raises
     ------
-    ValueError: when the input survey is not (currently) available
+    ValueError
+        When the input survey is not (currently) available
 
     """
     if survey_name not in available_surveys:
@@ -37,7 +39,7 @@ def get_survey(survey_name: str) -> Survey:
     return _survey_info[survey_name]
 
 
-def get_filter(filter_name: str, survey_name: str) -> Filter:
+def get_filter(filter_name, survey_name):
     """Get the filter class from the corresponding survey
 
     Parameters
@@ -49,11 +51,8 @@ def get_filter(filter_name: str, survey_name: str) -> Filter:
 
     Returns
     -------
-    a Filter dataclass
-
-    Raises
-    ------
-    ValueError: when the survey or filter is not available
+    Filter
+        The corresponding Filter dataclass
 
     """
     survey = get_survey(survey_name)
