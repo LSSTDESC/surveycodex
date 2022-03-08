@@ -1,3 +1,4 @@
+from galcheat.helpers import get_survey
 from galcheat.utilities import mag2counts, mean_sky_level
 
 BTK_COUNTS_MAG24 = {
@@ -19,15 +20,45 @@ BTK_MEAN_SKY_LEVEL = {
 }
 
 
-def test_mag2counts():
+def test_mag2counts_str():
     survey = "LSST"
     for filt in "ugrizy":
         counts = mag2counts(24, survey, filt).value
         assert counts == int(BTK_COUNTS_MAG24[f"{survey}_{filt}"])
 
 
-def test_mean_sky_level():
+def test_mag2counts_filter_str():
+    survey_inst = get_survey("LSST")
+    for filt in "ugrizy":
+        counts = mag2counts(24, survey_inst, filt).value
+        assert counts == int(BTK_COUNTS_MAG24[f"{survey_inst.name}_{filt}"])
+
+
+def test_mag2counts_filter_instance():
+    survey_inst = get_survey("LSST")
+    for filt in "ugrizy":
+        filt_inst = survey_inst.get_filter(filt)
+        counts = mag2counts(24, survey_inst, filt_inst).value
+        assert counts == int(BTK_COUNTS_MAG24[f"{survey_inst.name}_{filt}"])
+
+
+def test_mean_sky_level_str():
     survey = "LSST"
     for filt in "ugrizy":
         sky_level = mean_sky_level(survey, filt).value
         assert int(sky_level) == int(BTK_MEAN_SKY_LEVEL[f"{survey}_{filt}"])
+
+
+def test_mean_sky_level_filter_str():
+    survey_inst = get_survey("LSST")
+    for filt in "ugrizy":
+        sky_level = mean_sky_level(survey_inst, filt).value
+        assert int(sky_level) == int(BTK_MEAN_SKY_LEVEL[f"{survey_inst.name}_{filt}"])
+
+
+def test_mean_sky_level_filter_instance():
+    survey_inst = get_survey("LSST")
+    for filt in "ugrizy":
+        filt_inst = survey_inst.get_filter(filt)
+        sky_level = mean_sky_level(survey_inst, filt_inst).value
+        assert int(sky_level) == int(BTK_MEAN_SKY_LEVEL[f"{survey_inst.name}_{filt}"])
