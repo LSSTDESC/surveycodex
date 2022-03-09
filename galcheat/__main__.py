@@ -2,6 +2,7 @@ from galcheat.helpers import available_surveys, get_survey
 
 
 def main():
+    """Print all properties for available surveys and their filters"""
     for survey_name in available_surveys:
         survey = get_survey(survey_name)
         print(survey_name, ":")
