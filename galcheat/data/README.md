@@ -45,6 +45,7 @@ This parameter is used to compute the effective area of the telescope.
 
 Airmass value at which the zeropoint is computed.  
 The airmass is commonly defined as the optical path length through the atmosphere relative to the zenith path length.
+For space surveys, this value is set to 0.0.
 
 Filter parameters
 -----------------

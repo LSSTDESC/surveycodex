@@ -1,6 +1,12 @@
-from galcheat import _survey_info
+from pathlib import Path
+
 from galcheat.filter import Filter
 from galcheat.survey import Survey
+
+_BASEDIR = Path(__file__).parent.resolve()
+_survey_info = {
+    path.stem: Survey.from_yaml(path) for path in _BASEDIR.glob("data/*.yaml")
+}
 
 available_surveys = list(_survey_info.keys())
 

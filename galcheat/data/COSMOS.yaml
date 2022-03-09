@@ -24,8 +24,11 @@
 #
 # psf_fwhm
 # https://iopscience.iop.org/article/10.1086/520086/pdf (section 5)
+#
+# effective_wavelength
+# https://cosmos.astro.caltech.edu/page/filterset
 
-name: "HST_COSMOS"
+name: "COSMOS"
 pixel_scale: 0.03
 gain: 1.0
 mirror_diameter: 2.4
@@ -38,3 +41,4 @@ filters:
     exposure_time: 2028
     zeropoint: 25.94
     psf_fwhm: 0.095
+    effective_wavelength: 807.343
