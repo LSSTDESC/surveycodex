@@ -1,9 +1,11 @@
 import astropy.units as u
 
-from galcheat.helpers import get_filter, get_survey
+from galcheat.filter import Filter
+from galcheat.helpers import get_survey
+from galcheat.survey import Survey
 
 
-def mag2counts(magnitude, survey_name, filter_name):
+def mag2counts(magnitude, survey, filter):
     """Convert source magnitude to counts for a given filter of a survey
 
     To perform the computation, we use the filter zeropoint computed
@@ -19,10 +21,10 @@ def mag2counts(magnitude, survey_name, filter_name):
     ----------
     magnitude: float
         magnitude of source
-    survey_name: str
-        Name of a given survey
-    filter_name: str
-        Name of the survey filter
+    survey: str or Survey
+        Name of a given survey or Survey instance
+    filter: str or Filter
+        Name of the survey filter or Filter instance
 
     Returns
     -------
@@ -39,7 +41,11 @@ def mag2counts(magnitude, survey_name, filter_name):
     else:
         magnitude = magnitude.value * u.mag(u.ct / u.s)
 
-    filter = get_filter(filter_name, survey_name)
+    if not isinstance(survey, Survey):
+        survey = get_survey(survey)
+
+    if not isinstance(filter, Filter):
+        filter = survey.get_filter(filter)
 
     flux = (magnitude - filter.zeropoint).to(u.ct / u.s)
     counts = flux * filter.exposure_time
@@ -47,7 +53,7 @@ def mag2counts(magnitude, survey_name, filter_name):
     return counts.astype(int)
 
 
-def mean_sky_level(survey_name, filter_name):
+def mean_sky_level(survey, filter):
     """Computes the mean sky level for a given survey and a filter
 
     This computation uses the sky brightness parameter from galcheat,
@@ -56,20 +62,23 @@ def mean_sky_level(survey_name, filter_name):
 
     Parameters
     ----------
-    survey_name: str
-        Name of a given survey
-    filter_name: str
-        Name of the survey filter
+    survey: str or Survey
+        Name of a given survey or Survey instance
+    filter: str or Filter
+        Name of the survey filter of Filter instance
 
     Returns
     -------
     The corresponding mean sky level in counts
 
     """
-    survey = get_survey(survey_name)
-    filter = get_filter(filter_name, survey_name)
+    if not isinstance(survey, Survey):
+        survey = get_survey(survey)
 
-    sky_brightness_counts = mag2counts(filter.sky_brightness, survey_name, filter_name)
+    if not isinstance(filter, Filter):
+        filter = survey.get_filter(filter)
+
+    sky_brightness_counts = mag2counts(filter.sky_brightness, survey, filter)
     pixel_area = survey.pixel_scale.to_value(u.arcsec) ** 2
 
     mean_sky_level = sky_brightness_counts * pixel_area
