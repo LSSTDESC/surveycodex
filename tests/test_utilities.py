@@ -28,7 +28,7 @@ BTK_MEAN_SKY_LEVEL = {
 def lsst_btk_counts(request):
     survey, filt = request.param
     expected = int(BTK_COUNTS_MAG24[f"{survey}_{filt}"])
-    return *request.param, expected
+    return survey, filt, expected
 
 
 @pytest.fixture(
@@ -37,7 +37,7 @@ def lsst_btk_counts(request):
 def lsst_btk_sky_level(request):
     survey, filt = request.param
     expected = int(BTK_MEAN_SKY_LEVEL[f"{survey}_{filt}"])
-    return *request.param, expected
+    return survey, filt, expected
 
 
 def test_mag2counts_str(lsst_btk_counts):
