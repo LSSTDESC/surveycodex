@@ -68,8 +68,7 @@ fwhm = u_band.psf_fwhm
 # The value in the original units is obtained as
 fwhm.value
 # or it can be converted to other units
-import astropy.units as u
-fwhm.to_value(u.arcmin)
+fwhm.to_value('arcmin')
 ```
 
 ## Contributing ✨
