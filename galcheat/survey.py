@@ -1,6 +1,6 @@
 import math
-from dataclasses import dataclass, field, make_dataclass
-from typing import Any, List
+from dataclasses import dataclass, field
+from typing import Dict, List
 
 import astropy.units as u
 import yaml
@@ -12,7 +12,7 @@ from galcheat.filter import Filter
 @dataclass
 class Survey:
     name: str
-    filters: Any
+    filters: Dict[str, Filter]
     pixel_scale: Quantity
     mirror_diameter: Quantity
     gain: Quantity
@@ -38,7 +38,7 @@ class Survey:
         with open(yaml_file) as f:
             data = yaml.safe_load(f)
 
-        filters = Survey._construct_filter_list(data)
+        filters = Survey._construct_filter_dict(data)
         pixel_scale = data["pixel_scale"] * u.arcsec
         mirror_diameter = data["mirror_diameter"] * u.m
         gain = data["gain"] * u.electron / u.adu
@@ -56,8 +56,8 @@ class Survey:
         )
 
     @staticmethod
-    def _construct_filter_list(survey_dict):
-        """Create a custom container for the survey filters
+    def _construct_filter_dict(survey_dict):
+        """Create a custom dictionary for the survey filters
 
         Parameters
         ----------
@@ -66,35 +66,20 @@ class Survey:
 
         Returns
         -------
-        Dynamically created dataclass whose attributes are the survey filters
+        Dictionary of the survey filters
 
         """
-        filter_data = {
+        return {
             fname: Filter.from_dict(fdict)
             for fname, fdict in survey_dict["filters"].items()
         }
-        FList = make_dataclass(
-            survey_dict["name"] + "FilterList",
-            [(filter_name, Filter) for filter_name in filter_data.keys()],
-            namespace={
-                "__repr__": lambda self: "("
-                + ", ".join([filt for filt in self.__dict__.keys()])
-                + ")"
-            },
-        )
-
-        return FList(**filter_data)
 
     def __post_init__(self):
         """Set attributes computed after class is constructed"""
-        self.available_filters = list(self.filters.__dict__.keys())
+        self.available_filters = list(self.filters.keys())
 
         total_area = math.pi * (self.mirror_diameter * 0.5) ** 2
         self.effective_area = (1 - self.obscuration) * total_area
-
-    def get_filters(self):
-        """Getter method to retrieve the filters as a dictionary"""
-        return self.filters.__dict__
 
     def get_filter(self, filter_name):
         """Getter method to retrieve a Filter object"""
@@ -105,4 +90,4 @@ class Survey:
                 f"are {self.available_filters}"
             )
 
-        return self.filters.__dict__[filter_name]
+        return self.filters[filter_name]
