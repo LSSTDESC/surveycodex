@@ -59,4 +59,4 @@ parameter values for your surveys of
 interest or reporting inconsistent values.
 
 """
-from galcheat.helpers import available_surveys, get_filter, get_survey  # noqa
+from galcheat.helpers import available_surveys, get_survey  # noqa

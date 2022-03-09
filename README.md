@@ -42,19 +42,16 @@ API
 # The list of available surveys
 from galcheat import available_surveys
 
-# Getter methods to retrieve a Survey of a Filter dataclass
-from galcheat import get_survey, get_filter
+# Getter method to retrieve a Survey dataclass
+from galcheat import get_survey
 
 LSST = get_survey("LSST")
-u_band = get_filter("u", "LSST")
-# which is a proxy for
-u_band = LSST.get_filter("u")
 
-# Get the list of available filters
+# Get the list of available filter names
 LSST.available_filters
 
-# or as a dictionary with all `Filter` objects
-LSST.get_filters()
+# and then pick a Filter dataclass
+u_band = LSST.get_filter("u")
 
 # Both Survey and Filter classes have physical attributes
 LSST.mirror_diameter
