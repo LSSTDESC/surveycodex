@@ -6,7 +6,7 @@ from galcheat.survey import Survey
 
 
 def mag2counts(magnitude, survey, filter):
-    """Convert source magnitude to counts for a given filter of a survey
+    """Convert source magnitude to electron counts for a given survey filter
 
     To perform the computation, we use the filter zeropoint computed
     with `speclite` under classical atmospheric conditions and at a
@@ -28,7 +28,7 @@ def mag2counts(magnitude, survey, filter):
 
     Returns
     -------
-    The corresponding flux in counts
+    The corresponding flux in electron counts
 
     References
     ----------
@@ -37,9 +37,9 @@ def mag2counts(magnitude, survey, filter):
 
     """
     if not isinstance(magnitude, u.Quantity):
-        magnitude *= u.mag(u.ct / u.s)
+        magnitude *= u.mag(u.electron / u.s)
     else:
-        magnitude = magnitude.value * u.mag(u.ct / u.s)
+        magnitude = magnitude.value * u.mag(u.electron / u.s)
 
     if not isinstance(survey, Survey):
         survey = get_survey(survey)
@@ -47,7 +47,7 @@ def mag2counts(magnitude, survey, filter):
     if not isinstance(filter, Filter):
         filter = survey.get_filter(filter)
 
-    flux = (magnitude - filter.zeropoint).to(u.ct / u.s)
+    flux = (magnitude - filter.zeropoint).to(u.electron / u.s)
     counts = flux * filter.exposure_time
 
     return counts.astype(int)
@@ -58,7 +58,7 @@ def mean_sky_level(survey, filter):
 
     This computation uses the sky brightness parameter from galcheat,
     expressed as a magnitude per square arcminute, weights it by the
-    pixel area and converts it to counts.
+    pixel area and converts it to electron counts.
 
     Parameters
     ----------
@@ -69,7 +69,7 @@ def mean_sky_level(survey, filter):
 
     Returns
     -------
-    The corresponding mean sky level in counts
+    The corresponding mean sky level in electron counts
 
     """
     if not isinstance(survey, Survey):
