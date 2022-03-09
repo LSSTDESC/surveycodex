@@ -7,9 +7,8 @@ def main():
         print(survey_name, ":")
         print("  ", survey)
 
-        survey_filters = survey.get_filters()
         print("   Filters :")
-        for info in survey_filters.values():
+        for info in survey.filters.values():
             print("     ", info)
         print()
 
