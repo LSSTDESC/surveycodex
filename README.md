@@ -50,18 +50,15 @@ u_band = get_filter("u", "LSST")
 # which is a proxy for
 u_band = LSST.get_filter("u")
 
-# Get the list of available filters
+# Get the list of available filters names
 LSST.available_filters
 
 # or as a dictionary with all `Filter` objects
-LSST.get_filters()
+LSST.filters
 
 # Both Survey and Filter classes have physical attributes
 LSST.mirror_diameter
 u_band.exposure_time
-
-# Filters are also attributes of a Survey
-LSST.filters.u.exposure_time  # same attribute as above
 
 # These attributes are Astropy Quantity objects with units
 fwhm = u_band.psf_fwhm
