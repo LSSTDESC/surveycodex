@@ -57,7 +57,7 @@ def mean_sky_level(survey, filter):
     """Computes the mean sky level for a given survey and a filter
 
     This computation uses the sky brightness parameter from galcheat,
-    expressed as a magnitude per square arcminute, weights it by the
+    expressed as a magnitude per sky area, weights it by the
     pixel area and converts it to electron counts.
 
     Parameters
