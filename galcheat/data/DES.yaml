@@ -34,6 +34,7 @@
 # https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
 
 name: "DES"
+description: "Dark Energy wide-field Survey (DES) done with the Victor M. Blanco telescope and the Dark Energy CAMera (DECam)"
 pixel_scale: 0.2637
 gain: 4.0
 mirror_diameter: 3.934
