@@ -16,12 +16,16 @@ Survey parameters
 | obscuration       | float | dimensionless  |
 | zeropoint_airmass | float | dimensionless  |
 
-### Description
+### Parameter description
 
 #### `name`
 
 The classical name or abbreviation for the survey. Most often this is how the survey is referred to.
 In case of an ambiguity, for instance when a survey has several instruments, the name of the instrument should be added as a suffix (e.g. `Euclid_VIS`).
+
+#### `description`
+
+A bit of context around the survey: on which telescope, with which instrument, wide survey or a specific deep field.
 
 #### `pixel_scale`
 
@@ -56,8 +60,8 @@ Filter parameters
 | name                 | str       | –              |
 | sky_brightness       | float     | mag / arcsec^2 |
 | exposure_time        | int/float | s              |
-| psf_fwhm             | float     | arcsec         |
 | zeropoint            | float     | mag            |
+| psf_fwhm             | float     | arcsec         |
 | effective_wavelength | float     | nm             |
 
 ### Description
@@ -74,16 +78,16 @@ The moon conditions under which this number was computed will be given as a comm
 
 Average exposure time of the filter on the same spot in the sky over the course of the survey.
 
-#### `psf_fwhm`
-
-Average full width at half-maximum (FWHM) of the point spread function (PSF) over the filter.
-
 #### `zeropoint`
 
 The zeropoint is the magnitude of an object that produces 1 e- per second on the detector. It is computed for a given filter, using the [`speclite`][speclite] library with a classical atmosphere, at the airmass indicated in the survey parameters: `zeropoint_airmass`.
 
 
 [speclite]: https://github.com/desihub/speclite
+
+#### `psf_fwhm`
+
+Average full width at half-maximum (FWHM) of the point spread function (PSF) over the filter.
 
 #### `effective_wavelength` – ***optional***
 
@@ -103,7 +107,8 @@ An example for a survey called `Survey42` with two filters `a` and `b` is shown 
 
 ```yaml
 # Content of Survey42.yaml
-name: Survey42
+name: "Survey42"
+description: "The Survey42 was done on the XXX telescope with the YYY instrument"
 pixel_scale: 0.2
 gain: 2.0
 mirror_diameter: 4.2
@@ -114,14 +119,14 @@ filters:
     name: "a"
     sky_brightness: 19.4
     exposure_time: 500
-    psf_fwhm: 1.1
     zeropoint: 26.90
+    psf_fwhm: 1.1
     effective_wavelength: 500.00
   b:
     name: "b"
     sky_brightness: 18.6
     exposure_time: 500
-    psf_fwhm: 1.2
     zeropoint: 27.36
+    psf_fwhm: 1.2
     effective_wavelength: 600.00
 ```

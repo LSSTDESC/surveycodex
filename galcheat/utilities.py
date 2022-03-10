@@ -1,10 +1,12 @@
 import astropy.units as u
 
-from galcheat.helpers import get_filter, get_survey
+from galcheat.filter import Filter
+from galcheat.helpers import get_survey
+from galcheat.survey import Survey
 
 
-def mag2counts(magnitude, survey_name, filter_name):
-    """Convert source magnitude to counts for a given filter of a survey
+def mag2counts(magnitude, survey, filter):
+    """Convert source magnitude to electron counts for a given survey filter
 
     To perform the computation, we use the filter zeropoint computed
     with `speclite` under classical atmospheric conditions and at a
@@ -13,21 +15,21 @@ def mag2counts(magnitude, survey_name, filter_name):
 
     Expect a rough estimate from this calculation since e.g. it does not
     take into account the atmospheric extinction. Therefore the result
-    is casted to an integer.
+    is cast to an integer.
 
     Parameters
     ----------
     magnitude: float
         magnitude of source
-    survey_name: str
-        Name of a given survey
-    filter_name: str
-        Name of the survey filter
+    survey: str or Survey
+        Name of a given survey or Survey instance
+    filter: str or Filter
+        Name of the survey filter or Filter instance
 
     Returns
     -------
     Quantity[int]
-        The corresponding flux in counts
+        The corresponding flux in electron counts
 
     Example
     -------
@@ -42,36 +44,40 @@ def mag2counts(magnitude, survey_name, filter_name):
 
     """
     if not isinstance(magnitude, u.Quantity):
-        magnitude *= u.mag(u.ct / u.s)
+        magnitude *= u.mag(u.electron / u.s)
     else:
-        magnitude = magnitude.value * u.mag(u.ct / u.s)
+        magnitude = magnitude.value * u.mag(u.electron / u.s)
 
-    filter = get_filter(filter_name, survey_name)
+    if not isinstance(survey, Survey):
+        survey = get_survey(survey)
 
-    flux = (magnitude - filter.zeropoint).to(u.ct / u.s)
+    if not isinstance(filter, Filter):
+        filter = survey.get_filter(filter)
+
+    flux = (magnitude - filter.zeropoint).to(u.electron / u.s)
     counts = flux * filter.exposure_time
 
     return counts.astype(int)
 
 
-def mean_sky_level(survey_name, filter_name):
+def mean_sky_level(survey, filter):
     """Computes the mean sky level for a given survey and a filter
 
     This computation uses the sky brightness parameter from galcheat,
-    expressed as a magnitude per square arcminute, weights it by the
-    pixel area and converts it to counts.
+    expressed as a magnitude per sky area, weights it by the
+    pixel area and converts it to electron counts.
 
     Parameters
     ----------
-    survey_name: str
-        Name of a given survey
-    filter_name: str
-        Name of the survey filter
+    survey: str or Survey
+        Name of a given survey or Survey instance
+    filter: str or Filter
+        Name of the survey filter of Filter instance
 
     Returns
     -------
     Quantity[float]
-        The corresponding mean sky level in counts
+        The corresponding mean sky level in electron counts
 
     Example
     -------
@@ -80,10 +86,13 @@ def mean_sky_level(survey_name, filter_name):
     <Quantity 23241.84 ct>
 
     """
-    survey = get_survey(survey_name)
-    filter = get_filter(filter_name, survey_name)
+    if not isinstance(survey, Survey):
+        survey = get_survey(survey)
 
-    sky_brightness_counts = mag2counts(filter.sky_brightness, survey_name, filter_name)
+    if not isinstance(filter, Filter):
+        filter = survey.get_filter(filter)
+
+    sky_brightness_counts = mag2counts(filter.sky_brightness, survey, filter)
     pixel_area = survey.pixel_scale.to_value(u.arcsec) ** 2
 
     mean_sky_level = sky_brightness_counts * pixel_area

@@ -15,6 +15,8 @@ class Survey:
 
     name: str
     "The survey name"
+    description: str
+    "The survey description with telescope/instrument information"
     filters: Any
     "A dynamically created dataclass containing all the survey filters"
     pixel_scale: Quantity
@@ -59,6 +61,7 @@ class Survey:
 
         return cls(
             data["name"],
+            data["description"],
             filters,
             pixel_scale,
             mirror_diameter,

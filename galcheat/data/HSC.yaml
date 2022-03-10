@@ -17,9 +17,6 @@
 # zeropoint_aimass
 # https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters
 #
-# exposure_time and psf_fwhm
-# "Wide" in Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
-#
 # sky_brightness
 # https://www.naoj.org/Observing/Instruments/SCam/exptime.html.
 # Note:
@@ -29,15 +26,22 @@
 # could update the numbers to this version, although we need to
 # convert the unit from ADU/sec to mag/arcsec^2.
 #
+# exposure_time
+# "Wide" in Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
+#
 # zeropoint
 # computed with speclite: for more information you may want to check
 # https://github.com/aboucaud/galcheat/issues/48 and the zeropoints.py script
+#
+# psf_fwhm
+# "Wide" in Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
 #
 # effective_wavelength
 # computed with speclite: for more information you may want to check
 # https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
 
-name: HSC
+name: "HSC"
+description: "Hyper Suprime-Cam (HSC) wide-field survey done with the Subaru telescope and the Hyper Suprime-Cam (HSC)"
 pixel_scale: 0.168
 gain: 3.0
 mirror_diameter: 8.3
@@ -48,29 +52,29 @@ filters:
     name: "g"
     sky_brightness: 21.4
     exposure_time: 600
-    psf_fwhm: 0.79
     zeropoint: 28.90
+    psf_fwhm: 0.79
     effective_wavelength: 484.370
   r:
     name: "r"
     sky_brightness: 20.6
     exposure_time: 600
-    psf_fwhm: 0.75
     zeropoint: 28.86
+    psf_fwhm: 0.75
     effective_wavelength: 625.889
   i:
     name: "i"
     sky_brightness: 19.7
     exposure_time: 1200
-    psf_fwhm: 0.61
     zeropoint: 28.61
+    psf_fwhm: 0.61
     effective_wavelength: 773.009
   z:
     name: "z"
     sky_brightness: 18.3
     exposure_time: 1200
-    psf_fwhm: 0.68
     zeropoint: 27.68
+    psf_fwhm: 0.68
     effective_wavelength: 891.239
   y:
     name: "y"
