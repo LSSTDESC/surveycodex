@@ -12,6 +12,7 @@ from galcheat.filter import Filter
 @dataclass
 class Survey:
     name: str
+    description: str
     filters: Any
     pixel_scale: Quantity
     mirror_diameter: Quantity
@@ -38,6 +39,7 @@ class Survey:
         with open(yaml_file) as f:
             data = yaml.safe_load(f)
 
+        description = data["description"]
         filters = Survey._construct_filter_list(data)
         pixel_scale = data["pixel_scale"] * u.arcsec
         mirror_diameter = data["mirror_diameter"] * u.m
@@ -47,6 +49,7 @@ class Survey:
 
         return cls(
             data["name"],
+            description,
             filters,
             pixel_scale,
             mirror_diameter,
