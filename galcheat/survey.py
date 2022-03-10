@@ -60,7 +60,8 @@ class Survey:
     def __repr__(self):
         n = len(self.name)
         survey_repr = "-" * (n + 4) + "\n"
-        survey_repr += f"| {self.name} |\n"
+        survey_repr += f"| {self.name} |"
+        survey_repr += f" {self.description}\n"
         survey_repr += "-" * (n + 4) + "\n"
         printed_params = [
             f"  {key:<20} = {val}"
