@@ -1,6 +1,6 @@
 import math
 from dataclasses import dataclass, field
-from typing import Any, List
+from typing import Dict, List
 
 import astropy.units as u
 import yaml
@@ -9,17 +9,10 @@ from astropy.units import Quantity
 from galcheat.filter import Filter
 
 
-class FilterDict(dict):
-    """Classical dictionary with custom string representation"""
-
-    def __repr__(self):
-        return f"({', '.join(self.keys())})"
-
-
 @dataclass
 class Survey:
     name: str
-    filters: Any
+    filters: Dict[str, Filter]
     pixel_scale: Quantity
     mirror_diameter: Quantity
     gain: Quantity
@@ -73,15 +66,13 @@ class Survey:
 
         Returns
         -------
-        FilterDict
-            Custom dictionary of the survey filters
+        Dictionary of the survey filters
 
         """
-        filter_data = {
+        return {
             fname: Filter.from_dict(fdict)
             for fname, fdict in survey_dict["filters"].items()
         }
-        return FilterDict(**filter_data)
 
     def __post_init__(self):
         """Set attributes computed after class is constructed"""
