@@ -56,8 +56,8 @@ Filter parameters
 | name                 | str       | –              |
 | sky_brightness       | float     | mag / arcsec^2 |
 | exposure_time        | int/float | s              |
-| psf_fwhm             | float     | arcsec         |
 | zeropoint            | float     | mag            |
+| psf_fwhm             | float     | arcsec         |
 | effective_wavelength | float     | nm             |
 
 ### Description
@@ -74,16 +74,16 @@ The moon conditions under which this number was computed will be given as a comm
 
 Average exposure time of the filter on the same spot in the sky over the course of the survey.
 
-#### `psf_fwhm`
-
-Average full width at half-maximum (FWHM) of the point spread function (PSF) over the filter.
-
 #### `zeropoint`
 
 The zeropoint is the magnitude of an object that produces 1 e- per second on the detector. It is computed for a given filter, using the [`speclite`][speclite] library with a classical atmosphere, at the airmass indicated in the survey parameters: `zeropoint_airmass`.
 
 
 [speclite]: https://github.com/desihub/speclite
+
+#### `psf_fwhm`
+
+Average full width at half-maximum (FWHM) of the point spread function (PSF) over the filter.
 
 #### `effective_wavelength` – ***optional***
 
