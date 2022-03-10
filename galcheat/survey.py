@@ -12,6 +12,7 @@ from galcheat.filter import Filter
 @dataclass
 class Survey:
     name: str
+    description: str
     filters: Dict[str, Filter]
     pixel_scale: Quantity
     mirror_diameter: Quantity
@@ -47,6 +48,7 @@ class Survey:
 
         return cls(
             data["name"],
+            data["description"],
             filters,
             pixel_scale,
             mirror_diameter,
