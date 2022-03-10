@@ -28,6 +28,7 @@
 # https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
 
 name: "LSST"
+description: "Legacy Survey of Space and Time (LSST) done with the Simonyi survey telescope and the LSST camera"
 pixel_scale: 0.2
 gain: 1.0
 mirror_diameter: 8.36

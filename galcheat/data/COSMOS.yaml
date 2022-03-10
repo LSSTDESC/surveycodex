@@ -29,6 +29,7 @@
 # https://cosmos.astro.caltech.edu/page/filterset
 
 name: "COSMOS"
+description: "COSMOS survey done with the Hubble Space Telescope (HST) and the Advanced Camera for Surveys (ACS)"
 pixel_scale: 0.03
 gain: 1.0
 mirror_diameter: 2.4

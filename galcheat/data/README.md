@@ -16,12 +16,16 @@ Survey parameters
 | obscuration       | float | dimensionless  |
 | zeropoint_airmass | float | dimensionless  |
 
-### Description
+### Parameter description
 
 #### `name`
 
 The classical name or abbreviation for the survey. Most often this is how the survey is referred to.
 In case of an ambiguity, for instance when a survey has several instruments, the name of the instrument should be added as a suffix (e.g. `Euclid_VIS`).
+
+#### `description`
+
+A bit of context around the survey: on which telescope, with which instrument, wide survey or a specific deep field.
 
 #### `pixel_scale`
 
@@ -103,7 +107,8 @@ An example for a survey called `Survey42` with two filters `a` and `b` is shown 
 
 ```yaml
 # Content of Survey42.yaml
-name: Survey42
+name: "Survey42"
+description: "The Survey42 was done on the XXX telescope with the YYY instrument"
 pixel_scale: 0.2
 gain: 2.0
 mirror_diameter: 4.2

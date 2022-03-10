@@ -41,6 +41,7 @@
 # https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
 
 name: "HSC"
+description: "Hyper Suprime-Cam (HSC) wide-field survey done with the Subaru telescope and the Hyper Suprime-Cam (HSC)"
 pixel_scale: 0.168
 gain: 3.0
 mirror_diameter: 8.3
