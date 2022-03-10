@@ -30,7 +30,6 @@
 # computed with speclite: for more information you may want to check
 # https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
 
-
 name: "Euclid_VIS"
 pixel_scale: 0.10
 gain: 3.1
