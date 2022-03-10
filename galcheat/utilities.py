@@ -15,7 +15,7 @@ def mag2counts(magnitude, survey, filter):
 
     Expect a rough estimate from this calculation since e.g. it does not
     take into account the atmospheric extinction. Therefore the result
-    is casted to an integer.
+    is cast to an integer.
 
     Parameters
     ----------
