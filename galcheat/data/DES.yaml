@@ -15,7 +15,7 @@
 # zeropoint_airmass
 # https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters
 #
-# sky brightness
+# sky_brightness
 # https://arxiv.org/pdf/1801.03181.pdf (table 1)
 #
 # exposure_time
