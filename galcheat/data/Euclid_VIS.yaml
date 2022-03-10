@@ -32,6 +32,7 @@
 
 
 name: "Euclid_VIS"
+description: "Euclid wide-field survey done with the Euclid space telescope and the visible instrument (VIS)"
 pixel_scale: 0.10
 gain: 3.1
 mirror_diameter: 1.2
