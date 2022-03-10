@@ -33,6 +33,7 @@
 # https://cosmos.astro.caltech.edu/page/filterset
 
 name: "CFHTLS"
+description: "Canada France Hawaii Lensing wide-field Survey (CFHTLS) done with the Canada France Hawaii Telescope (CFHT) and MegaCam"
 pixel_scale: 0.187
 gain: 1.67
 mirror_diameter: 3.58
