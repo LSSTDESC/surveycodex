@@ -1,38 +1,3 @@
-# pixel_scale
-# http://www.ctio.noirlab.edu/noao/content/DECam-What
-#
-# gain
-# http://www.ctio.noirlab.edu/noao/content/DECam-What
-#
-# mirror_diameter
-# http://www.ctio.noirlab.edu/noao/content/Basic-Optical-Parameters
-#
-# obscuration
-# http://www.ctio.noirlab.edu/noao/content/Basic-Optical-Parameters
-# disk of 1.651m so that the obscuration is 1.651^2/3.934^2
-# which gives back the 10.014m² effective area given by the webpage
-#
-# zeropoint_airmass
-# https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters
-#
-# sky_brightness
-# https://arxiv.org/pdf/1801.03181.pdf (table 1)
-#
-# exposure_time
-# https://arxiv.org/pdf/1801.03181.pdf
-# coadds of 10 90s exposures from section 2.2 page 5
-#
-# zeropoint
-# computed with speclite: for more information you may want to check
-# https://github.com/aboucaud/galcheat/issues/48 and the zeropoints.py script
-#
-# psf_fwhm
-# https://arxiv.org/pdf/1801.03181.pdf (table 1)
-#
-# effective_wavelength
-# computed with speclite: for more information you may want to check
-# https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
-
 name: "DES"
 description: "Dark Energy wide-field Survey (DES) done with the Victor M. Blanco telescope and the Dark Energy CAMera (DECam)"
 pixel_scale: 0.2637
@@ -71,32 +36,32 @@ filters:
     effective_wavelength: 919.646
 references:
   pixel_scale:
-    link: ""
+    link: "http://www.ctio.noirlab.edu/noao/content/DECam-What"
     comment: ""
   gain:
-    link: ""
+    link: "http://www.ctio.noirlab.edu/noao/content/DECam-What"
     comment: ""
   mirror_diameter:
-    link: ""
+    link: "http://www.ctio.noirlab.edu/noao/content/Basic-Optical-Parameters"
     comment: ""
   obscuration:
-    link: ""
-    comment: ""
+    link: "http://www.ctio.noirlab.edu/noao/content/Basic-Optical-Parameters"
+    comment: "disk of 1.651m - obscuration is 1.651^2/3.934^2 which returns the right effective area"
   zeropoint_airmass:
-    link: ""
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters"
     comment: ""
   sky_brightness:
-    link: ""
-    comment: ""
+    link: "https://arxiv.org/pdf/1801.03181.pdf"
+    comment: "See table 1"
   exposure_time:
-    link: ""
-    comment: ""
+    link: "https://arxiv.org/pdf/1801.03181.pdf"
+    comment: "See section 2.2 page 5. Coadds of 10 x 90s exposures"
   zeropoint:
-    link: ""
-    comment: ""
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters"
+    comment: "computed with speclite – see scripts/check_zeropoints.py"
   psf_fwhm:
-    link: ""
-    comment: ""
+    link: "https://arxiv.org/pdf/1801.03181.pdf"
+    comment: "See table 1"
   effective_wavelength:
-    link: ""
-    comment: ""
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters"
+    comment: "computed with speclite – see scripts/check_effective_wavelength.py"
