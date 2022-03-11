@@ -59,3 +59,19 @@ def get_filter(filter_name: str, survey_name: str) -> Filter:
     survey = get_survey(survey_name)
 
     return survey.get_filter(filter_name)
+
+
+def print_survey(survey):
+    """Print information on a given survey
+
+    Parameters
+    ----------
+    survey: str or Survey instance
+
+    """
+    if not isinstance(survey, Survey):
+        survey = get_survey(survey)
+
+    print(survey)
+    for filter_name in survey.available_filters:
+        print(survey.get_filter(filter_name))

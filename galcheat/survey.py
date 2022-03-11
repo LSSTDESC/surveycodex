@@ -57,6 +57,20 @@ class Survey:
             zeropoint_airmass,
         )
 
+    def __repr__(self):
+        n = len(self.name)
+        survey_repr = "-" * (n + 4) + "\n"
+        survey_repr += f"| {self.name} |"
+        survey_repr += f" {self.description}\n"
+        survey_repr += "-" * (n + 4) + "\n"
+        printed_params = [
+            f"  {key:<20} = {val}"
+            for key, val in self.__dict__.items()
+            if key not in ("name", "description", "filters")
+        ]
+        survey_repr += "\n".join(printed_params)
+        return survey_repr
+
     @staticmethod
     def _construct_filter_list(survey_dict):
         """Create a custom container for the survey filters
