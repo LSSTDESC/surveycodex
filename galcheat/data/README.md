@@ -3,8 +3,11 @@
 
 The following document describes the parameters expected for the photometric surveys and their filters: how they should be computed, their units, etc.
 
+[**Survey parameters**](#survey-parameters) | [**Filter parameters**](#filter-parameters) | [**References**](#references) | [**Data file layout**](#yaml-file-layout)
+
 Survey parameters
 -----------------
+
 ### Units and types
 
 | parameter name    | type  | units          |
@@ -94,6 +97,13 @@ Average full width at half-maximum (FWHM) of the point spread function (PSF) ove
 Wavelength computed as a weighted average of the full passband throughput over the wavelength range.  
 The throughput takes into account the transmission of the filter, the transmittance of the optics, the CCD efficiency as well as a standard atmospheric extinction model.
 
+References
+----------
+
+The parameters written in `galcheat` have all been sourced and referenced.
+
+These references can be specified for each parameter as a link and a comment string.
+
 YAML file layout
 ----------------
 
@@ -129,4 +139,15 @@ filters:
     zeropoint: 27.36
     psf_fwhm: 1.2
     effective_wavelength: 600.00
+references:
+  pixel_scale:
+    link: "https://link-to-the-pixelscale-ref.com"
+    comment: "See section 2.4"
+  gain:
+    link: "https://link-to-the-gain-info.org"
+    comment: ""
+  psf_fwhm:
+    link: "https://link-to-filters-refs.org"
+    comment: ""
+# goal is to have a reference per parameter, survey or filter-wise...
 ```
