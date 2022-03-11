@@ -1,6 +1,6 @@
 import math
 from dataclasses import dataclass, field, make_dataclass
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 import astropy.units as u
 import yaml
@@ -21,7 +21,7 @@ class Survey:
     zeropoint_airmass: Quantity
     available_filters: List[str] = field(init=False)
     effective_area: Quantity = field(init=False)
-    references: Optional[Dict[str, Dict[str, str]]]
+    references: Dict[str, Dict[str, str]]
 
     @classmethod
     def from_yaml(cls, yaml_file):
@@ -56,7 +56,7 @@ class Survey:
             gain,
             obscuration,
             zeropoint_airmass,
-            data.get("references"),
+            data["references"],
         )
 
     def __repr__(self):
