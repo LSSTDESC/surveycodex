@@ -83,3 +83,34 @@ filters:
     zeropoint: 27.33
     psf_fwhm: 0.68
     effective_wavelength: 978.695
+references:
+  pixel_scale:
+    link: ""
+    comment: ""
+  gain:
+    link: ""
+    comment: ""
+  mirror_diameter:
+    link: ""
+    comment: ""
+  obscuration:
+    link: ""
+    comment: ""
+  zeropoint_airmass:
+    link: ""
+    comment: ""
+  sky_brightness:
+    link: ""
+    comment: ""
+  exposure_time:
+    link: ""
+    comment: ""
+  zeropoint:
+    link: ""
+    comment: ""
+  psf_fwhm:
+    link: ""
+    comment: ""
+  effective_wavelength:
+    link: ""
+    comment: ""
