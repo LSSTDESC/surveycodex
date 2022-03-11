@@ -6,15 +6,23 @@ _FOOTER = "\nprovided by galcheat <https://github.com/aboucaud/galcheat>\n"
 _LINEBREAK = "\n", "•  " * 15, "\n"
 
 
-def main():
+def _survey_parser():
     parser = argparse.ArgumentParser(
         description="Print out the main survey features present in galcheat",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
-        "-s", type=str, default=None, metavar="survey_name", help="name of survey"
+        "-s",
+        type=str,
+        default=None,
+        dest="survey_name",
+        help="Name of survey. If None, shows all available surveys.",
     )
-    args = parser.parse_args()
+    return parser.parse_args()
+
+
+def main():
+    args = _survey_parser()
 
     if args.survey_name is None:
         for sname in available_surveys:
