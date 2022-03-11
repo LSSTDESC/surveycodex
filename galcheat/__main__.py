@@ -18,6 +18,12 @@ def _survey_parser():
         dest="survey_name",
         help="Name of survey. If None, shows all available surveys.",
     )
+    parser.add_argument(
+        "--refs",
+        action="store_true",
+        dest="show_refs",
+        help="Print the references for each parameter.",
+    )
     return parser.parse_args()
 
 
@@ -26,11 +32,11 @@ def main():
 
     if args.survey_name is None:
         for survey in available_surveys:
-            print_survey(survey)
+            print_survey(survey, show_refs=args.show_refs)
             print(_LINEBREAK)
     else:
         try:
-            print_survey(args.survey_name)
+            print_survey(args.survey_name, show_refs=args.show_refs)
         except ValueError as e:
             print(e)
     print(_FOOTER)
