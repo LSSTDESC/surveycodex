@@ -3,7 +3,7 @@ import argparse
 from galcheat.helpers import available_surveys, print_survey
 
 _FOOTER = "\nprovided by galcheat <https://github.com/aboucaud/galcheat>\n"
-_LINEBREAK = "\n", "•  " * 15, "\n"
+_LINEBREAK = "\n" + "•  " * 15 + "\n"
 
 
 def _survey_parser():
