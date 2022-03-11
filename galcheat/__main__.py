@@ -3,6 +3,7 @@ import argparse
 from galcheat.helpers import available_surveys, get_survey, print_survey
 
 _FOOTER = "\nprovided by galcheat <https://github.com/aboucaud/galcheat>\n"
+_LINEBREAK = "\n", "•  " * 15, "\n"
 
 
 def main():
@@ -19,7 +20,7 @@ def main():
         for sname in available_surveys:
             survey = get_survey(sname)
             print_survey(survey)
-            print("\n", "•  " * 15, "\n")
+            print(_LINEBREAK)
     else:
         try:
             survey = get_survey(args.survey_name)
