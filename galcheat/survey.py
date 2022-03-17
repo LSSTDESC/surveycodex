@@ -34,6 +34,7 @@ class Survey:
     effective_area: Quantity = field(init=False)
     "The survey instrument effective area on the sky computed from the obscuration"
     references: Dict[str, Dict[str, str]]
+    "Dictionary of references for each parameter specified in galcheat"
 
     @classmethod
     def from_yaml(cls, yaml_file: str):
