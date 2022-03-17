@@ -1,45 +1,3 @@
-# pixel_scale
-# https://hsc-release.mtk.nao.ac.jp/doc/index.php/survey/
-#
-# gain
-# https://www.naoj.org/Observing/Instruments/HSC/parameters.html
-#
-# mirror_diameter
-# https://carlkop.home.xs4all.nl/subaru.html#:~:text=The%20National%20Astronomical%20Observatory%20of,construction%20atop%20Mauna%20Kea%2C%20Hawaii.
-#
-# obscuration
-# https://carlkop.home.xs4all.nl/subaru.html#:~:text=The%20National%20Astronomical%20Observatory%20of,construction%20atop%20Mauna%20Kea%2C%20Hawaii.
-# central hole of 1.2m so that the obscuration is 1.2^2/8.3^2 (confirmed by an expert contacted by H. Miyatake)
-# which is consistent with the 8.2 effective diameter value that can be found in many places
-# https://subarutelescope.org/Observing/Telescope/Parameters/
-# https://subarutelescope.org/en/about/
-#
-# zeropoint_aimass
-# https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters
-#
-# sky_brightness
-# https://www.naoj.org/Observing/Instruments/SCam/exptime.html.
-# Note:
-# The link is for Suprime-Cam, which should be approximately
-# okay. Here is the updated version for HSC as of July 2021
-# https://www.subarutelescope.org/Observing/Instruments/HSC/hsc_etc_report.html. We
-# could update the numbers to this version, although we need to
-# convert the unit from ADU/sec to mag/arcsec^2.
-#
-# exposure_time
-# "Wide" in Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
-#
-# zeropoint
-# computed with speclite: for more information you may want to check
-# https://github.com/aboucaud/galcheat/issues/48 and the zeropoints.py script
-#
-# psf_fwhm
-# "Wide" in Table 1 of the HSC PDR3 paper (https://arxiv.org/pdf/2108.13045.pdf)
-#
-# effective_wavelength
-# computed with speclite: for more information you may want to check
-# https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
-
 name: "HSC"
 description: "Hyper Suprime-Cam (HSC) wide-field survey done with the Subaru telescope and the Hyper Suprime-Cam (HSC)"
 pixel_scale: 0.168
@@ -83,3 +41,42 @@ filters:
     zeropoint: 27.33
     psf_fwhm: 0.68
     effective_wavelength: 978.695
+references:
+  pixel_scale:
+    link: "https://hsc-release.mtk.nao.ac.jp/doc/index.php/survey/"
+    comment: ""
+  gain:
+    link: "https://www.naoj.org/Observing/Instruments/HSC/parameters.html"
+    comment: ""
+  mirror_diameter:
+    link: "https://carlkop.home.xs4all.nl/subaru.html"
+    comment: ""
+  obscuration:
+    link: "https://carlkop.home.xs4all.nl/subaru.html"
+    comment: "central hole of 1.2m so that the obscuration is 1.2^2/8.3^2 (confirmed by an expert contacted by H. Miyatake)"
+  zeropoint_airmass:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters"
+    comment: ""
+  sky_brightness:
+    link: "https://www.naoj.org/Observing/Instruments/SCam/exptime.html"
+    comment: ""
+  exposure_time:
+    link: "https://arxiv.org/pdf/2108.13045.pdf"
+    comment: "See \"Wide\" in table 1"
+  zeropoint:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters"
+    comment: "computed with speclite – see scripts/check_zeropoints.py"
+  psf_fwhm:
+    link: "https://arxiv.org/pdf/2108.13045.pdf"
+    comment: "See \"Wide\" in table 1"
+  effective_wavelength:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters"
+    comment: "computed with speclite – see scripts/check_effective_wavelength.py"
+
+# Notes
+# -----
+# The reference link for sky_brightness for Suprime-Cam, should be approximately okay.
+# Here is the updated version for HSC as of July 2021
+# https://www.subarutelescope.org/Observing/Instruments/HSC/hsc_etc_report.html.
+# We could update the numbers to this version, although we need to
+# convert the unit from ADU/sec to mag/arcsec^2.

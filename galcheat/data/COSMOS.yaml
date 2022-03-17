@@ -1,33 +1,3 @@
-# pixel_scale
-# https://iopscience.iop.org/article/10.1086/520086/pdf (section 4)
-#
-# gain
-# https://iopscience.iop.org/article/10.1086/520086/pdf (section 2.1)
-#
-# mirror_diameter
-# https://arxiv.org/pdf/1203.0002.pdf (section 4 table 1)
-#
-# obscuration
-# https://arxiv.org/pdf/1203.0002.pdf (section 4 table 1)
-#
-# zeropoint_airmass
-# space telescope
-#
-# sky_brightness
-#
-#
-# exposure_time
-# https://iopscience.iop.org/article/10.1086/520086/pdf (section 2.2)
-#
-# zeropoint
-# https://galsim-developers.github.io/GalSim/_build/html/real_gal.html
-#
-# psf_fwhm
-# https://iopscience.iop.org/article/10.1086/520086/pdf (section 5)
-#
-# effective_wavelength
-# https://cosmos.astro.caltech.edu/page/filterset
-
 name: "COSMOS"
 description: "COSMOS survey done with the Hubble Space Telescope (HST) and the Advanced Camera for Surveys (ACS)"
 pixel_scale: 0.03
@@ -43,3 +13,34 @@ filters:
     zeropoint: 25.94
     psf_fwhm: 0.095
     effective_wavelength: 807.343
+references:
+  pixel_scale:
+    link: " https://iopscience.iop.org/article/10.1086/520086/pdf"
+    comment: "See section 4"
+  gain:
+    link: " https://iopscience.iop.org/article/10.1086/520086/pdf"
+    comment: "See section 2.1"
+  mirror_diameter:
+    link: "https://arxiv.org/pdf/1203.0002.pdf"
+    comment: "See section 4 table 1"
+  obscuration:
+    link: "https://arxiv.org/pdf/1203.0002.pdf"
+    comment: "See section 4 table 1"
+  zeropoint_airmass:
+    link: ""
+    comment: "Space telescope"
+  sky_brightness:
+    link: ""
+    comment: ""
+  exposure_time:
+    link: "https://iopscience.iop.org/article/10.1086/520086/pdf"
+    comment: "See section 2.2"
+  zeropoint:
+    link: "https://galsim-developers.github.io/GalSim/_build/html/real_gal.html"
+    comment: ""
+  psf_fwhm:
+    link: "https://iopscience.iop.org/article/10.1086/520086/pdf"
+    comment: "See section 5"
+  effective_wavelength:
+    link: "https://cosmos.astro.caltech.edu/page/filterset"
+    comment: ""

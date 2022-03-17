@@ -1,6 +1,6 @@
 import math
 from dataclasses import dataclass, field, make_dataclass
-from typing import Any, List
+from typing import Any, Dict, List
 
 import astropy.units as u
 import yaml
@@ -33,6 +33,7 @@ class Survey:
     "The list of survey filters"
     effective_area: Quantity = field(init=False)
     "The survey instrument effective area on the sky computed from the obscuration"
+    references: Dict[str, Dict[str, str]]
 
     @classmethod
     def from_yaml(cls, yaml_file: str):
@@ -68,7 +69,22 @@ class Survey:
             gain,
             obscuration,
             zeropoint_airmass,
+            data["references"],
         )
+
+    def __repr__(self):
+        n = len(self.name)
+        survey_repr = "-" * (n + 4) + "\n"
+        survey_repr += f"| {self.name} |"
+        survey_repr += f" {self.description}\n"
+        survey_repr += "-" * (n + 4) + "\n"
+        printed_params = [
+            f"  {key:<20} = {val}"
+            for key, val in self.__dict__.items()
+            if key not in ("name", "description", "filters", "references")
+        ]
+        survey_repr += "\n".join(printed_params)
+        return survey_repr
 
     @staticmethod
     def _construct_filter_list(survey_dict):
