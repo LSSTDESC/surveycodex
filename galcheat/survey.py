@@ -149,6 +149,11 @@ class Survey:
         Filter
             Corresponding `Filter` dataclass
 
+        Raises
+        ------
+        ValueError
+            The requested filter does not exist or is not available in galcheat
+
         """
         if filter_name not in self.available_filters:
             raise ValueError(
