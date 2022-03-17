@@ -1,6 +1,6 @@
 import math
 from dataclasses import dataclass, field, make_dataclass
-from typing import Any, List
+from typing import Any, Dict, List
 
 import astropy.units as u
 import yaml
@@ -12,6 +12,7 @@ from galcheat.filter import Filter
 @dataclass
 class Survey:
     name: str
+    description: str
     filters: Any
     pixel_scale: Quantity
     mirror_diameter: Quantity
@@ -20,6 +21,7 @@ class Survey:
     zeropoint_airmass: Quantity
     available_filters: List[str] = field(init=False)
     effective_area: Quantity = field(init=False)
+    references: Dict[str, Dict[str, str]]
 
     @classmethod
     def from_yaml(cls, yaml_file):
@@ -47,13 +49,29 @@ class Survey:
 
         return cls(
             data["name"],
+            data["description"],
             filters,
             pixel_scale,
             mirror_diameter,
             gain,
             obscuration,
             zeropoint_airmass,
+            data["references"],
         )
+
+    def __repr__(self):
+        n = len(self.name)
+        survey_repr = "-" * (n + 4) + "\n"
+        survey_repr += f"| {self.name} |"
+        survey_repr += f" {self.description}\n"
+        survey_repr += "-" * (n + 4) + "\n"
+        printed_params = [
+            f"  {key:<20} = {val}"
+            for key, val in self.__dict__.items()
+            if key not in ("name", "description", "filters", "references")
+        ]
+        survey_repr += "\n".join(printed_params)
+        return survey_repr
 
     @staticmethod
     def _construct_filter_list(survey_dict):

@@ -1,33 +1,5 @@
-# gain
-# https://github.com/LSSTDESC/imSim/blob/main/imsim/stamp.py#L416
-#
-# mirror_diameter
-# https://www.lsst.org/about/tel-site/optical_design
-#
-# obscuration
-# the current value is computed from the effective area found in WLD
-# https://github.com/LSSTDESC/WeakLensingDeblending/blob/master/descwl/survey.py#L192
-# 1-32.4/(pi*8.36*8.36/4)
-# you can also find information at
-# https://github.com/aboucaud/galcheat/issues/38
-#
-# zeropoint_airmass
-# https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters
-#
-# https://www.lsst.org/about/camera/features
-#
-# zeropoint
-# computed with speclite: for more information you may want to check
-# https://github.com/aboucaud/galcheat/issues/48 and the zeropoints.py script
-#
-# psf_fwhm
-#
-#
-# effective_wavelength
-# computed with speclite: for more information you may want to check
-# https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
-
 name: "LSST"
+description: "Legacy Survey of Space and Time (LSST) done with the Simonyi survey telescope and the LSST camera"
 pixel_scale: 0.2
 gain: 1.0
 mirror_diameter: 8.36
@@ -76,3 +48,34 @@ filters:
     zeropoint: 26.56
     psf_fwhm: 0.703
     effective_wavelength: 972.202
+references:
+  pixel_scale:
+    link: "https://www.lsst.org/about/camera/features"
+    comment: "See Technical details"
+  gain:
+    link: "https://github.com/LSSTDESC/imSim/blob/main/imsim/stamp.py#L416"
+    comment: ""
+  mirror_diameter:
+    link: "https://www.lsst.org/about/tel-site/optical_design"
+    comment: ""
+  obscuration:
+    link: "https://arxiv.org/abs/0805.2366"
+    comment: "See https://github.com/aboucaud/galcheat/issues/38 for discussions"
+  zeropoint_airmass:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters"
+    comment: ""
+  sky_brightness:
+    link: "https://www.lsst.org/about/camera/features"
+    comment: ""
+  exposure_time:
+    link: "https://www.lsst.org/about/camera/features"
+    comment: "See Technical details"
+  zeropoint:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters"
+    comment: "computed with speclite – see scripts/check_zeropoints.py"
+  psf_fwhm:
+    link: ""
+    comment: ""
+  effective_wavelength:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters"
+    comment: "computed with speclite – see scripts/check_effective_wavelength.py"

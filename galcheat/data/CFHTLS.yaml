@@ -1,38 +1,5 @@
-# pixel_scale
-# https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html
-#
-# gain
-# https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html
-#
-# mirror_diameter
-# https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/specsinformation.html (section 2.3)
-#
-# obscuration
-# https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/specsinformation.html (section 2.3)
-# using the given effective area in cm^2, the obscuration is 1-80216/(pi*358*358/4)
-#
-# zeropoint_airmass
-# https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html
-#
-# sky_brightness
-# http://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html
-# taken as "grey sky": at zenith, 30% moon
-#
-# exposure_time
-# https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf
-# taken as modes in table 31
-#
-# zeropoint
-# https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html
-#
-# psf_fwhm
-# https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf
-# roughly taken from figure 25
-#
-# effective_wavelength
-# https://cosmos.astro.caltech.edu/page/filterset
-
 name: "CFHTLS"
+description: "Canada France Hawaii Lensing wide-field Survey (CFHTLS) done with the Canada France Hawaii Telescope (CFHT) and MegaCam"
 pixel_scale: 0.187
 gain: 1.67
 mirror_diameter: 3.58
@@ -74,3 +41,34 @@ filters:
     zeropoint: 25.05
     psf_fwhm: 0.66
     effective_wavelength: 882.798
+references:
+  pixel_scale:
+    link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html"
+    comment: ""
+  gain:
+    link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html"
+    comment: ""
+  mirror_diameter:
+    link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/specsinformation.html"
+    comment: "See section 2.3"
+  obscuration:
+    link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/specsinformation.html"
+    comment: "See section 2.3, using the given effective area in cm^2, the obscuration is 1-80216/(pi*358*358/4)"
+  zeropoint_airmass:
+    link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html"
+    comment: ""
+  sky_brightness:
+    link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html"
+    comment: "taken as \"grey sky\": at zenith, 30% moon"
+  exposure_time:
+    link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf"
+    comment: "taken as modes in table 31"
+  zeropoint:
+    link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html"
+    comment: ""
+  psf_fwhm:
+    link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf"
+    comment: "roughly taken from figure 25"
+  effective_wavelength:
+    link: "https://cosmos.astro.caltech.edu/page/filterset"
+    comment: ""
