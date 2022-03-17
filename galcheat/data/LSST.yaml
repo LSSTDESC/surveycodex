@@ -3,7 +3,7 @@ description: "Legacy Survey of Space and Time (LSST) done with the Simonyi surve
 pixel_scale: 0.2
 gain: 1.0
 mirror_diameter: 8.36
-obscuration: 0.40974106
+obscuration: 0.39257227
 zeropoint_airmass: 1.2
 filters:
   u:
@@ -59,23 +59,23 @@ references:
     link: "https://www.lsst.org/about/tel-site/optical_design"
     comment: ""
   obscuration:
-    link: "https://arxiv.org/abs/0805.2366"
-    comment: "See https://github.com/aboucaud/galcheat/issues/38 for discussions"
+    link: "https://arxiv.org/abs/0805.2366v4.pdf"
+    comment: "The paper mentions an effective diameter of ~6.5m. See https://github.com/aboucaud/galcheat/issues/38 for discussions on how to calculate obscuration from effective diameter."
   zeropoint_airmass:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters"
     comment: ""
   sky_brightness:
-    link: "https://www.lsst.org/about/camera/features"
-    comment: ""
+    link: "https://arxiv.org/pdf/0805.2366v4.pdf"
+    comment: "See Table 2, first row"
   exposure_time:
-    link: "https://www.lsst.org/about/camera/features"
-    comment: "See Technical details"
+    link: "https://arxiv.org/pdf/0805.2366v4.pdf"
+    comment: "See Table 1 'Mean number of visits' and in the paper it is mentioned that visit exposure time 30s. So for example, for u band, 56 * 30 = 1680."
   zeropoint:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters"
     comment: "computed with speclite – see scripts/check_zeropoints.py"
   psf_fwhm:
-    link: ""
-    comment: ""
+    link: "https://arxiv.org/pdf/0805.2366v4.pdf"
+    comment: "Computed from second row of Table 2 by multiplying times airmass**0.6 where it is assumed airmass=1.2"
   effective_wavelength:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters"
     comment: "computed with speclite – see scripts/check_effective_wavelength.py"
