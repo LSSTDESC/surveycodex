@@ -34,7 +34,7 @@ jobs:
         python -m galcheat
     - name: Test the console script
       run: |
-        galcheat
+        galcheat --refs
     - name: Test the scripts
       run: |
         for pyscript in scripts/*.py; do python ${pyscript}; done
