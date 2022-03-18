@@ -39,27 +39,6 @@ def get_survey(survey_name):
     return _survey_info[survey_name]
 
 
-def get_filter(filter_name, survey_name):
-    """Get the filter class from the corresponding survey
-
-    Parameters
-    ----------
-    filter_name : str
-        Name of a filter belonging to `survey_name`
-    survey_name : str
-        Name of a survey among the `available_surveys`
-
-    Returns
-    -------
-    Filter
-        The corresponding Filter dataclass
-
-    """
-    survey = get_survey(survey_name)
-
-    return survey.get_filter(filter_name)
-
-
 def print_survey(survey, show_refs=False):
     """Print information on a given survey
 
