@@ -59,7 +59,7 @@ class Survey:
             data["references"],
         )
 
-    def __repr__(self):
+    def __str__(self):
         n = len(self.name)
         survey_repr = "-" * (n + 4) + "\n"
         survey_repr += f"| {self.name} |"
@@ -72,6 +72,9 @@ class Survey:
         ]
         survey_repr += "\n".join(printed_params)
         return survey_repr
+
+    def __repr__(self):
+        return f"Survey {self.name}"
 
     @staticmethod
     def _construct_filter_dict(survey_dict):
