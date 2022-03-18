@@ -48,7 +48,7 @@ class Filter:
             wavelength,
         )
 
-    def __repr__(self):
+    def __str__(self):
         filter_repr = f"-= {self.name} filter =-\n"
         printed_params = [
             f"  {key:<20} = {val}"
@@ -57,3 +57,6 @@ class Filter:
         ]
         filter_repr += "\n".join(printed_params)
         return filter_repr
+
+    def __repr__(self):
+        return f"Filter {self.name}"
