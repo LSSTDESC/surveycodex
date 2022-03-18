@@ -21,20 +21,37 @@ The goal of this project is to provide a Python library with minimal dependencie
 
 The current parameters and the corresponding units are specified in the [data README](galcheat/data/README.md)
 
-[**Getting started**](#getting-started) | [**API**](#api) | [**Contributing**](#contributing) | [**License**](#license)
+[**Getting started**](#getting-started) | [**CLI**](#cli) | [**API**](#api) | [**Contributing**](#contributing) | [**License**](#license)
 
 Getting started
 ---------------
-1.  Install the latest version of the library
-    ```sh
-    pip install -U galcheat
-    ```
-2. Run the demo = print the available surveys and associated filters
-    ```sh
-    python -m galcheat
-    # or
-    galcheat
-    ```
+Install the latest version of the library
+```sh
+pip install -U galcheat
+```
+
+CLI
+---
+
+Print the available surveys and associated filters
+
+```sh
+python -m galcheat
+# or
+galcheat
+```
+
+### Options
+- **`-s <survey>`**: print information for a given survey
+- **`--refs`**: print the source for each parameter
+- **`-h, --help`**: get help
+
+### Exemples
+```sh
+galcheat -s LSST        # LSST info
+galcheat --refs         # all surveys info with refs
+galcheat --refs -s HSC  # HSC info with refs
+```
 
 API
 ---

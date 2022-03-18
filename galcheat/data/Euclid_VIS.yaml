@@ -1,35 +1,3 @@
-# pixel_scale
-# https://arxiv.org/pdf/1110.3193.pdf (page 3)
-#
-# gain
-# https://www.mssl.ucl.ac.uk/~smn2/instrument.html
-#
-# mirror_diameter
-# https://arxiv.org/pdf/1608.08603.pdf (section 3.1)
-#
-# obscuration
-# https://arxiv.org/pdf/1608.08603.pdf (section 3.1)
-#
-# zeropoint_airmass
-# space telescope
-#
-# sky_brightness
-# https://www.mssl.ucl.ac.uk/~smn2/instrument.html
-#
-# exposure_time
-# https://arxiv.org/pdf/1608.08603.pdf (section 6)
-#
-# zeropoint
-# computed with speclite: for more information you may want to check
-# https://github.com/aboucaud/galcheat/issues/48 and the zeropoints.py script
-#
-# psf_fwhm
-# https://arxiv.org/pdf/1608.08603.pdf (section 8)
-#
-# effective_wavelength
-# computed with speclite: for more information you may want to check
-# https://github.com/aboucaud/galcheat/issues/36 and the effective_wavelengths.py script
-
 name: "Euclid_VIS"
 description: "Euclid wide-field survey done with the Euclid space telescope and the visible instrument (VIS)"
 pixel_scale: 0.10
@@ -45,3 +13,34 @@ filters:
     zeropoint: 25.91
     psf_fwhm: 0.17
     effective_wavelength: 750.637
+references:
+  pixel_scale:
+    link: "https://arxiv.org/pdf/1110.3193.pdf"
+    comment: "See page 3"
+  gain:
+    link: "https://www.mssl.ucl.ac.uk/~smn2/instrument.html"
+    comment: ""
+  mirror_diameter:
+    link: "https://arxiv.org/pdf/1608.08603.pdf"
+    comment: "See section 3.1"
+  obscuration:
+    link: "https://arxiv.org/pdf/1608.08603.pdf"
+    comment: "See section 3.1"
+  zeropoint_airmass:
+    link: ""
+    comment: "Space telescope"
+  sky_brightness:
+    link: "https://www.mssl.ucl.ac.uk/~smn2/instrument.html"
+    comment: ""
+  exposure_time:
+    link: "https://arxiv.org/pdf/1608.08603.pdf"
+    comment: "See section 6"
+  zeropoint:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html"
+    comment: "computed with speclite – see scripts/check_zeropoints.py"
+  psf_fwhm:
+    link: "https://arxiv.org/pdf/1608.08603.pdf"
+    comment: "See section 8"
+  effective_wavelength:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html"
+    comment: "computed with speclite – see scripts/check_effective_wavelength.py"

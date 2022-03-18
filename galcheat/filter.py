@@ -47,3 +47,13 @@ class Filter:
             exposure_time,
             wavelength,
         )
+
+    def __repr__(self):
+        filter_repr = f"-= {self.name} filter =-\n"
+        printed_params = [
+            f"  {key:<20} = {val}"
+            for key, val in self.__dict__.items()
+            if key not in ("name",)
+        ]
+        filter_repr += "\n".join(printed_params)
+        return filter_repr
