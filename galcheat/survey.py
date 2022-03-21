@@ -1,3 +1,4 @@
+import copy
 import math
 from dataclasses import dataclass, field
 from typing import Dict, List
@@ -13,7 +14,7 @@ from galcheat.filter import Filter
 class Survey:
     name: str
     description: str
-    filters: Dict[str, Filter]
+    _filters: Dict[str, Filter]
     pixel_scale: Quantity
     mirror_diameter: Quantity
     gain: Quantity
@@ -68,7 +69,7 @@ class Survey:
         printed_params = [
             f"  {key:<20} = {val}"
             for key, val in self.__dict__.items()
-            if key not in ("name", "description", "filters", "references")
+            if key not in ("name", "description", "_filters", "references")
         ]
         survey_repr += "\n".join(printed_params)
         return survey_repr
@@ -97,7 +98,7 @@ class Survey:
 
     def __post_init__(self):
         """Set attributes computed after class is constructed"""
-        self.available_filters = list(self.filters.keys())
+        self.available_filters = list(self._filters.keys())
 
         total_area = math.pi * (self.mirror_diameter * 0.5) ** 2
         self.effective_area = (1 - self.obscuration) * total_area
@@ -111,4 +112,4 @@ class Survey:
                 f"are {self.available_filters}"
             )
 
-        return self.filters[filter_name]
+        return copy.deepcopy(self._filters[filter_name])
