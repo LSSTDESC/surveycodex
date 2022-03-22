@@ -1,6 +1,7 @@
+import copy
 import math
-from dataclasses import dataclass, field, make_dataclass
-from typing import Any, Dict, List
+from dataclasses import dataclass, field
+from typing import Dict, List
 
 import astropy.units as u
 import yaml
@@ -17,8 +18,8 @@ class Survey:
     "The survey name"
     description: str
     "The survey description with telescope/instrument information"
-    filters: Any
-    "A dynamically created dataclass containing all the survey filters"
+    _filters: Dict[str, Filter]
+    "A private dictionary containing the survey filters"
     pixel_scale: Quantity
     "The pixel scale of the survey"
     mirror_diameter: Quantity
@@ -54,7 +55,7 @@ class Survey:
         with open(yaml_file) as f:
             data = yaml.safe_load(f)
 
-        filters = Survey._construct_filter_list(data)
+        filters = Survey._construct_filter_dict(data)
         pixel_scale = data["pixel_scale"] * u.arcsec
         mirror_diameter = data["mirror_diameter"] * u.m
         gain = data["gain"] * u.electron / u.adu
@@ -82,7 +83,7 @@ class Survey:
         printed_params = [
             f"  {key:<20} = {val}"
             for key, val in self.__dict__.items()
-            if key not in ("name", "description", "filters", "references")
+            if key not in ("name", "description", "_filters", "references")
         ]
         survey_repr += "\n".join(printed_params)
         return survey_repr
@@ -91,8 +92,8 @@ class Survey:
         return f"Survey {self.name}"
 
     @staticmethod
-    def _construct_filter_list(survey_dict):
-        """Create a custom container for the survey filters
+    def _construct_filter_dict(survey_dict):
+        """Create a custom dictionary for the survey filters
 
         Parameters
         ----------
@@ -101,45 +102,23 @@ class Survey:
 
         Returns
         -------
-        FilterList
-            Dynamically created dataclass whose attributes are the survey filters
+        dict
+            Dictionary of the survey Filter instances
 
         """
-        filter_data = {
+        return {
             fname: Filter.from_dict(fdict)
             for fname, fdict in survey_dict["filters"].items()
         }
-        FList = make_dataclass(
-            survey_dict["name"] + "FilterList",
-            [(filter_name, Filter) for filter_name in filter_data.keys()],
-            namespace={
-                "__repr__": lambda self: "("
-                + ", ".join([filt for filt in self.__dict__.keys()])
-                + ")"
-            },
-        )
-
-        return FList(**filter_data)
 
     def __post_init__(self):
         """Set attributes computed after class is constructed"""
-        self.available_filters = list(self.filters.__dict__.keys())
+        self.available_filters = list(self._filters.keys())
 
         total_area = math.pi * (self.mirror_diameter * 0.5) ** 2
         self.effective_area = (1 - self.obscuration) * total_area
 
-    def get_filters(self) -> dict:
-        """Getter method to retrieve the filters as a dictionary
-
-        Returns
-        -------
-        dict
-            Dictionary of all the `Filter` objects from a given `Survey`
-
-        """
-        return self.filters.__dict__
-
-    def get_filter(self, filter_name) -> Filter:
+    def get_filter(self, filter_name):
         """Getter method to retrieve a Filter object
 
         Parameters
@@ -165,4 +144,4 @@ class Survey:
                 f"are {self.available_filters}"
             )
 
-        return self.filters.__dict__[filter_name]
+        return copy.deepcopy(self._filters[filter_name])
