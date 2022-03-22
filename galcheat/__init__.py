@@ -7,7 +7,7 @@ r"""
  \____|\__,_|_|\____|_| |_|\___|\__,_|\__|
 
 The tiny library of galaxy surveys
-most useful parameters (with units)
+most useful parameters with units
 
 The data can be viewed in a terminal with
 
@@ -26,32 +26,22 @@ whose names can be obtained as
 
     >>> LSST.available_filters
 
-Each `Filter` class is then accessible either
-as an attribute from the `Survey`
-
-    >>> u_filter = LSST.filters.u
-
-or through a method
+Each `Filter` class is accessible through
 
     >>> u_filter = LSST.get_filter('u')
 
-For a given survey, a dictionary of the available
-filters is returned by
-
-    >>> LSST.get_filters()
-
-Parameter values can be converted to any physical
-units using the `astropy.units` scheme
+Parameter values are astropy Quantity objects
 
     >>> u_filter.psf_fwhm
     <Quantity 0.859 arcsec>
-    >>> u_filter.value
+    >>> u_filter.psf_fwhm.value
     0.859
+    >>> u_filter.psf_fwhm.unit
+    Unit("arcsec")
 
-    >>> import astropy.units as u
-    >>> u_filter.psf_fwhm.to(u.arcmin).value
-or
-    >>> u_filter.psf_fwhm.to_value(u.arcmin)
+which can be converted to any physical units
+using the `astropy.units` scheme
+    >>> u_filter.psf_fwhm.to_value('arcmin')
     0.014316666666666667
 
 Feel free to contribute by submitting
