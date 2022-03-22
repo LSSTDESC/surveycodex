@@ -56,31 +56,28 @@ galcheat --refs -s HSC  # HSC info with refs
 API
 ---
 ```python
+import galcheat
+
 # Start with the list of available surveys
-from galcheat import available_surveys
+galcheat.available_surveys
 
-print(available_surveys)
-
-# then retrieve the corresponding Survey instance
-from galcheat import get_survey
-
-LSST = get_survey("LSST")
+# Retrieve a Survey instance
+LSST = galcheat.get_survey("LSST")
 
 # List the available survey filters
-print(LSST.available_filters)
-# and pick a Filter instance
+LSST.available_filters
+
+# Pick a Filter instance
 u_band = LSST.get_filter("u")
 
-# Both Survey and Filter classes have physical attributes
+# Both Survey and Filter objects have physical attributes
 LSST.mirror_diameter
-fwhm = u_band.psf_fwhm
 
-# These attributes are Astropy Quantity objects with units
-fwhm.unit
-# The value in the original units is obtained as
-fwhm.value
-# or it can be converted to other units
-fwhm.to_value('arcmin')
+u_band.exposure_time
+
+# These attributes are Astropy Quantity objects
+# whose value can be retrieved in any desired unit
+u_band.psf_fwhm.to_value('arcmin')
 ```
 
 ## Contributing ✨
