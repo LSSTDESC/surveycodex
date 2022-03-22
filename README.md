@@ -36,8 +36,6 @@ CLI
 Print the available surveys and associated filters
 
 ```sh
-python -m galcheat
-# or
 galcheat
 ```
 
