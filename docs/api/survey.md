@@ -1,0 +1,3 @@
+# galcheat.survey
+
+::: galcheat.survey

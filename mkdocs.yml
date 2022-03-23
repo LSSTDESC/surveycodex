@@ -1,0 +1,72 @@
+site_name: galcheat docs
+repo_url: https://github.com/aboucaud/galcheat
+site_url: https://aboucaud.github.io/galcheat/
+site_description: A small python library that can clump lists of data together.
+site_author: Alexandre Boucaud
+use_directory_urls: false
+# Theming
+theme:
+  name: material
+  language: en
+  palette:
+    # primary: teal
+    # accent: indigo
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  feature:
+    tabs: true
+#   logo: 'img/lsst.png'
+#   favicon: 'img/favicon.ico'
+
+# Content
+nav:
+  - Home:
+    - Index: index.md
+    - Parameters: parameters.md
+  - Guides:
+      - Getting Started: guides/getting-started.md
+      - Releases: guides/releases.md
+  - API:
+      - galcheat.survey: api/survey.md
+      - galcheat.filter: api/filter.md
+      - galcheat.utilities: api/utilities.md
+# Plugins
+plugins:
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: false
+            docstring_section_style: list
+          selection:
+            docstring_style: numpy
+      watch:
+        - galcheat
+  - search
+copyright: Copyright &copy; 2022 Maintained by <a href="https://twitter.com/alxbcd">Alexandre</a>.
+# Mkdocs material extensions
+# https://squidfunk.github.io/mkdocs-material/extensions
+markdown_extensions:
+  - admonition
+#   - pymdownx.arithmatex:
+#       generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences
+  - toc:
+      permalink: true

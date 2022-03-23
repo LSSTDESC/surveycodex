@@ -7,12 +7,20 @@ from astropy.units import Quantity
 
 @dataclass
 class Filter:
+    """A dataclass containing the main filter parameters"""
+
     name: str
+    "The filter name"
     psf_fwhm: Quantity
+    "The full-width at half maximum of the PSF"
     zeropoint: Quantity
+    "The zeropoint magnitude computed with the speclite library"
     sky_brightness: Quantity
+    "Mean sky brightness"
     exposure_time: Quantity
+    "Mean time spent on the sky on a random survey location"
     effective_wavelength: Optional[Quantity] = None
+    "Filter effective wavelength computed from the complete throughput infoormation"
 
     @classmethod
     def from_dict(cls, filter_info):
@@ -28,7 +36,8 @@ class Filter:
 
         Returns
         -------
-        A Filter object filled with the given information
+        Filter
+            A Filter object filled with the given information
 
         """
         name = filter_info["name"]

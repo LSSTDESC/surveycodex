@@ -28,7 +28,14 @@ def mag2counts(magnitude, survey, filter):
 
     Returns
     -------
-    The corresponding flux in electron counts
+    Quantity[int]
+        The corresponding flux in electron counts
+
+    Example
+    -------
+    >>> from galcheat.utilities import mag2counts
+    >>> mag2counts(24, "LSST", "g")
+    <Quantity 121397 ct>
 
     References
     ----------
@@ -69,7 +76,14 @@ def mean_sky_level(survey, filter):
 
     Returns
     -------
-    The corresponding mean sky level in electron counts
+    Quantity[float]
+        The corresponding mean sky level in electron counts
+
+    Example
+    -------
+    >>> from galcheat.utilities import mean_sky_level
+    >>> mean_sky_level("LSST", "g")
+    <Quantity 23241.84 ct>
 
     """
     if not isinstance(survey, Survey):

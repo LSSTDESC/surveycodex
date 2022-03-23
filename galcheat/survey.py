@@ -12,20 +12,33 @@ from galcheat.filter import Filter
 
 @dataclass
 class Survey:
+    """A dataclass for storing the parameters of a survey"""
+
     name: str
+    "The survey name"
     description: str
+    "The survey description with telescope/instrument information"
     _filters: Dict[str, Filter]
+    "A private dictionary containing the survey filters"
     pixel_scale: Quantity
+    "The pixel scale of the survey"
     mirror_diameter: Quantity
+    "The mirror diameter"
     gain: Quantity
+    "The gain in electron/ADU"
     obscuration: Quantity
+    "The total obscuration created by the instrument pieces"
     zeropoint_airmass: Quantity
+    "The zeropoint airmass"
     available_filters: List[str] = field(init=False)
+    "The list of survey filters"
     effective_area: Quantity = field(init=False)
+    "The survey instrument effective area on the sky computed from the obscuration"
     references: Dict[str, Dict[str, str]]
+    "Dictionary of references for each parameter specified in galcheat"
 
     @classmethod
-    def from_yaml(cls, yaml_file):
+    def from_yaml(cls, yaml_file: str):
         """Constructor for the Survey class
 
         Parameters
@@ -35,7 +48,8 @@ class Survey:
 
         Returns
         -------
-        The Survey object filled with the info
+        Survey
+            A `Survey` instance filled with the information as attributes
 
         """
         with open(yaml_file) as f:
@@ -88,7 +102,8 @@ class Survey:
 
         Returns
         -------
-        Dictionary of the survey filters
+        dict
+            Dictionary of the survey Filter instances
 
         """
         return {
@@ -104,7 +119,24 @@ class Survey:
         self.effective_area = (1 - self.obscuration) * total_area
 
     def get_filter(self, filter_name):
-        """Getter method to retrieve a Filter object"""
+        """Getter method to retrieve a Filter object
+
+        Parameters
+        ----------
+        filter_name : str
+            Name of a filter chosen among the `available_filters` attribute
+
+        Returns
+        -------
+        Filter
+            Corresponding `Filter` dataclass
+
+        Raises
+        ------
+        ValueError
+            The requested filter does not exist or is not available in galcheat
+
+        """
         if filter_name not in self.available_filters:
             raise ValueError(
                 "Please check the filter name. "

@@ -9,9 +9,10 @@ _survey_info = {
 }
 
 available_surveys = list(_survey_info.keys())
+"List of available surveys in galcheat"
 
 
-def get_survey(survey_name: str) -> Survey:
+def get_survey(survey_name):
     """Get the dataclass corresponding to the survey
 
     Parameters
@@ -21,11 +22,13 @@ def get_survey(survey_name: str) -> Survey:
 
     Returns
     -------
-    a Survey dataclass
+    Survey
+        The corresponding Survey dataclass
 
     Raises
     ------
-    ValueError: when the input survey is not (currently) available
+    ValueError
+        When the input survey is not (currently) available
 
     """
     if survey_name not in available_surveys:
