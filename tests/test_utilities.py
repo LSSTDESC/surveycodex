@@ -12,13 +12,13 @@ BTK_COUNTS_MAG24 = {
     "LSST_y": 50727.240442255556,
 }
 
-BTK_MEAN_SKY_LEVEL = {
-    "LSST_u": 1687.9876819744386,
-    "LSST_g": 23241.878848667337,
-    "LSST_r": 127057.1381640446,
-    "LSST_i": 180301.3875959776,
-    "LSST_z": 250784.8105213134,
-    "LSST_y": 293292.6831817095,
+MEAN_SKY_LEVEL = {
+    "LSST_u": 1553,
+    "LSST_g": 24114,
+    "LSST_r": 127057,
+    "LSST_i": 183653,
+    "LSST_z": 250784,
+    "LSST_y": 290603,
 }
 
 
@@ -36,7 +36,7 @@ def lsst_btk_counts(request):
 )
 def lsst_btk_sky_level(request):
     survey, filt = request.param
-    expected = int(BTK_MEAN_SKY_LEVEL[f"{survey}_{filt}"])
+    expected = int(MEAN_SKY_LEVEL[f"{survey}_{filt}"])
     return survey, filt, expected
 
 
