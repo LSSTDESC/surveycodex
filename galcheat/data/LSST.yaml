@@ -59,8 +59,8 @@ references:
     link: "https://www.lsst.org/about/tel-site/optical_design"
     comment: ""
   obscuration:
-    link: "https://arxiv.org/abs/0805.2366v4.pdf"
-    comment: "The paper mentions an effective diameter of ~6.5m. See https://github.com/aboucaud/galcheat/issues/38 for discussions on how to calculate obscuration from effective diameter."
+    link: "https://arxiv.org/abs/0805.2366.pdf"
+    comment: "(v5) The paper mentions an effective diameter of ~6.5m. See https://github.com/aboucaud/galcheat/issues/38 for discussions on how to calculate obscuration from effective diameter."
   zeropoint_airmass:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters"
     comment: ""
