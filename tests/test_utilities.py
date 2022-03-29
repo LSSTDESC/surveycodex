@@ -37,7 +37,7 @@ def lsst_btk_counts(request):
 )
 def lsst_btk_sky_level(request):
     survey, filt = request.param
-    expected = int(WLD_SKY_LEVEL[f"{survey}_{filt}"])
+    expected = WLD_SKY_LEVEL[f"{survey}_{filt}"]
     return survey, filt, expected
 
 
@@ -66,14 +66,14 @@ def test_mag2counts_filter_instance(lsst_btk_counts):
 def test_mean_sky_level_str(lsst_btk_sky_level):
     survey, filt, expected = lsst_btk_sky_level
     sky_level = mean_sky_level(survey, filt).value
-    np.testing.assert_allclose(int(sky_level), expected, rtol=1e-1)
+    np.testing.assert_allclose(sky_level, expected, rtol=1e-1)
 
 
 def test_mean_sky_level_filter_str(lsst_btk_sky_level):
     survey, filt, expected = lsst_btk_sky_level
     survey_inst = get_survey(survey)
     sky_level = mean_sky_level(survey_inst, filt).value
-    np.testing.assert_allclose(int(sky_level), expected, rtol=1e-1)
+    np.testing.assert_allclose(sky_level, expected, rtol=1e-1)
 
 
 def test_mean_sky_level_filter_instance(lsst_btk_sky_level):
@@ -81,4 +81,4 @@ def test_mean_sky_level_filter_instance(lsst_btk_sky_level):
     survey_inst = get_survey(survey)
     filt_inst = survey_inst.get_filter(filt)
     sky_level = mean_sky_level(survey_inst, filt_inst).value
-    np.testing.assert_allclose(int(sky_level), expected, rtol=1e-1)
+    np.testing.assert_allclose(sky_level, expected, rtol=1e-1)
