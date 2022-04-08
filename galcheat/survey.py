@@ -1,4 +1,3 @@
-import copy
 import math
 from dataclasses import dataclass, field
 from typing import Dict, List
@@ -10,7 +9,7 @@ from astropy.units import Quantity
 from galcheat.filter import Filter
 
 
-@dataclass
+@dataclass(frozen=True)
 class Survey:
     """A dataclass for storing the parameters of a survey"""
 
@@ -113,10 +112,12 @@ class Survey:
 
     def __post_init__(self):
         """Set attributes computed after class is constructed"""
-        self.available_filters = list(self._filters.keys())
+        available_filters = list(self._filters.keys())
+        object.__setattr__(self, "available_filters", available_filters)
 
         total_area = math.pi * (self.mirror_diameter * 0.5) ** 2
-        self.effective_area = (1 - self.obscuration) * total_area
+        effective_area = total_area * (1 - self.obscuration)
+        object.__setattr__(self, "effective_area", effective_area)
 
     def get_filter(self, filter_name):
         """Getter method to retrieve a Filter object
@@ -144,4 +145,4 @@ class Survey:
                 f"are {self.available_filters}"
             )
 
-        return copy.deepcopy(self._filters[filter_name])
+        return self._filters[filter_name]

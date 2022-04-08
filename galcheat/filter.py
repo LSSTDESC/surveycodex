@@ -5,7 +5,7 @@ import astropy.units as u
 from astropy.units import Quantity
 
 
-@dataclass
+@dataclass(frozen=True)
 class Filter:
     """A dataclass containing the main filter parameters"""
 
@@ -20,7 +20,7 @@ class Filter:
     exposure_time: Quantity
     "Mean time spent on the sky on a random survey location"
     effective_wavelength: Optional[Quantity] = None
-    "Filter effective wavelength computed from the complete throughput infoormation"
+    "Filter effective wavelength computed from the complete throughput information"
 
     @classmethod
     def from_dict(cls, filter_info):
