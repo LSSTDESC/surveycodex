@@ -9,7 +9,7 @@ filters:
   f814w:
     name: "f814w"
     sky_brightness: 22
-    exposure_time: 2028
+    full_exposure_time: 2028
     zeropoint: 25.94
     psf_fwhm: 0.095
     effective_wavelength: 807.343
@@ -32,7 +32,7 @@ references:
   sky_brightness:
     link: ""
     comment: ""
-  exposure_time:
+  full_exposure_time:
     link: "https://iopscience.iop.org/article/10.1086/520086/pdf"
     comment: "See section 2.2"
   zeropoint:

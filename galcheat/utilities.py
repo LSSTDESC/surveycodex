@@ -55,7 +55,7 @@ def mag2counts(magnitude, survey, filter):
         filter = survey.get_filter(filter)
 
     flux = (magnitude - filter.zeropoint).to(u.electron / u.s)
-    counts = flux * filter.exposure_time
+    counts = flux * filter.full_exposure_time
 
     return counts.astype(int)
 

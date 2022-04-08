@@ -17,7 +17,7 @@ class Filter:
     "The zeropoint magnitude computed with the speclite library"
     sky_brightness: Quantity
     "Mean sky brightness"
-    exposure_time: Quantity
+    full_exposure_time: Quantity
     "Mean time spent on the sky on a random survey location"
     effective_wavelength: Optional[Quantity] = None
     "Filter effective wavelength computed from the complete throughput infoormation"
@@ -44,7 +44,7 @@ class Filter:
         psf_fwhm = filter_info["psf_fwhm"] * u.arcsec
         zeropoint = filter_info["zeropoint"] * u.mag
         sky_brightness = filter_info["sky_brightness"] * (u.mag / u.arcsec**2)
-        exposure_time = filter_info["exposure_time"] * u.s
+        full_exposure_time = filter_info["full_exposure_time"] * u.s
         wavelength = filter_info.get("effective_wavelength")
         wavelength = wavelength if wavelength is None else wavelength * u.nm
 
@@ -53,7 +53,7 @@ class Filter:
             psf_fwhm,
             zeropoint,
             sky_brightness,
-            exposure_time,
+            full_exposure_time,
             wavelength,
         )
 
