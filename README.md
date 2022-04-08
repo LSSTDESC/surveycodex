@@ -71,7 +71,7 @@ u_band = LSST.get_filter("u")
 # Both Survey and Filter objects have physical attributes
 LSST.mirror_diameter
 
-u_band.exposure_time
+u_band.full_exposure_time
 
 # These attributes are Astropy Quantity objects
 # whose value can be retrieved in any desired unit

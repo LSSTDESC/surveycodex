@@ -20,10 +20,10 @@ LSST.get_filters()
 
 # Both Survey and Filter classes have physical attributes
 LSST.mirror_diameter
-u_band.exposure_time
+u_band.full_exposure_time
 
 # Filters are also attributes of a Survey
-LSST.filters.u.exposure_time  # same attribute as above
+LSST.filters.u.full_exposure_time  # same attribute as above
 
 # These attributes are Astropy Quantity objects with units
 fwhm = u_band.psf_fwhm

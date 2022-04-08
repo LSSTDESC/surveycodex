@@ -9,7 +9,7 @@ filters:
   VIS:
     name: "VIS"
     sky_brightness: 22.3203
-    exposure_time: 565
+    full_exposure_time: 565
     zeropoint: 25.91
     psf_fwhm: 0.17
     effective_wavelength: 750.637
@@ -32,7 +32,7 @@ references:
   sky_brightness:
     link: "https://www.mssl.ucl.ac.uk/~smn2/instrument.html"
     comment: ""
-  exposure_time:
+  full_exposure_time:
     link: "https://arxiv.org/pdf/1608.08603.pdf"
     comment: "See section 6"
   zeropoint:
