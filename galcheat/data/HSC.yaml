@@ -3,7 +3,7 @@ description: "Hyper Suprime-Cam (HSC) wide-field survey done with the Subaru tel
 pixel_scale: 0.168
 gain: 3.0
 mirror_diameter: 8.3
-obscuration: 0.02090289
+obscuration: 0.02
 zeropoint_airmass: 1.2
 filters:
   g:

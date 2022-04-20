@@ -3,7 +3,7 @@ description: "Dark Energy wide-field Survey (DES) done with the Victor M. Blanco
 pixel_scale: 0.2637
 gain: 4.0
 mirror_diameter: 3.934
-obscuration: 0.17612680
+obscuration: 0.18
 zeropoint_airmass: 1.3
 filters:
   g:
