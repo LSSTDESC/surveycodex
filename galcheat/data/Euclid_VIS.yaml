@@ -15,17 +15,17 @@ filters:
     effective_wavelength: 750.637
 references:
   pixel_scale:
-    link: "https://arxiv.org/pdf/1110.3193.pdf"
-    comment: "See page 3"
+    link: "https://arxiv.org/abs/1110.3193"
+    comment: "(v1) See page 3"
   gain:
     link: "https://www.mssl.ucl.ac.uk/~smn2/instrument.html"
     comment: ""
   mirror_diameter:
-    link: "https://arxiv.org/pdf/1608.08603.pdf"
-    comment: "See section 3.1"
+    link: "https://arxiv.org/abs/1608.08603"
+    comment: "(v1) See section 3.1"
   obscuration:
-    link: "https://arxiv.org/pdf/1608.08603.pdf"
-    comment: "See section 3.1"
+    link: "https://arxiv.org/abs/1608.08603"
+    comment: "(v1) See section 3.1"
   zeropoint_airmass:
     link: ""
     comment: "Space telescope"
@@ -33,14 +33,14 @@ references:
     link: "https://www.mssl.ucl.ac.uk/~smn2/instrument.html"
     comment: ""
   full_exposure_time:
-    link: "https://arxiv.org/pdf/1608.08603.pdf"
-    comment: "See section 6"
+    link: "https://arxiv.org/abs/1608.08603"
+    comment: "(v1) See section 6"
   zeropoint:
     link: "https://speclite.readthedocs.io/en/latest/filters.html"
     comment: "computed with speclite – see scripts/check_zeropoints.py"
   psf_fwhm:
-    link: "https://arxiv.org/pdf/1608.08603.pdf"
-    comment: "See section 8"
+    link: "https://arxiv.org/abs/1608.08603"
+    comment: "(v1) See section 8"
   effective_wavelength:
     link: "https://speclite.readthedocs.io/en/latest/filters.html"
     comment: "computed with speclite – see scripts/check_effective_wavelength.py"

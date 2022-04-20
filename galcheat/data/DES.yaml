@@ -51,17 +51,17 @@ references:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters"
     comment: ""
   sky_brightness:
-    link: "https://arxiv.org/pdf/1801.03181.pdf"
-    comment: "See table 1"
+    link: "https://arxiv.org/abs/1801.03181"
+    comment: "(v3) See table 1"
   full_exposure_time:
-    link: "https://arxiv.org/pdf/1801.03181.pdf"
-    comment: "See section 2.2 page 5. Coadds of 10 x 90s exposures"
+    link: "https://arxiv.org/abs/1801.03181"
+    comment: "(v3) See section 2.2 page 5. Coadds of 10 x 90s exposures"
   zeropoint:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters"
     comment: "computed with speclite – see scripts/check_zeropoints.py"
   psf_fwhm:
-    link: "https://arxiv.org/pdf/1801.03181.pdf"
-    comment: "See table 1"
+    link: "https://arxiv.org/abs/1801.03181"
+    comment: "(v3) See table 1"
   effective_wavelength:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters"
     comment: "computed with speclite – see scripts/check_effective_wavelength.py"
