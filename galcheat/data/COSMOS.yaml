@@ -15,17 +15,17 @@ filters:
     effective_wavelength: 807.343
 references:
   pixel_scale:
-    link: " https://iopscience.iop.org/article/10.1086/520086/pdf"
+    link: "https://iopscience.iop.org/article/10.1086/520086"
     comment: "See section 4"
   gain:
-    link: " https://iopscience.iop.org/article/10.1086/520086/pdf"
+    link: "https://iopscience.iop.org/article/10.1086/520086"
     comment: "See section 2.1"
   mirror_diameter:
-    link: "https://arxiv.org/pdf/1203.0002.pdf"
-    comment: "See section 4 table 1"
+    link: "https://arxiv.org/abs/1203.0002"
+    comment: "(v1) See section 4 table 1"
   obscuration:
-    link: "https://arxiv.org/pdf/1203.0002.pdf"
-    comment: "See section 4 table 1"
+    link: "https://arxiv.org/abs/1203.0002"
+    comment: "(v1) See section 4 table 1"
   zeropoint_airmass:
     link: ""
     comment: "Space telescope"
@@ -33,13 +33,13 @@ references:
     link: ""
     comment: ""
   full_exposure_time:
-    link: "https://iopscience.iop.org/article/10.1086/520086/pdf"
+    link: "https://iopscience.iop.org/article/10.1086/520086"
     comment: "See section 2.2"
   zeropoint:
     link: "https://galsim-developers.github.io/GalSim/_build/html/real_gal.html"
     comment: ""
   psf_fwhm:
-    link: "https://iopscience.iop.org/article/10.1086/520086/pdf"
+    link: "https://iopscience.iop.org/article/10.1086/520086"
     comment: "See section 5"
   effective_wavelength:
     link: "https://cosmos.astro.caltech.edu/page/filterset"
