@@ -61,13 +61,13 @@ references:
     link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html"
     comment: "taken as \"grey sky\": at zenith, 30% moon"
   full_exposure_time:
-    link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf"
+    link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007"
     comment: "taken as modes in table 31"
   zeropoint:
     link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html"
     comment: ""
   psf_fwhm:
-    link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf"
+    link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007"
     comment: "roughly taken from figure 25"
   effective_wavelength:
     link: "https://cosmos.astro.caltech.edu/page/filterset"
