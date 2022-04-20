@@ -61,14 +61,14 @@ references:
     link: "https://www.naoj.org/Observing/Instruments/SCam/exptime.html"
     comment: ""
   full_exposure_time:
-    link: "https://arxiv.org/pdf/2108.13045.pdf"
-    comment: "See \"Wide\" in table 1"
+    link: "https://arxiv.org/abs/2108.13045"
+    comment: "(v1) See \"Wide\" in table 1"
   zeropoint:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters"
     comment: "computed with speclite – see scripts/check_zeropoints.py"
   psf_fwhm:
-    link: "https://arxiv.org/pdf/2108.13045.pdf"
-    comment: "See \"Wide\" in table 1"
+    link: "https://arxiv.org/abs/2108.13045"
+    comment: "(v1) See \"Wide\" in table 1"
   effective_wavelength:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters"
     comment: "computed with speclite – see scripts/check_effective_wavelength.py"
