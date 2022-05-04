@@ -6,8 +6,8 @@ mirror_diameter: 1.2
 obscuration: 0.13
 zeropoint_airmass: 0.0
 filters:
-  VIS:
-    name: "VIS"
+  IE:
+    name: "IE"
     sky_brightness: 22.3203
     full_exposure_time: 565
     zeropoint: 25.91
