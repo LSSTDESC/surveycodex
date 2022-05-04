@@ -32,11 +32,12 @@ theme:
 # Content
 nav:
   - Home:
-    - Index: index.md
-    - Parameters: parameters.md
+      - Index: index.md
+      - Parameters: parameters.md
   - Guides:
       - Getting Started: guides/getting-started.md
       - Releases: guides/releases.md
+      - Create Galaxy: guides/create-galaxy.md
   - API:
       - galcheat.survey: api/survey.md
       - galcheat.filter: api/filter.md
@@ -60,8 +61,8 @@ copyright: Copyright &copy; 2022 Maintained by <a href="https://twitter.com/alxb
 # https://squidfunk.github.io/mkdocs-material/extensions
 markdown_extensions:
   - admonition
-#   - pymdownx.arithmatex:
-#       generic: true
+  #   - pymdownx.arithmatex:
+  #       generic: true
   - pymdownx.betterem
   - pymdownx.caret
   - pymdownx.inlinehilite
