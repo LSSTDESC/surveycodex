@@ -41,6 +41,8 @@ def check_zeropoints(survey_name):
         print("------- | --------- | ---------")
 
         for filter_name in survey.available_filters:
+            if filter_name == "IE":
+                filter_name = "VIS"
             speclite_filter_name = f"{speclite_prefix}-{filter_name}"
             zp_24 = (
                 calculate_zero_point(speclite_filter_name)
