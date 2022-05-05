@@ -5,13 +5,15 @@ from galcheat.helpers import get_survey
 from galcheat.survey import Survey
 
 
-def mag2counts(magnitude, survey, filter):
+def mag2counts(magnitude, survey, filter, exposure_time=None):
     """Convert source magnitude to electron counts for a given survey filter
 
     To perform the computation, we use the filter zeropoint computed
-    with `speclite` under classical atmospheric conditions and at a
-    given airmass and we integrate over the survey lifetime using the
-    full filter exposure time.
+    with `speclite` at a given airmass under classical atmospheric
+    conditions and by default integrated over the survey lifetime.
+
+    An exposure time can be provided to compute the corresponding counts
+    instead of the full filter exposure time.
 
     Expect a rough estimate from this calculation since e.g. it does not
     take into account the atmospheric extinction. Therefore the result
@@ -25,6 +27,9 @@ def mag2counts(magnitude, survey, filter):
         Name of a given survey or Survey instance
     filter: str or Filter
         Name of the survey filter or Filter instance
+    exposure_time: float or Quantity[float] (optional)
+        Exposure time of the filter in seconds.
+        If not provided, the full filter exposure time is used.
 
     Returns
     -------
@@ -55,7 +60,12 @@ def mag2counts(magnitude, survey, filter):
         filter = survey.get_filter(filter)
 
     flux = (magnitude - filter.zeropoint).to(u.electron / u.s)
-    counts = flux * filter.exposure_time
+
+    exposure_time = exposure_time or filter.full_exposure_time
+    if not isinstance(exposure_time, u.Quantity):
+        exposure_time *= u.s
+
+    counts = flux * exposure_time
 
     return counts.astype(int)
 

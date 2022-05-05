@@ -1,4 +1,3 @@
-import copy
 from pathlib import Path
 
 from galcheat.survey import Survey
@@ -37,7 +36,7 @@ def get_survey(survey_name):
             f"The available surveys are {available_surveys}"
         )
 
-    return copy.deepcopy(_survey_info[survey_name])
+    return _survey_info[survey_name]
 
 
 def print_survey(survey, show_refs=False):

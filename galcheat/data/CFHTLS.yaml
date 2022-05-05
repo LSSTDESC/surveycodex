@@ -9,35 +9,35 @@ filters:
   u:
     name: "u"
     sky_brightness: 21.20
-    exposure_time: 3000
+    full_exposure_time: 3000
     zeropoint: 25.78
     psf_fwhm: 0.81
     effective_wavelength: 382.329
   g:
     name: "g"
     sky_brightness: 21.30
-    exposure_time: 2500
+    full_exposure_time: 2500
     zeropoint: 27.11
     psf_fwhm: 0.84
     effective_wavelength: 487.737
   r:
     name: "r"
     sky_brightness: 20.80
-    exposure_time: 2000
+    full_exposure_time: 2000
     zeropoint: 26.74
     psf_fwhm: 0.73
     effective_wavelength: 623.062
   i:
     name: "i"
     sky_brightness: 20.30
-    exposure_time: 4305
+    full_exposure_time: 4305
     zeropoint: 26.22
     psf_fwhm: 0.66
     effective_wavelength: 716.766
   z:
     name: "z"
     sky_brightness: 19.40
-    exposure_time: 3600
+    full_exposure_time: 3600
     zeropoint: 25.05
     psf_fwhm: 0.66
     effective_wavelength: 882.798
@@ -60,14 +60,14 @@ references:
   sky_brightness:
     link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html"
     comment: "taken as \"grey sky\": at zenith, 30% moon"
-  exposure_time:
-    link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf"
+  full_exposure_time:
+    link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007"
     comment: "taken as modes in table 31"
   zeropoint:
     link: "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html"
     comment: ""
   psf_fwhm:
-    link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007/CFHTLS_T0007-TechnicalDocumentation.pdf"
+    link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007"
     comment: "roughly taken from figure 25"
   effective_wavelength:
     link: "https://cosmos.astro.caltech.edu/page/filterset"

@@ -9,28 +9,28 @@ filters:
   g:
     name: "g"
     sky_brightness: 22.01
-    exposure_time: 900
+    full_exposure_time: 900
     zeropoint: 26.72
     psf_fwhm: 1.12
     effective_wavelength: 489.004
   r:
     name: "r"
     sky_brightness: 21.15
-    exposure_time: 900
+    full_exposure_time: 900
     zeropoint: 26.99
     psf_fwhm: 0.96
     effective_wavelength: 646.962
   i:
     name: "i"
     sky_brightness: 19.89
-    exposure_time: 900
+    full_exposure_time: 900
     zeropoint: 26.86
     psf_fwhm: 0.88
     effective_wavelength: 784.778
   z:
     name: "z"
     sky_brightness: 18.72
-    exposure_time: 900
+    full_exposure_time: 900
     zeropoint: 26.58
     psf_fwhm: 0.84
     effective_wavelength: 919.646
@@ -51,17 +51,17 @@ references:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters"
     comment: ""
   sky_brightness:
-    link: "https://arxiv.org/pdf/1801.03181.pdf"
-    comment: "See table 1"
-  exposure_time:
-    link: "https://arxiv.org/pdf/1801.03181.pdf"
-    comment: "See section 2.2 page 5. Coadds of 10 x 90s exposures"
+    link: "https://arxiv.org/abs/1801.03181"
+    comment: "(v3) See table 1"
+  full_exposure_time:
+    link: "https://arxiv.org/abs/1801.03181"
+    comment: "(v3) See section 2.2 page 5. Coadds of 10 x 90s exposures"
   zeropoint:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters"
     comment: "computed with speclite – see scripts/check_zeropoints.py"
   psf_fwhm:
-    link: "https://arxiv.org/pdf/1801.03181.pdf"
-    comment: "See table 1"
+    link: "https://arxiv.org/abs/1801.03181"
+    comment: "(v3) See table 1"
   effective_wavelength:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters"
     comment: "computed with speclite – see scripts/check_effective_wavelength.py"

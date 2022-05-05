@@ -62,7 +62,7 @@ Filter parameters
 | -------------------- | --------- | -------------- |
 | name                 | str       | –              |
 | sky_brightness       | float     | mag / arcsec^2 |
-| exposure_time        | int/float | s              |
+| full_exposure_time   | int/float | s              |
 | zeropoint            | float     | mag            |
 | psf_fwhm             | float     | arcsec         |
 | effective_wavelength | float     | nm             |
@@ -77,7 +77,7 @@ Name of the filter
 Average sky brightness computed for the survey and this filter.  
 The moon conditions under which this number was computed will be given as a comment in the yaml file.
 
-#### `exposure_time`
+#### `full_exposure_time`
 
 Average exposure time of the filter on the same spot in the sky over the course of the survey.
 
@@ -128,14 +128,14 @@ filters:
   a:
     name: "a"
     sky_brightness: 19.4
-    exposure_time: 500
+    full_exposure_time: 500
     zeropoint: 26.90
     psf_fwhm: 1.1
     effective_wavelength: 500.00
   b:
     name: "b"
     sky_brightness: 18.6
-    exposure_time: 500
+    full_exposure_time: 500
     zeropoint: 27.36
     psf_fwhm: 1.2
     effective_wavelength: 600.00

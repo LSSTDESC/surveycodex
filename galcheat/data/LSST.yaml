@@ -9,42 +9,42 @@ filters:
   u:
     name: "u"
     sky_brightness: 22.99
-    exposure_time: 1680
+    full_exposure_time: 1680
     zeropoint: 26.40
     psf_fwhm: 0.90
     effective_wavelength: 368.141
   g:
     name: "g"
     sky_brightness: 22.26
-    exposure_time: 2400
+    full_exposure_time: 2400
     zeropoint: 28.26
     psf_fwhm: 0.86
     effective_wavelength: 486.412
   r:
     name: "r"
     sky_brightness: 21.20
-    exposure_time: 5520
+    full_exposure_time: 5520
     zeropoint: 28.10
     psf_fwhm: 0.81
     effective_wavelength: 624.976
   i:
     name: "i"
     sky_brightness: 20.48
-    exposure_time: 5520
+    full_exposure_time: 5520
     zeropoint: 27.78
     psf_fwhm: 0.79
     effective_wavelength: 756.469
   z:
     name: "z"
     sky_brightness: 19.60
-    exposure_time: 4800
+    full_exposure_time: 4800
     zeropoint: 27.39
     psf_fwhm: 0.77
     effective_wavelength: 870.164
   y:
     name: "y"
     sky_brightness: 18.61
-    exposure_time: 4800
+    full_exposure_time: 4800
     zeropoint: 26.56
     psf_fwhm: 0.76
     effective_wavelength: 972.202
@@ -59,7 +59,7 @@ references:
     link: "https://www.lsst.org/about/tel-site/optical_design"
     comment: ""
   obscuration:
-    link: "https://arxiv.org/abs/0805.2366.pdf"
+    link: "https://arxiv.org/abs/0805.2366"
     comment: "(v5) The paper mentions an effective diameter of ~6.5m. See https://github.com/aboucaud/galcheat/issues/38 for discussions on how to calculate obscuration from effective diameter."
   zeropoint_airmass:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters"
@@ -67,14 +67,14 @@ references:
   sky_brightness:
     link: "https://arxiv.org/abs/0805.2366"
     comment: "(v5) See Table 2, first row."
-  exposure_time:
+  full_exposure_time:
     link: "https://arxiv.org/abs/0805.2366"
     comment: "(v5) See Table 1 'Mean number of visits' and in the paper it is mentioned that the visit exposure time is 30s (section 2.2.2). So, for example, for u band 56 * 30 = 1680."
   zeropoint:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters"
     comment: "Computed with speclite – see scripts/check_zeropoints.py"
   psf_fwhm:
-    link: "https://arxiv.org/pdf/0805.2366.pdf"
+    link: "https://arxiv.org/abs/0805.2366"
     comment: "(v5) Computed from second row of Table 2 by multiplying times airmass**0.6 where  airmass=1.2 (used throughout paper in e.g. Figure 4)"
   effective_wavelength:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#lsst-filters"
