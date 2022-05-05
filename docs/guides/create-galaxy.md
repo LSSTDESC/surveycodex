@@ -5,6 +5,10 @@ to create a simple elliptical galaxy with galsim. The galaxy will be convolved w
 a optical+atmospheric component PSF, include background and noise, and use
 the r-band filter of the LSST survey.
 
+Please note that `galsim` is not a `galcheat` dependency, so it must be installed
+separately to follow this guide. See [here](https://galsim-developers.github.io/GalSim/_build/html/install.html)
+for `galsim` installation instructions.
+
 First, we import galsim and necessary functions from galcheat.
 
 ```python
