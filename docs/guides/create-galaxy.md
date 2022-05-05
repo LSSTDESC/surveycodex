@@ -12,7 +12,7 @@ from galcheat import get_survey
 from galcheat.utilites import mag2counts, mean_sky_level
 
 LSST = get_survey("LSST")
-r_band = get_filter("r", "LSST")
+r_band = LSST.get_filter("r")
 
 # galaxy model parameters
 mag = 19.0 # ab
