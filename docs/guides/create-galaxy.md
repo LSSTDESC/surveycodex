@@ -9,12 +9,17 @@ Please note that `galsim` is not a `galcheat` dependency, so it must be installe
 separately to follow this guide. See [here](https://galsim-developers.github.io/GalSim/_build/html/install.html)
 for `galsim` installation instructions.
 
+To draw the image at the end of the tutorial, `matplotlib` will also need to be installed separately.
+
 First, we import galsim and necessary functions from galcheat.
 
 ```python
 import galsim
+import galcheat
 from galcheat import get_survey
-from galcheat.utilites import mag2counts, mean_sky_level
+from galcheat import utilities
+import matplotlib.pyplot as plt
+import numpy as np
 ```
 
 Then, we specify the survey and filter from galcheat we will use. Along with
@@ -26,7 +31,7 @@ LSST = get_survey("LSST")
 r_band = LSST.get_filter("r")
 
 # galaxy model parameters
-mag = 19.0 # ab
+mag = 22.0 # ab
 e1 = 0.2
 e2 = 0.2
 hlr = 1.2 # arcsecs
@@ -59,10 +64,8 @@ Then, the optical component.
 effective_wavelength = r_band.effective_wavelength.to_value("angstrom")
 obscuration = LSST.obscuration.value
 mirror_diameter = LSST.mirror_diameter.to_value("m")
-lam_over_diam = 3600 *np.degrees(1e-10* effective_wavelength / mirror_diameter)
-optical_psf_model = galsim.Airy(
-    lam_over_diam=lam_over_diam, obscuration=obscuration
-)
+lam_over_diam = 3600 * np.degrees(1e-10 * effective_wavelength / mirror_diameter)
+optical_psf_model = galsim.Airy(lam_over_diam=lam_over_diam, obscuration=obscuration)
 ```
 
 The full PSF is the convolution of both components.
@@ -81,14 +84,22 @@ Finally, we add noise and background:
 
 ```python
 # retrieve the sky level using galcheat.
-sky_level = mean_sky_level(LSST, r_band)
+sky_level = utilities.mean_sky_level(LSST, r_band).to_value('electron')
 
 # add noise and background to image.
 pixel_scale = LSST.pixel_scale.to_value('arcsec')
-generator = galsim.random.BaseDeviate(seed=seedseq_blend.generate_state(1))
+generator = galsim.random.BaseDeviate(seed=0)
 noise = galsim.PoissonNoise(rng=generator, sky_level=sky_level)
 image = conv_gal.drawImage(nx=53, ny=53, scale=pixel_scale)
 image.addNoise(noise)
 ```
 
 Now `image.array` can be plotted to see the galaxy that was produced.
+
+```python
+plt.imshow(image.array)
+```
+
+We get the following image:
+
+![galaxy](../images/galaxy.png)
