@@ -1,4 +1,4 @@
-# Create Simple Galaxy with Galcheat
+# Simulate a simple galaxy with galcheat and GalSim
 
 In this tutorial, we will see how we can use the survey parameters in galcheat
 to create a simple elliptical galaxy with galsim. The galaxy will be convolved with
