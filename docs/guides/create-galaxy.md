@@ -1,7 +1,7 @@
 # Create Simple Galaxy with Galcheat
 
 In this tutorial, we will see how we can use the survey parameters in galcheat
-to create a simple galsim elliptical galaxy. Our galaxy will be convolved with
+to create a simple elliptical galaxy with galsim. The galaxy will be convolved with
 a optical+atmospheric component PSF, include background and noise, and use
 the r-band filter of the LSST survey.
 
