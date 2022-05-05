@@ -30,8 +30,10 @@ def check_effective_wavelengths(survey_name):
 
         for filter_name in survey.available_filters:
             if filter_name == "IE":
-                filter_name = "VIS"
-            speclite_filter_name = f"{speclite_prefix}-{filter_name}"
+                old_filter_name = "VIS"
+            else:
+                old_filter_name = filter_name
+            speclite_filter_name = f"{speclite_prefix}-{old_filter_name}"
             speclite_filter = load_filter(speclite_filter_name)
             speclite_eff_wl = speclite_filter.effective_wavelength.to(u.nm)
             current_eff_wl = survey.get_filter(filter_name).effective_wavelength
