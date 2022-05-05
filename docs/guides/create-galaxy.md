@@ -8,7 +8,7 @@ the r-band filter of the LSST survey.
 ```python
 import galsim
 from galcheat import available_surveys
-from galcheat import get_survey, get_filter
+from galcheat import get_survey
 from galcheat.utilites import mag2counts, mean_sky_level
 
 LSST = get_survey("LSST")
