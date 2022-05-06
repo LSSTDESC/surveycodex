@@ -1,3 +1,9 @@
+[**Main documentation**](https://aboucaud.github.io/galcheat/) | [**Getting started**](#getting-started) | [**CLI**](#cli) | [**API**](#api) | [**Contributing**](#contributing) | [**License**](#license)
+
+<br>
+<img src="docs/images/galcheat_logo.png" alt="galcheat" height=200px>
+</p>
+
 [![Python package][gh-workflow-badge]][gh-workflow]
 [![License][license-badge]](LICENSE)
 ![Python supported versions][pyversion-badge]
@@ -12,16 +18,11 @@
 [pypi-badge]: https://badge.fury.io/py/galcheat.svg
 [pypi]: https://pypi.org/project/galcheat/
 
-Galaxy Surveys cheatsheet
-=========================
-
 Tiny package containing useful parameters from main galaxy surveys (**with units**).
 
 The goal of this project is to provide a Python library with minimal dependencies that centralises galaxy survey properties with adequate reference. Such information tends to be scattered in many places or is often copy/pasted without all of the relevant information like units or sources.
 
-The current parameters and the corresponding units are specified in the [data README](galcheat/data/README.md)
-
-[**Getting started**](#getting-started) | [**CLI**](#cli) | [**API**](#api) | [**Contributing**](#contributing) | [**License**](#license)
+The current parameters and the corresponding units are specified in the [documentation](https://aboucaud.github.io/galcheat/parameters.html)
 
 Getting started
 ---------------
@@ -44,7 +45,7 @@ galcheat
 - **`--refs`**: print the source for each parameter
 - **`-h, --help`**: get help
 
-### Exemples
+### Examples
 ```sh
 galcheat -s LSST        # LSST info
 galcheat --refs         # all surveys info with refs
