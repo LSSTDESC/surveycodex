@@ -8,20 +8,24 @@ The goal of this project is to provide a Python library with minimal dependencie
 
 Pretty print the available surveys and associated filters in the terminal
 
-```
+```bash
 galcheat
 ```
+
 ### Options
+
 - **`-s <survey>`**: print information for a given survey
 - **`--refs`**: print the source for each parameter
 - **`-h, --help`**: get help
 
-### Exemples
+### Examples
+
 ```sh
 galcheat -s LSST        # LSST info
 galcheat --refs         # all surveys info with refs
 galcheat --refs -s HSC  # HSC info with refs
 ```
+
 ## Installation
 
 ```sh
