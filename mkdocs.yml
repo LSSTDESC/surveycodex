@@ -36,9 +36,8 @@ nav:
       - Parameters: parameters.md
   - Guides:
       - Getting Started: guides/getting-started.md
+      - Simulate Galaxy with Galsim: guides/create-galaxy.md
       - Extend galcheat objects: guides/heritage.md
-      - Releases: guides/releases.md
-      - Create Galaxy: guides/create-galaxy.md
   - API:
       - galcheat.survey: api/survey.md
       - galcheat.filter: api/filter.md

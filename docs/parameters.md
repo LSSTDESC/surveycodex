@@ -5,6 +5,7 @@ The following page describes the parameters of the photometric surveys and their
 
 Survey parameters
 -----------------
+
 ### Input parameters
 
 The following parameters are required in the YAML file describing any survey to build the `Survey` class in `galcheat`.
