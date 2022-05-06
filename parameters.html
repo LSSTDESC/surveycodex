@@ -435,8 +435,22 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/releases.html" class="md-nav__link">
-        Releases
+      <a href="guides/create-galaxy.html" class="md-nav__link">
+        Simulate Galaxy with Galsim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/heritage.html" class="md-nav__link">
+        Extend galcheat objects
       </a>
     </li>
   
@@ -746,7 +760,7 @@
 <td>Average sky brightness computed for the survey and this filter. The moon conditions under which this number was computed will be given as a comment in the yaml file.</td>
 </tr>
 <tr>
-<td>exposure_time</td>
+<td>full_exposure_time</td>
 <td align="center">int/float</td>
 <td align="center">s</td>
 <td>Average exposure time of the filter on the same spot in the sky over the course of the survey.</td>
@@ -761,7 +775,7 @@
 <td>zeropoint</td>
 <td align="center">float</td>
 <td align="center">mag</td>
-<td>The zeropoint is the magnitude of an object that produces one electron per second on the detector. It is computed for a given filter, using the <a href="https://github.com/desihub/speclite"><code>speclite</code></a> library with a classical atmosphere, at the airmass given by the survey <code>zeropoint_airmass</code>.</td>
+<td>The zeropoint value for most surveys is a reference magnitude computed as the magnitude in the AB system (see <a href="https://speclite.readthedocs.io/en/stable/api.html#convolutions">this reference</a>) collected on the instrument effective area in one second. It takes into account the filter bandwidth and a classical atmosphere for ground based surveys, using the <a href="https://github.com/desihub/speclite"><code>speclite</code></a> library, at the airmass given by the survey <code>zeropoint_airmass</code>. For the remaining surveys it is extracted from corresponding the references (see <code>references</code> parameter).</td>
 </tr>
 <tr>
 <td>effective_wavelength</td>
@@ -797,14 +811,14 @@
 <span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">sky_brightness</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">19.4</span><span class="w"></span>
-<span class="w">    </span><span class="nt">exposure_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500</span><span class="w"></span>
+<span class="w">    </span><span class="nt">full_exposure_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500</span><span class="w"></span>
 <span class="w">    </span><span class="nt">zeropoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">26.90</span><span class="w"></span>
 <span class="w">    </span><span class="nt">psf_fwhm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1</span><span class="w"></span>
 <span class="w">    </span><span class="nt">effective_wavelength</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500.00</span><span class="w"></span>
 <span class="w">  </span><span class="nt">b</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">sky_brightness</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">18.6</span><span class="w"></span>
-<span class="w">    </span><span class="nt">exposure_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500</span><span class="w"></span>
+<span class="w">    </span><span class="nt">full_exposure_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500</span><span class="w"></span>
 <span class="w">    </span><span class="nt">zeropoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">27.36</span><span class="w"></span>
 <span class="w">    </span><span class="nt">psf_fwhm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2</span><span class="w"></span>
 <span class="w">    </span><span class="nt">effective_wavelength</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">600.00</span><span class="w"></span>

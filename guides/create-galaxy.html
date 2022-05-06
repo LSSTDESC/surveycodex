@@ -12,14 +12,14 @@
         <meta name="author" content="Alexandre Boucaud">
       
       
-        <link rel="canonical" href="https://aboucaud.github.io/galcheat/api/helpers.html">
+        <link rel="canonical" href="https://aboucaud.github.io/galcheat/guides/create-galaxy.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>galcheat.helpers - galcheat docs</title>
+        <title>Simulate Galaxy with Galsim - galcheat docs</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#galcheathelpers" class="md-skip">
+        <a href="#simulate-a-simple-galaxy-with-galcheat-and-galsim" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              galcheat.helpers
+              Simulate Galaxy with Galsim
             
           </span>
         </div>
@@ -296,12 +296,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -324,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides/getting-started.html" class="md-nav__link">
+      <a href="getting-started.html" class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -336,11 +338,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../guides/create-galaxy.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="create-galaxy.html" class="md-nav__link md-nav__link--active">
         Simulate Galaxy with Galsim
       </a>
+      
     </li>
   
 
@@ -352,7 +364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides/heritage.html" class="md-nav__link">
+      <a href="heritage.html" class="md-nav__link">
         Extend galcheat objects
       </a>
     </li>
@@ -400,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="survey.html" class="md-nav__link">
+      <a href="../api/survey.html" class="md-nav__link">
         galcheat.survey
       </a>
     </li>
@@ -414,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="filter.html" class="md-nav__link">
+      <a href="../api/filter.html" class="md-nav__link">
         galcheat.filter
       </a>
     </li>
@@ -428,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="utilities.html" class="md-nav__link">
+      <a href="../api/utilities.html" class="md-nav__link">
         galcheat.utilities
       </a>
     </li>
@@ -472,14 +484,85 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/aboucaud/galcheat/edit/master/docs/api/helpers.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/aboucaud/galcheat/edit/master/docs/guides/create-galaxy.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-<h1 id="galcheathelpers">galcheat.helpers<a class="headerlink" href="#galcheathelpers" title="Permanent link">&para;</a></h1>
-<!-- ::: galcheat.helpers -->
+<h1 id="simulate-a-simple-galaxy-with-galcheat-and-galsim">Simulate a simple galaxy with galcheat and GalSim<a class="headerlink" href="#simulate-a-simple-galaxy-with-galcheat-and-galsim" title="Permanent link">&para;</a></h1>
+<p>In this tutorial, we will see how we can use the survey parameters in galcheat
+to create a simple elliptical galaxy with galsim. The galaxy will be convolved with
+a optical+atmospheric component PSF, include background and noise, and use
+the r-band filter of the LSST survey.</p>
+<p>Please note that <code>galsim</code> is not a <code>galcheat</code> dependency, so it must be installed
+separately to follow this guide. See <a href="https://galsim-developers.github.io/GalSim/_build/html/install.html">here</a>
+for <code>galsim</code> installation instructions.</p>
+<p>To draw the image at the end of the tutorial, <code>matplotlib</code> will also need to be installed separately.</p>
+<p>First, we import galsim and necessary functions from galcheat.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">galsim</span>
+<span class="kn">import</span> <span class="nn">galcheat</span>
+<span class="kn">from</span> <span class="nn">galcheat</span> <span class="kn">import</span> <span class="n">get_survey</span>
+<span class="kn">from</span> <span class="nn">galcheat</span> <span class="kn">import</span> <span class="n">utilities</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</code></pre></div>
+<p>Then, we specify the survey and filter from galcheat we will use. Along with
+galaxy parameters.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># galcheat survey and filter.</span>
+<span class="n">LSST</span> <span class="o">=</span> <span class="n">get_survey</span><span class="p">(</span><span class="s2">&quot;LSST&quot;</span><span class="p">)</span>
+<span class="n">r_band</span> <span class="o">=</span> <span class="n">LSST</span><span class="o">.</span><span class="n">get_filter</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="c1"># galaxy model parameters</span>
+<span class="n">mag</span> <span class="o">=</span> <span class="mf">22.0</span> <span class="c1"># ab</span>
+<span class="n">e1</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">e2</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">hlr</span> <span class="o">=</span> <span class="mf">1.2</span> <span class="c1"># arcsecs</span>
+</code></pre></div>
+<p>Now we create a galaxy model and shear it.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># get flux from magnitude using galcheat for LSST r-band.</span>
+<span class="n">total_flux</span> <span class="o">=</span> <span class="n">mag2counts</span><span class="p">(</span><span class="n">mag</span><span class="p">,</span> <span class="n">LSST</span><span class="p">,</span> <span class="n">r_band</span><span class="p">)</span>
+
+<span class="c1"># get only the value of flux in desired units.</span>
+<span class="n">total_flux</span> <span class="o">=</span> <span class="n">total_flux</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="s1">&#39;electron&#39;</span><span class="p">)</span>
+
+<span class="c1"># simple gaussian galaxy with ellipticity</span>
+<span class="n">gal</span> <span class="o">=</span> <span class="n">galsim</span><span class="o">.</span><span class="n">Gaussian</span><span class="p">(</span><span class="n">flux</span><span class="o">=</span><span class="n">total_flux</span><span class="p">,</span> <span class="n">half_light_radius</span><span class="o">=</span><span class="n">hlr</span><span class="p">)</span>
+<span class="n">gal</span> <span class="o">=</span> <span class="n">gal</span><span class="o">.</span><span class="n">shear</span><span class="p">(</span><span class="n">e1</span><span class="o">=</span><span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="o">=</span><span class="n">e2</span><span class="p">)</span>
+</code></pre></div>
+<p>Now we create a PSF, first the atmospheric component.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fwhm</span> <span class="o">=</span> <span class="n">r_band</span><span class="o">.</span><span class="n">psf_fwhm</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="s2">&quot;arcsec&quot;</span><span class="p">)</span>
+<span class="n">atmospheric_psf_model</span> <span class="o">=</span> <span class="n">galsim</span><span class="o">.</span><span class="n">Kolmogorov</span><span class="p">(</span><span class="n">fwhm</span><span class="o">=</span><span class="n">fwhm</span><span class="p">)</span>
+</code></pre></div>
+<p>Then, the optical component.</p>
+<div class="highlight"><pre><span></span><code><span class="n">effective_wavelength</span> <span class="o">=</span> <span class="n">r_band</span><span class="o">.</span><span class="n">effective_wavelength</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="s2">&quot;angstrom&quot;</span><span class="p">)</span>
+<span class="n">obscuration</span> <span class="o">=</span> <span class="n">LSST</span><span class="o">.</span><span class="n">obscuration</span><span class="o">.</span><span class="n">value</span>
+<span class="n">mirror_diameter</span> <span class="o">=</span> <span class="n">LSST</span><span class="o">.</span><span class="n">mirror_diameter</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="n">lam_over_diam</span> <span class="o">=</span> <span class="mi">3600</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="mf">1e-10</span> <span class="o">*</span> <span class="n">effective_wavelength</span> <span class="o">/</span> <span class="n">mirror_diameter</span><span class="p">)</span>
+<span class="n">optical_psf_model</span> <span class="o">=</span> <span class="n">galsim</span><span class="o">.</span><span class="n">Airy</span><span class="p">(</span><span class="n">lam_over_diam</span><span class="o">=</span><span class="n">lam_over_diam</span><span class="p">,</span> <span class="n">obscuration</span><span class="o">=</span><span class="n">obscuration</span><span class="p">)</span>
+</code></pre></div>
+<p>The full PSF is the convolution of both components.</p>
+<div class="highlight"><pre><span></span><code><span class="n">psf</span> <span class="o">=</span> <span class="n">galsim</span><span class="o">.</span><span class="n">Convolve</span><span class="p">(</span><span class="n">atmospheric_psf_model</span><span class="p">,</span> <span class="n">optical_psf_model</span><span class="p">)</span>
+</code></pre></div>
+<p>We convolve it with the galaxy model</p>
+<div class="highlight"><pre><span></span><code><span class="n">conv_gal</span> <span class="o">=</span> <span class="n">galsim</span><span class="o">.</span><span class="n">Convolve</span><span class="p">(</span><span class="n">gal</span><span class="p">,</span> <span class="n">psf</span><span class="p">)</span>
+</code></pre></div>
+<p>Finally, we add noise and background:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># retrieve the sky level using galcheat.</span>
+<span class="n">sky_level</span> <span class="o">=</span> <span class="n">utilities</span><span class="o">.</span><span class="n">mean_sky_level</span><span class="p">(</span><span class="n">LSST</span><span class="p">,</span> <span class="n">r_band</span><span class="p">)</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="s1">&#39;electron&#39;</span><span class="p">)</span>
+
+<span class="c1"># add noise and background to image.</span>
+<span class="n">pixel_scale</span> <span class="o">=</span> <span class="n">LSST</span><span class="o">.</span><span class="n">pixel_scale</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="s1">&#39;arcsec&#39;</span><span class="p">)</span>
+<span class="n">generator</span> <span class="o">=</span> <span class="n">galsim</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">BaseDeviate</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">galsim</span><span class="o">.</span><span class="n">PoissonNoise</span><span class="p">(</span><span class="n">rng</span><span class="o">=</span><span class="n">generator</span><span class="p">,</span> <span class="n">sky_level</span><span class="o">=</span><span class="n">sky_level</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">conv_gal</span><span class="o">.</span><span class="n">drawImage</span><span class="p">(</span><span class="n">nx</span><span class="o">=</span><span class="mi">53</span><span class="p">,</span> <span class="n">ny</span><span class="o">=</span><span class="mi">53</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">pixel_scale</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">addNoise</span><span class="p">(</span><span class="n">noise</span><span class="p">)</span>
+</code></pre></div>
+<p>Now <code>image.array</code> can be plotted to see the galaxy that was produced.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+</code></pre></div>
+<p>We get the following image:</p>
+<p><img alt="galaxy" src="../images/galaxy.png" /></p>
 
               
             </article>
@@ -489,6 +572,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="getting-started.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Getting Started
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="heritage.html" class="md-footer__link md-footer__link--next" aria-label="Next: Extend galcheat objects" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Extend galcheat objects
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

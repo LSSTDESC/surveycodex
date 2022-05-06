@@ -338,8 +338,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides/releases.html" class="md-nav__link">
-        Releases
+      <a href="../guides/create-galaxy.html" class="md-nav__link">
+        Simulate Galaxy with Galsim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/heritage.html" class="md-nav__link">
+        Extend galcheat objects
       </a>
     </li>
   
@@ -575,7 +589,7 @@
 
 
 <h2 id="galcheat.utilities.mag2counts" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">mag2counts</span><span class="p">(</span><span class="n">magnitude</span><span class="p">,</span> <span class="n">survey</span><span class="p">,</span> <span class="nb">filter</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">mag2counts</span><span class="p">(</span><span class="n">magnitude</span><span class="p">,</span> <span class="n">survey</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">exposure_time</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
 <a href="#galcheat.utilities.mag2counts" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -584,9 +598,10 @@
 
       <p>Convert source magnitude to electron counts for a given survey filter</p>
 <p>To perform the computation, we use the filter zeropoint computed
-with <code>speclite</code> under classical atmospheric conditions and at a
-given airmass and we integrate over the survey lifetime using the
-full filter exposure time.</p>
+with <code>speclite</code> at a given airmass under classical atmospheric
+conditions and by default integrated over the survey lifetime.</p>
+<p>An exposure time can be provided to compute the corresponding counts
+instead of the full filter exposure time.</p>
 <p>Expect a rough estimate from this calculation since e.g. it does not
 take into account the atmospheric extinction. Therefore the result
 is cast to an integer.</p>
@@ -619,6 +634,13 @@ is cast to an integer.</p>
         <td><code>str or Filter</code></td>
         <td><p>Name of the survey filter or Filter instance</p></td>
         <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>exposure_time</code></td>
+        <td><code>float or Quantity[float] </code></td>
+        <td><p>Exposure time of the filter in seconds.
+If not provided, the full filter exposure time is used.</p></td>
+        <td><code>None</code></td>
       </tr>
   </tbody>
 </table>
