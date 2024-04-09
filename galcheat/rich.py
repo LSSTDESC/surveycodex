@@ -11,28 +11,35 @@ def _rich_survey_name(survey):
         icon = _SATELLITE
     else:
         icon = _TELESCOPE
-        
+
     return f"{icon} [b]{survey.name}[/b]"
 
 
 def display_survey(survey):
+    from rich.console import Group
     from rich.panel import Panel
     from rich.text import Text
-    from rich.console import Group
 
     if not isinstance(survey, Survey):
         survey = get_survey(survey)
 
-    survey_desc = Text(textwrap.fill(survey.description, 40), no_wrap=False, justify="left")
+    survey_desc = Text(
+        textwrap.fill(survey.description, 40), no_wrap=False, justify="left"
+    )
 
     survey_info = _survey_table(survey)
-    
+
     filters_info = [
-        _filter_panel(survey.get_filter(filter)) 
-        for filter in survey.available_filters
+        _filter_panel(survey.get_filter(filter)) for filter in survey.available_filters
     ]
 
-    display_info = [survey_desc, "\n", survey_info, "\n", "[b]Filter info:"] + filters_info
+    display_info = [
+        survey_desc,
+        "\n",
+        survey_info,
+        "\n",
+        "[b]Filter info:",
+    ] + filters_info
 
     return Panel(
         Group(*display_info),
@@ -41,6 +48,7 @@ def display_survey(survey):
         title=_rich_survey_name(survey),
         title_align="center",
     )
+
 
 def _survey_table(survey):
     from rich.table import Table
@@ -61,8 +69,8 @@ def _survey_table(survey):
 
 
 def _filter_panel(filter):
-    from rich.table import Table
     from rich.panel import Panel
+    from rich.table import Table
 
     filter_info = Table.grid()
     filter_info.add_column(justify="left")
@@ -82,23 +90,26 @@ def _filter_panel(filter):
         title_align="left",
     )
 
+
 def display_references(survey):
-    from rich.table import Table
     from rich.box import HEAVY_HEAD
+    from rich.table import Table
 
     if not isinstance(survey, Survey):
         survey = get_survey(survey)
 
     ref_table = Table(
-        "Parameter", "Source", "Comments", 
+        "Parameter",
+        "Source",
+        "Comments",
         title=f"[b]{survey.name} references[/]",
         # show_lines=True,
-        box=HEAVY_HEAD
+        box=HEAVY_HEAD,
     )
     for name, param in survey.references.items():
         link = param["link"]
         source = f"[u cyan link={link}]{link}"
         comment = textwrap.fill(param["comment"], 60)
         ref_table.add_row(name, source, comment)
-                      
+
     return ref_table

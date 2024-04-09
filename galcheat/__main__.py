@@ -40,14 +40,15 @@ def main():
     if args.use_rich:
         try:
             from rich.console import Console
+
             console = Console()
             use_rich = True
-        except ImportError as e:
+        except ImportError:
             print(
                 "The rich library is not installed by default with galcheat.",
-                "In order to use rich display, please consider installing it using pip.",
+                "In order to use rich printing, please consider installing it using pip.",
                 "`python -m pip install rich`",
-                "\nDefaulting to classic display...\n"
+                "\nDefaulting to classic display...\n",
             )
 
     if args.survey_name is None:
@@ -57,6 +58,7 @@ def main():
 
     if use_rich:
         from galcheat.rich import display_references, display_survey
+
         for survey in surveys:
             console.print("")
             console.print(display_survey(survey))
