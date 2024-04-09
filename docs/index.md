@@ -16,14 +16,16 @@ galcheat
 
 - **`-s <survey>`**: print information for a given survey
 - **`--refs`**: print the source for each parameter
+- **`--rich`**: use pretty printing for the terminal (needs the `rich` library installed)
 - **`-h, --help`**: get help
 
 ### Examples
 
 ```sh
-galcheat -s LSST        # LSST info
-galcheat --refs         # all surveys info with refs
-galcheat --refs -s HSC  # HSC info with refs
+galcheat -s LSST         # LSST info
+galcheat --refs          # all surveys info with refs
+galcheat --refs -s HSC   # HSC info with refs
+galcheat -s LSST --rich  # pretty print rich terminal output for LSST survey info
 ```
 
 ## Installation
@@ -48,4 +50,12 @@ The developer tools needed to perform tests and linting and compile the docs loc
 
 ```sh
 python -m pip install -U galcheat[dev]
+```
+
+### Rich display (new in v1.1)
+
+For a better terminal experience, install the `rich` library and use it together with the `--rich` option from `galcheat`
+
+```sh
+python -m pip install rich
 ```
