@@ -57,12 +57,12 @@ def _survey_table(survey):
     survey_info.add_column(justify="left")
     survey_info.add_column(justify="left")
 
-    survey_info.add_row("Pixel scale: ", f"{survey.pixel_scale}")
-    survey_info.add_row("Mirror diameter: ", f"{survey.mirror_diameter}")
+    survey_info.add_row("Pixel scale: ", f"{survey.pixel_scale:.3f}")
+    survey_info.add_row("Mirror diameter: ", f"{survey.mirror_diameter:.2f}")
     survey_info.add_row("Effective area: ", f"{survey.effective_area:.2f}")
     survey_info.add_row("Obscuration: ", f"{survey.obscuration:.2f}")
-    survey_info.add_row("Gain: ", f"{survey.gain}")
-    survey_info.add_row("Zeropoint airmass: ", f"{survey.zeropoint_airmass}")
+    survey_info.add_row("Gain: ", f"{survey.gain:.2f}")
+    survey_info.add_row("Zeropoint airmass: ", f"{survey.zeropoint_airmass:.1f}")
     survey_info.add_row("Available filters: ", ", ".join(survey.available_filters))
 
     return survey_info
@@ -76,11 +76,11 @@ def _filter_panel(filter):
     filter_info.add_column(justify="left")
     filter_info.add_column(justify="left")
 
-    filter_info.add_row("PSF FWHM: ", f"{filter.psf_fwhm}")
-    filter_info.add_row("Zeropoint: ", f"{filter.zeropoint}")
+    filter_info.add_row("PSF FWHM: ", f"{filter.psf_fwhm:.2f}")
+    filter_info.add_row("Zeropoint: ", f"{filter.zeropoint:.2f}")
     filter_info.add_row("Sky brightness: ", f"{filter.sky_brightness:.2f}")
-    filter_info.add_row("Full exposure time: ", f"{filter.full_exposure_time}")
-    filter_info.add_row("Effective wavelength: ", f"{filter.effective_wavelength}")
+    filter_info.add_row("Full exposure time: ", f"{filter.full_exposure_time:0.0f}")
+    filter_info.add_row("Effective wavelength: ", f"{filter.effective_wavelength:.1f}")
 
     return Panel(
         filter_info,
