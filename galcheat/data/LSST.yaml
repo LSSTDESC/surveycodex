@@ -3,7 +3,7 @@ description: "Legacy Survey of Space and Time (LSST) done with the Simonyi surve
 pixel_scale: 0.2
 gain: 1.0
 mirror_diameter: 8.36
-obscuration: 0.39257227
+obscuration: 0.39
 zeropoint_airmass: 1.2
 filters:
   u:

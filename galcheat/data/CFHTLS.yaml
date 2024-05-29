@@ -3,7 +3,7 @@ description: "Canada France Hawaii Lensing wide-field Survey (CFHTLS) done with 
 pixel_scale: 0.187
 gain: 1.67
 mirror_diameter: 3.58
-obscuration: 0.20309772
+obscuration: 0.20
 zeropoint_airmass: 1.0
 filters:
   u:
