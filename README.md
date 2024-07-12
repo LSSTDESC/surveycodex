@@ -1,4 +1,4 @@
-[**Main documentation**](https://aboucaud.github.io/galcheat/) | [**Getting started**](#getting-started) | [**CLI**](#cli) | [**API**](#api) | [**Contributing**](#contributing) | [**License**](#license)
+[**Main documentation**](https://lsstdesc.github.io/surveycodex/) | [**Getting started**](#getting-started) | [**CLI**](#cli) | [**API**](#api) | [**Contributing**](#contributing) | [**License**](#license)
 
 <!-- <br>
 <img src="docs/images/surveycodex_logo.png" alt="surveycodex" height=200px>
@@ -24,7 +24,7 @@ Tiny package containing useful parameters from main galaxy surveys (**with units
 
 The goal of this project is to provide a Python library with minimal dependencies that centralises galaxy survey properties with adequate reference. Such information tends to be scattered in many places or is often copy/pasted without all of the relevant information like units or sources.
 
-The current parameters and the corresponding units are specified in the [documentation](https://aboucaud.github.io/galcheat/parameters.html)
+The current parameters and the corresponding units are specified in the [documentation](https://lsstdesc.github.io/surveycodex/parameters.html)
 
 Getting started
 ---------------
