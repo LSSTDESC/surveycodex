@@ -1,6 +1,6 @@
 site_name: surveycodex docs
 repo_url: https://github.com/LSSTDESC/surveycodex
-site_url: https://aboucaud.github.io/galcheat/
+site_url: https://lsstdesc.github.io/surveycodex/
 site_description: A small python library that can clump lists of data together.
 site_author: Alexandre Boucaud
 use_directory_urls: false
