@@ -1,14 +1,14 @@
-`galcheat` supported parameters
+`surveycodex` supported parameters
 ===============================
 
-The following page describes the parameters of the photometric surveys and their filters exposed in galcheat, what type and unit they should be specified with.
+The following page describes the parameters of the photometric surveys and their filters exposed in surveycodex, what type and unit they should be specified with.
 
 Survey parameters
 -----------------
 
 ### Input parameters
 
-The following parameters are required in the YAML file describing any survey to build the `Survey` class in `galcheat`.
+The following parameters are required in the YAML file describing any survey to build the `Survey` class in `surveycodex`.
 
 | parameter name    |   type    |     units      | description                                                                                                                                                                                                                                                   |
 | ----------------- | :-------: | :------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,7 +33,7 @@ The following parameters are computed after initialisation of the `Survey` class
 Filter parameters
 -----------------
 
-The following parameters are required in the YAML file describing any filter of a given survey, to build the `Filter` class in `galcheat`.
+The following parameters are required in the YAML file describing any filter of a given survey, to build the `Filter` class in `surveycodex`.
 
 | parameter name       |   type    |      units      | description                                                                                                                                                                                                                                                                                   |
 | -------------------- | :-------: | :-------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

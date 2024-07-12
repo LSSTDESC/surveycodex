@@ -1,32 +1,32 @@
-# Simulate a simple galaxy with galcheat and GalSim
+# Simulate a simple galaxy with surveycodex and GalSim
 
-In this tutorial, we will see how we can use the survey parameters in galcheat
+In this tutorial, we will see how we can use the survey parameters in surveycodex
 to create a simple elliptical galaxy with galsim. The galaxy will be convolved with
 a optical+atmospheric component PSF, include background and noise, and use
 the r-band filter of the LSST survey.
 
-Please note that `galsim` is not a `galcheat` dependency, so it must be installed
+Please note that `galsim` is not a `surveycodex` dependency, so it must be installed
 separately to follow this guide. See [here](https://galsim-developers.github.io/GalSim/_build/html/install.html)
 for `galsim` installation instructions.
 
 To draw the image at the end of the tutorial, `matplotlib` will also need to be installed separately.
 
-First, we import galsim and necessary functions from galcheat.
+First, we import galsim and necessary functions from surveycodex.
 
 ```python
 import galsim
-import galcheat
-from galcheat import get_survey
-from galcheat import utilities
+import surveycodex
+from surveycodex import get_survey
+from surveycodex import utilities
 import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-Then, we specify the survey and filter from galcheat we will use. Along with
+Then, we specify the survey and filter from surveycodex we will use. Along with
 galaxy parameters.
 
 ```python
-# galcheat survey and filter.
+# surveycodex survey and filter.
 LSST = get_survey("LSST")
 r_band = LSST.get_filter("r")
 
@@ -40,7 +40,7 @@ hlr = 1.2 # arcsecs
 Now we create a galaxy model and shear it.
 
 ```python
-# get flux from magnitude using galcheat for LSST r-band.
+# get flux from magnitude using surveycodex for LSST r-band.
 total_flux = mag2counts(mag, LSST, r_band)
 
 # get only the value of flux in desired units.
@@ -83,7 +83,7 @@ conv_gal = galsim.Convolve(gal, psf)
 Finally, we add noise and background:
 
 ```python
-# retrieve the sky level using galcheat.
+# retrieve the sky level using surveycodex.
 sky_level = utilities.mean_sky_level(LSST, r_band).to_value('electron')
 
 # add noise and background to image.

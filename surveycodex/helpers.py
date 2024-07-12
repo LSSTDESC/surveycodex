@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from galcheat.survey import Survey
+from surveycodex.survey import Survey
 
 _BASEDIR = Path(__file__).parent.resolve()
 _survey_info = {
@@ -8,7 +8,7 @@ _survey_info = {
 }
 
 available_surveys = list(_survey_info.keys())
-"List of available surveys in galcheat"
+"List of available surveys in surveycodex"
 
 
 def get_survey(survey_name):

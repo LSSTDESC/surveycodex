@@ -1,8 +1,10 @@
 [**Main documentation**](https://aboucaud.github.io/galcheat/) | [**Getting started**](#getting-started) | [**CLI**](#cli) | [**API**](#api) | [**Contributing**](#contributing) | [**License**](#license)
 
-<br>
-<img src="docs/images/galcheat_logo.png" alt="galcheat" height=200px>
-</p>
+<!-- <br>
+<img src="docs/images/surveycodex_logo.png" alt="surveycodex" height=200px>
+</p> -->
+
+# SurveyCodex
 
 [![Python package][gh-workflow-badge]][gh-workflow]
 [![License][license-badge]](LICENSE)
@@ -11,12 +13,12 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[gh-workflow]: https://github.com/aboucaud/galcheat/actions/workflows/python-package.yml
-[gh-workflow-badge]: https://github.com/aboucaud/galcheat/actions/workflows/python-package.yml/badge.svg
-[license-badge]: https://img.shields.io/github/license/aboucaud/galcheat?color=blue
-[pyversion-badge]: https://img.shields.io/pypi/pyversions/galcheat?color=yellow&logo=pypi
-[pypi-badge]: https://badge.fury.io/py/galcheat.svg
-[pypi]: https://pypi.org/project/galcheat/
+[gh-workflow]: https://github.com/LSSTDESC/surveycodex/actions/workflows/python-package.yml
+[gh-workflow-badge]: https://github.com/LSSTDESC/surveycodex/actions/workflows/python-package.yml/badge.svg
+[license-badge]: https://img.shields.io/github/license/LSSTDESC/surveycodex?color=blue
+[pyversion-badge]: https://img.shields.io/pypi/pyversions/surveycodex?color=yellow&logo=pypi
+[pypi-badge]: https://badge.fury.io/py/surveycodex.svg
+[pypi]: https://pypi.org/project/surveycodex/
 
 Tiny package containing useful parameters from main galaxy surveys (**with units**).
 
@@ -28,7 +30,7 @@ Getting started
 ---------------
 Install the latest version of the library
 ```sh
-pip install -U galcheat
+pip install -U surveycodex
 ```
 
 CLI
@@ -37,7 +39,7 @@ CLI
 Print the available surveys and associated filters
 
 ```sh
-galcheat
+surveycodex
 ```
 
 ### Options
@@ -48,22 +50,22 @@ galcheat
 
 ### Examples
 ```sh
-galcheat -s LSST         # LSST info
-galcheat --refs          # all surveys info with refs
-galcheat --refs -s HSC   # HSC info with refs
-galcheat -s LSST --rich  # pretty print rich terminal output for LSST info
+surveycodex -s LSST         # LSST info
+surveycodex --refs          # all surveys info with refs
+surveycodex --refs -s HSC   # HSC info with refs
+surveycodex -s LSST --rich  # pretty print rich terminal output for LSST info
 ```
 
 API
 ---
 ```python
-import galcheat
+import surveycodex
 
 # Start with the list of available surveys
-galcheat.available_surveys
+surveycodex.available_surveys
 
 # Retrieve a Survey instance
-LSST = galcheat.get_survey("LSST")
+LSST = surveycodex.get_survey("LSST")
 
 # List the available survey filters
 LSST.available_filters
@@ -90,10 +92,10 @@ This project was started in the context of the [BlendingToolKit (BTK)][github-bt
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://aboucaud.github.io"><img src="https://avatars.githubusercontent.com/u/3065310?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alexandre Boucaud</b></sub></a><br /><a href="https://github.com/aboucaud/galcheat/commits?author=aboucaud" title="Code">💻</a> <a href="#ideas-aboucaud" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-aboucaud" title="Maintenance">🚧</a> <a href="https://github.com/aboucaud/galcheat/pulls?q=is%3Apr+reviewed-by%3Aaboucaud" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://github.com/mpaillassa"><img src="https://avatars.githubusercontent.com/u/9745094?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mpaillassa</b></sub></a><br /><a href="https://github.com/aboucaud/galcheat/commits?author=mpaillassa" title="Code">💻</a> <a href="https://github.com/aboucaud/galcheat/pulls?q=is%3Apr+reviewed-by%3Ampaillassa" title="Reviewed Pull Requests">👀</a> <a href="#data-mpaillassa" title="Data">🔣</a></td>
-    <td align="center"><a href="https://ismael-mendoza.github.io/"><img src="https://avatars.githubusercontent.com/u/11745764?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ismael Mendoza</b></sub></a><br /><a href="#ideas-ismael-mendoza" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/aboucaud/galcheat/pulls?q=is%3Apr+reviewed-by%3Aismael-mendoza" title="Reviewed Pull Requests">👀</a> <a href="#data-ismael-mendoza" title="Data">🔣</a></td>
-    <td align="center"><a href="https://github.com/HironaoMiyatake"><img src="https://avatars.githubusercontent.com/u/1507529?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hironao Miyatake</b></sub></a><br /><a href="https://github.com/aboucaud/galcheat/commits?author=HironaoMiyatake" title="Code">💻</a> <a href="#data-HironaoMiyatake" title="Data">🔣</a></td>
+    <td align="center"><a href="https://aboucaud.github.io"><img src="https://avatars.githubusercontent.com/u/3065310?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alexandre Boucaud</b></sub></a><br /><a href="https://github.com/LSSTDESC/surveycodex/commits?author=aboucaud" title="Code">💻</a> <a href="#ideas-aboucaud" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-aboucaud" title="Maintenance">🚧</a> <a href="https://github.com/LSSTDESC/surveycodex/pulls?q=is%3Apr+reviewed-by%3ALSSTDESC" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/mpaillassa"><img src="https://avatars.githubusercontent.com/u/9745094?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mpaillassa</b></sub></a><br /><a href="https://github.com/LSSTDESC/surveycodex/commits?author=mpaillassa" title="Code">💻</a> <a href="https://github.com/LSSTDESC/surveycodex/pulls?q=is%3Apr+reviewed-by%3Ampaillassa" title="Reviewed Pull Requests">👀</a> <a href="#data-mpaillassa" title="Data">🔣</a></td>
+    <td align="center"><a href="https://ismael-mendoza.github.io/"><img src="https://avatars.githubusercontent.com/u/11745764?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ismael Mendoza</b></sub></a><br /><a href="#ideas-ismael-mendoza" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/LSSTDESC/surveycodex/pulls?q=is%3Apr+reviewed-by%3Aismael-mendoza" title="Reviewed Pull Requests">👀</a> <a href="#data-ismael-mendoza" title="Data">🔣</a></td>
+    <td align="center"><a href="https://github.com/HironaoMiyatake"><img src="https://avatars.githubusercontent.com/u/1507529?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hironao Miyatake</b></sub></a><br /><a href="https://github.com/LSSTDESC/surveycodex/commits?author=HironaoMiyatake" title="Code">💻</a> <a href="#data-HironaoMiyatake" title="Data">🔣</a></td>
     <td align="center"><a href="https://github.com/aguinot"><img src="https://avatars.githubusercontent.com/u/39480528?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Axel Guinot</b></sub></a><br /><a href="#data-aguinot" title="Data">🔣</a></td>
     <td align="center"><a href="https://github.com/thuiop"><img src="https://avatars.githubusercontent.com/u/1338337?v=4?s=100" width="100px;" alt=""/><br /><sub><b>thuiop</b></sub></a><br /><a href="#ideas-thuiop" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://remyjoseph.wordpress.com/"><img src="https://avatars.githubusercontent.com/u/16084926?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rémy Joseph</b></sub></a><br /><a href="#ideas-herjy" title="Ideas, Planning, & Feedback">🤔</a></td>

@@ -31,10 +31,10 @@ jobs:
         pip install ".[dev]"
     - name: Test the code demo
       run: |
-        python -m galcheat
+        python -m surveycodex
     - name: Test the console script
       run: |
-        galcheat --refs
+        surveycodex --refs
     - name: Test the scripts
       run: |
         for pyscript in scripts/*.py; do python ${pyscript}; done

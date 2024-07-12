@@ -1,10 +1,10 @@
-# Extend galcheat objects
+# Extend surveycodex objects
 
 ## Frozen dataclasses
 
-The goal of galcheat is to provide a **sourced reference** for survey parameters. Therefore the `Survey` and `Filter` objects have been implemented as frozen dataclasses. This means that trying to modify the attributes of an instance of a `Survey` or a `Filter` will raise a `FrozenInstanceError`.
+The goal of surveycodex is to provide a **sourced reference** for survey parameters. Therefore the `Survey` and `Filter` objects have been implemented as frozen dataclasses. This means that trying to modify the attributes of an instance of a `Survey` or a `Filter` will raise a `FrozenInstanceError`.
 
-Nevertheless, one might possibly want to modify or extend the instances of the dataclasses found in galcheat for specific purposes. This can be achieved through inheritance.
+Nevertheless, one might possibly want to modify or extend the instances of the dataclasses found in surveycodex for specific purposes. This can be achieved through inheritance.
 
 ## Inheritance
 
@@ -16,6 +16,6 @@ class ExtensibleSurvey(Survey):
          self.__dict__[x] = val
 ```
 
-The `ExtensibleSurvey` will behave just as the galcheat `Survey` and will be extendable or modifiable. This is also true for the `Filter` class.
+The `ExtensibleSurvey` will behave just as the surveycodex `Survey` and will be extendable or modifiable. This is also true for the `Filter` class.
 
 !!! warning "To be used at you own risk"

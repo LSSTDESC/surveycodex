@@ -1,3 +1,3 @@
-# galcheat.filter
+# surveycodex.filter
 
-::: galcheat.filter
+::: surveycodex.filter

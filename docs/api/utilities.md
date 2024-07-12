@@ -1,3 +1,3 @@
-# galcheat.utilities
+# surveycodex.utilities
 
-::: galcheat.utilities
+::: surveycodex.utilities

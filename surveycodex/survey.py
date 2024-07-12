@@ -6,7 +6,7 @@ import astropy.units as u
 import yaml
 from astropy.units import Quantity
 
-from galcheat.filter import Filter
+from surveycodex.filter import Filter
 
 
 @dataclass(frozen=True)
@@ -34,7 +34,7 @@ class Survey:
     effective_area: Quantity = field(init=False)
     "The survey instrument effective area on the sky computed from the obscuration"
     references: Dict[str, Dict[str, str]]
-    "Dictionary of references for each parameter specified in galcheat"
+    "Dictionary of references for each parameter specified in surveycodex"
 
     @classmethod
     def from_yaml(cls, yaml_file: str):
@@ -135,7 +135,7 @@ class Survey:
         Raises
         ------
         ValueError
-            The requested filter does not exist or is not available in galcheat
+            The requested filter does not exist or is not available in surveycodex
 
         """
         if filter_name not in self.available_filters:
