@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://aboucaud.github.io/galcheat/index.html</loc>
-         <lastmod>2024-04-11</lastmod>
+         <loc>https://lsstdesc.github.io/surveycodex/index.html</loc>
+         <lastmod>2024-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aboucaud.github.io/galcheat/parameters.html</loc>
-         <lastmod>2024-04-11</lastmod>
+         <loc>https://lsstdesc.github.io/surveycodex/parameters.html</loc>
+         <lastmod>2024-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aboucaud.github.io/galcheat/api/filter.html</loc>
-         <lastmod>2024-04-11</lastmod>
+         <loc>https://lsstdesc.github.io/surveycodex/api/filter.html</loc>
+         <lastmod>2024-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aboucaud.github.io/galcheat/api/helpers.html</loc>
-         <lastmod>2024-04-11</lastmod>
+         <loc>https://lsstdesc.github.io/surveycodex/api/helpers.html</loc>
+         <lastmod>2024-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aboucaud.github.io/galcheat/api/survey.html</loc>
-         <lastmod>2024-04-11</lastmod>
+         <loc>https://lsstdesc.github.io/surveycodex/api/survey.html</loc>
+         <lastmod>2024-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aboucaud.github.io/galcheat/api/utilities.html</loc>
-         <lastmod>2024-04-11</lastmod>
+         <loc>https://lsstdesc.github.io/surveycodex/api/utilities.html</loc>
+         <lastmod>2024-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aboucaud.github.io/galcheat/guides/create-galaxy.html</loc>
-         <lastmod>2024-04-11</lastmod>
+         <loc>https://lsstdesc.github.io/surveycodex/guides/create-galaxy.html</loc>
+         <lastmod>2024-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aboucaud.github.io/galcheat/guides/getting-started.html</loc>
-         <lastmod>2024-04-11</lastmod>
+         <loc>https://lsstdesc.github.io/surveycodex/guides/getting-started.html</loc>
+         <lastmod>2024-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aboucaud.github.io/galcheat/guides/heritage.html</loc>
-         <lastmod>2024-04-11</lastmod>
+         <loc>https://lsstdesc.github.io/surveycodex/guides/heritage.html</loc>
+         <lastmod>2024-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
