@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from galcheat.helpers import get_survey
-from galcheat.utilities import mag2counts, mean_sky_level
+from surveycodex.helpers import get_survey
+from surveycodex.utilities import mag2counts, mean_sky_level
 
 WLD_COUNTS_MAG24 = {
     "LSST_u": 15388.800000000001,

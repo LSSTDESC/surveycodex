@@ -1,6 +1,6 @@
-# Contributing to `galcheat`
+# Contributing to `surveycodex`
 
-We appreciate that you want to contribute to `galcheat`. Your time is valuable, and your contribution means a lot.
+We appreciate that you want to contribute to `surveycodex`. Your time is valuable, and your contribution means a lot.
 
 ## Important!
 
@@ -16,20 +16,20 @@ There are several ways to contribute, namely:
 - Add, update or correct information through [pull-requests](#pull-requests)
 
 
-**Showing support for** `galcheat`
+**Showing support for** `surveycodex`
 
-Don't have time to contribute? No worries, here are some other ways to show your support for `galcheat`:
+Don't have time to contribute? No worries, here are some other ways to show your support for `surveycodex`:
 
-- star the [project](https://github.com/aboucaud/galcheat) (creates visibility)
+- star the [project](https://github.com/LSSTDESC/surveycodex) (creates visibility)
 - mention it around
 
 ## Issues
 
-To create an issue, go to https://github.com/aboucaud/galcheat/issues/new, provide it with a meaningful title and a description, as well as labels if appropriate.
+To create an issue, go to https://github.com/LSSTDESC/surveycodex/issues/new, provide it with a meaningful title and a description, as well as labels if appropriate.
 
 ## Pull-requests
 
-To add, update or correct information, the first step is to setup a development environment for `galcheat` and then create feature branches for a given [pull-request](https://github.com/aboucaud/galcheat/pulls).
+To add, update or correct information, the first step is to setup a development environment for `surveycodex` and then create feature branches for a given [pull-request](https://github.com/LSSTDESC/surveycodex/pulls).
 
 > Note that you will have to [fork the project](https://guides.github.com/activities/forking/) to contribute.
 
@@ -37,8 +37,8 @@ To add, update or correct information, the first step is to setup a development 
 
 - Clone the project
     ```sh
-    git clone https://github.com/aboucaud/galcheat
-    cd galcheat
+    git clone https://github.com/LSSTDESC/surveycodex
+    cd surveycodex
     ```
 - Setup the virtual environment with the dev tools
     ```sh
@@ -46,7 +46,7 @@ To add, update or correct information, the first step is to setup a development 
     source venv/bin/activate
     python -m pip install -U pip
     ```
-- Install `galcheat` with developer libs
+- Install `surveycodex` with developer libs
     ```sh
     pip install -e ".[dev]"
     ```
@@ -61,10 +61,10 @@ To add, update or correct information, the first step is to setup a development 
 
 ### Create a fork (do once)
 
-- [Fork the galcheat project](https://guides.github.com/activities/forking/)
+- [Fork the surveycodex project](https://guides.github.com/activities/forking/)
 - Add the fork to the list of remote servers
     ```sh
-    git remote add fork git@github.com:<your username>/galcheat.git
+    git remote add fork git@github.com:<your username>/surveycodex.git
     ```
 
 ### Code in a feature branch
@@ -88,4 +88,4 @@ To add, update or correct information, the first step is to setup a development 
     git push -u fork featbranch  # the first time to set the target remote
     git push                     # afterwards
     ```
-6. Create [the pull-request](https://github.com/aboucaud/galcheat/pulls) and iterate from 3. until it is merged.
+6. Create [the pull-request](https://github.com/LSSTDESC/surveycodex/pulls) and iterate from 3. until it is merged.

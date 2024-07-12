@@ -1,22 +1,22 @@
 r"""
-
-  ____       _  ____ _                _
- / ___| __ _| |/ ___| |__   ___  __ _| |_
-| |  _ / _` | | |   | '_ \ / _ \/ _` | __|
-| |_| | (_| | | |___| | | |  __/ (_| | |_
- \____|\__,_|_|\____|_| |_|\___|\__,_|\__|
+  ____                              ____          _
+/ ___| _   _ _ ____   _____ _   _ / ___|___   __| | _____  __
+\___ \| | | | '__\ \ / / _ \ | | | |   / _ \ / _` |/ _ \ \/ /
+ ___) | |_| | |   \ V /  __/ |_| | |__| (_) | (_| |  __/>  <
+|____/ \__,_|_|    \_/ \___|\__, |\____\___/ \__,_|\___/_/\_\
+                            |___/
 
 The tiny library of galaxy surveys
 most useful parameters with units
 
 The data can be viewed in a terminal with
 
-    python -m galcheat
+    python -m surveycodex
 
 To access the quantities, retrieve the
 `Survey` objects with `get_survey`.
 
-    >>> from galcheat import get_survey
+    >>> from surveycodex import get_survey
     >>> LSST = get_survey('LSST')
     >>> LSST.mirror_diameter
     <Quantity 8.36 m>
@@ -50,4 +50,4 @@ interest or reporting inconsistent values.
 
 """
 
-from galcheat.helpers import available_surveys, get_survey  # noqa
+from surveycodex.helpers import available_surveys, get_survey  # noqa

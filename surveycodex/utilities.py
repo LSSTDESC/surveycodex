@@ -1,8 +1,8 @@
 import astropy.units as u
 
-from galcheat.filter import Filter
-from galcheat.helpers import get_survey
-from galcheat.survey import Survey
+from surveycodex.filter import Filter
+from surveycodex.helpers import get_survey
+from surveycodex.survey import Survey
 
 
 def mag2counts(magnitude, survey, filter, exposure_time=None):
@@ -38,7 +38,7 @@ def mag2counts(magnitude, survey, filter, exposure_time=None):
 
     Example
     -------
-    >>> from galcheat.utilities import mag2counts
+    >>> from surveycodex.utilities import mag2counts
     >>> mag2counts(24, "LSST", "g")
     <Quantity 121397 ct>
 
@@ -73,7 +73,7 @@ def mag2counts(magnitude, survey, filter, exposure_time=None):
 def mean_sky_level(survey, filter):
     """Computes the mean sky level for a given survey and a filter
 
-    This computation uses the sky brightness parameter from galcheat,
+    This computation uses the sky brightness parameter from surveycodex,
     expressed as a magnitude per sky area, weights it by the
     pixel area and converts it to electron counts.
 
@@ -91,7 +91,7 @@ def mean_sky_level(survey, filter):
 
     Example
     -------
-    >>> from galcheat.utilities import mean_sky_level
+    >>> from surveycodex.utilities import mean_sky_level
     >>> mean_sky_level("LSST", "g")
     <Quantity 23241.84 ct>
 

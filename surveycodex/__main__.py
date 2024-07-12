@@ -1,14 +1,14 @@
 import argparse
 
-from galcheat.helpers import available_surveys, print_survey
+from surveycodex.helpers import available_surveys, print_survey
 
-_FOOTER = "\nprovided by galcheat <https://github.com/aboucaud/galcheat>\n"
+_FOOTER = "\nprovided by surveycodex <https://github.com/LSSTDESC/surveycodex>\n"
 _LINEBREAK = "\n" + "•  " * 15 + "\n"
 
 
 def _survey_parser():
     parser = argparse.ArgumentParser(
-        description="Print out the main survey features present in galcheat",
+        description="Print out the main survey features present in surveycodex",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
@@ -45,7 +45,7 @@ def main():
             use_rich = True
         except ImportError:
             print(
-                "The rich library is not installed by default with galcheat.",
+                "The rich library is not installed by default with surveycodex.",
                 "In order to use rich printing, please consider installing it using pip.",
                 "`python -m pip install rich`",
                 "\nDefaulting to classic display...\n",
@@ -57,7 +57,7 @@ def main():
         surveys = [args.survey_name]
 
     if use_rich:
-        from galcheat.rich import display_references, display_survey
+        from surveycodex.rich import display_references, display_survey
 
         for survey in surveys:
             console.print("")

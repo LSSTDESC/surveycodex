@@ -1,3 +1,3 @@
-# galcheat.survey
+# surveycodex.survey
 
-::: galcheat.survey
+::: surveycodex.survey

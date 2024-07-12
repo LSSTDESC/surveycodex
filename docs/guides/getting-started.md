@@ -2,10 +2,10 @@
 
 ```python
 # The list of available surveys
-from galcheat import available_surveys
+from surveycodex import available_surveys
 
 # Getter methods to retrieve a Survey of a Filter dataclass
-from galcheat import get_survey, get_filter
+from surveycodex import get_survey, get_filter
 
 LSST = get_survey("LSST")
 u_band = get_filter("u", "LSST")

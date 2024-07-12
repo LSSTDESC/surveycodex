@@ -1,7 +1,7 @@
 from astropy import units as u
 from speclite.filters import load_filter
 
-import galcheat
+import surveycodex
 
 SPECLITE_SURVEY_PREFIXES = {
     "DES": "decam2014",
@@ -21,11 +21,11 @@ def check_effective_wavelengths(survey_name):
 
     """
     if survey_name in SPECLITE_SURVEY_PREFIXES.keys():
-        survey = galcheat.get_survey(survey_name)
+        survey = surveycodex.get_survey(survey_name)
         speclite_prefix = SPECLITE_SURVEY_PREFIXES[survey_name]
 
         print(f"-- {survey_name} --\t({speclite_prefix} in speclite)\n")
-        print("filters |  speclite |  galcheat")
+        print("filters |  speclite |  surveycodex")
         print("------- | --------- | ---------")
 
         for filter_name in survey.available_filters:
@@ -52,5 +52,5 @@ def check_effective_wavelengths(survey_name):
 if __name__ == "__main__":
     print("\nChecking the effective filter wavelengths with speclite")
     print("-------------------------------------------------------\n")
-    for survey in galcheat.available_surveys:
+    for survey in surveycodex.available_surveys:
         check_effective_wavelengths(survey)

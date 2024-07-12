@@ -1,6 +1,6 @@
 import textwrap
 
-from galcheat.helpers import Survey, get_survey
+from surveycodex.helpers import Survey, get_survey
 
 _SATELLITE = "🛰️️ "
 _TELESCOPE = "🔭️ "

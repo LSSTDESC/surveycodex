@@ -1,3 +1,3 @@
-# galcheat.helpers
+# surveycodex.helpers
 
-<!-- ::: galcheat.helpers -->
+<!-- ::: surveycodex.helpers -->

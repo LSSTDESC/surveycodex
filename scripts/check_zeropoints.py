@@ -3,7 +3,7 @@ import math
 from astropy import units as u
 from speclite.filters import load_filter
 
-import galcheat
+import surveycodex
 
 SPECLITE_SURVEY_PREFIXES = {
     "DES": "decam2014",
@@ -34,11 +34,11 @@ def check_zeropoints(survey_name):
 
     """
     if survey_name in SPECLITE_SURVEY_PREFIXES.keys():
-        survey = galcheat.get_survey(survey_name)
+        survey = surveycodex.get_survey(survey_name)
         speclite_prefix = SPECLITE_SURVEY_PREFIXES[survey_name]
 
         print(f"-- {survey_name} --\t({speclite_prefix} in speclite)\n")
-        print("filters |  speclite |  galcheat")
+        print("filters |  speclite |  surveycodex")
         print("------- | --------- | ---------")
 
         for filter_name in survey.available_filters:
@@ -51,8 +51,8 @@ def check_zeropoints(survey_name):
                 speclite_filter_name, survey.effective_area
             )
 
-            galcheat_filter = survey.get_filter(filter_name)
-            current_zp = galcheat_filter.zeropoint
+            surveycodex_filter = survey.get_filter(filter_name)
+            current_zp = surveycodex_filter.zeropoint
             print(f"{filter_name:^7} | {speclite_zp:.2f} | {current_zp:.2f}")
     else:
         print(f"{survey_name} filters are not available in speclite")
@@ -62,5 +62,5 @@ def check_zeropoints(survey_name):
 if __name__ == "__main__":
     print("\nChecking the zeropoints with speclite")
     print("-------------------------------------\n")
-    for survey_name in galcheat.available_surveys:
+    for survey_name in surveycodex.available_surveys:
         check_zeropoints(survey_name)

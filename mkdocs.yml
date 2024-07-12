@@ -1,5 +1,5 @@
-site_name: galcheat docs
-repo_url: https://github.com/aboucaud/galcheat
+site_name: surveycodex docs
+repo_url: https://github.com/LSSTDESC/surveycodex
 site_url: https://aboucaud.github.io/galcheat/
 site_description: A small python library that can clump lists of data together.
 site_author: Alexandre Boucaud
@@ -37,11 +37,11 @@ nav:
   - Guides:
       - Getting Started: guides/getting-started.md
       - Simulate Galaxy with Galsim: guides/create-galaxy.md
-      - Extend galcheat objects: guides/heritage.md
+      - Extend surveycodex objects: guides/heritage.md
   - API:
-      - galcheat.survey: api/survey.md
-      - galcheat.filter: api/filter.md
-      - galcheat.utilities: api/utilities.md
+      - surveycodex.survey: api/survey.md
+      - surveycodex.filter: api/filter.md
+      - surveycodex.utilities: api/utilities.md
 # Plugins
 plugins:
   - mkdocstrings:
@@ -54,7 +54,7 @@ plugins:
           selection:
             docstring_style: numpy
       watch:
-        - galcheat
+        - surveycodex
   - search
 copyright: Copyright &copy; 2022 Maintained by <a href="https://twitter.com/alxbcd">Alexandre</a>.
 # Mkdocs material extensions
