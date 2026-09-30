@@ -6,6 +6,20 @@ mirror_diameter: 2.4
 obscuration: 0.20252763
 zeropoint_airmass: 0.0
 filters:
+  F062:
+    name: "F062"
+    sky_brightness: 23.29
+    full_exposure_time: 642
+    zeropoint: 26.58
+    psf_fwhm: 0.058
+    effective_wavelength: 644.293
+  F087:
+    name: "F087"
+    sky_brightness: 22.93
+    full_exposure_time: 642
+    zeropoint: 26.23
+    psf_fwhm: 0.073
+    effective_wavelength: 881.180
   F106:
     name: "F106"
     sky_brightness: 22.92
@@ -27,6 +41,20 @@ filters:
     zeropoint: 26.32
     psf_fwhm: 0.128
     effective_wavelength: 1596.115
+  F184:
+    name: "F184"
+    sky_brightness: 23.19
+    full_exposure_time: 642
+    zeropoint: 25.85
+    psf_fwhm: 0.146
+    effective_wavelength: 1850.203
+  F213:
+    name: "F213"
+    sky_brightness: 23.34
+    full_exposure_time: 642
+    zeropoint: 25.81
+    psf_fwhm: 0.169
+    effective_wavelength: 2144.099
 references:
   pixel_scale:
     link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/WFI_overview.yaml"
