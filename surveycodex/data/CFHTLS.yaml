@@ -11,35 +11,35 @@ filters:
     sky_brightness: 21.20
     full_exposure_time: 3000
     zeropoint: 25.78
-    psf_fwhm: 0.81
+    psf_fwhm: 0.85
     effective_wavelength: 382.329
   g:
     name: "g"
     sky_brightness: 21.30
     full_exposure_time: 2500
     zeropoint: 27.11
-    psf_fwhm: 0.84
+    psf_fwhm: 0.78
     effective_wavelength: 487.737
   r:
     name: "r"
     sky_brightness: 20.80
     full_exposure_time: 2000
     zeropoint: 26.74
-    psf_fwhm: 0.73
+    psf_fwhm: 0.71
     effective_wavelength: 623.062
   i:
     name: "i"
     sky_brightness: 20.30
     full_exposure_time: 4305
     zeropoint: 26.22
-    psf_fwhm: 0.66
-    effective_wavelength: 716.766
+    psf_fwhm: 0.64
+    effective_wavelength: 761.766
   z:
     name: "z"
     sky_brightness: 19.40
     full_exposure_time: 3600
-    zeropoint: 25.05
-    psf_fwhm: 0.66
+    zeropoint: 25.02
+    psf_fwhm: 0.68
     effective_wavelength: 882.798
 references:
   pixel_scale:
@@ -68,7 +68,7 @@ references:
     comment: ""
   psf_fwhm:
     link: "https://www.cfht.hawaii.edu/Science/CFHTLS/T0007"
-    comment: "roughly taken from figure 25"
+    comment: "Table 4 band means"
   effective_wavelength:
     link: "https://cosmos.astro.caltech.edu/page/filterset"
     comment: ""

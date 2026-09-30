@@ -19,7 +19,7 @@ references:
     comment: "See section 4"
   gain:
     link: "https://iopscience.iop.org/article/10.1086/520086"
-    comment: "See section 2.1"
+    comment: "See section 2.1 — observations obtained with gain of 1"
   mirror_diameter:
     link: "https://arxiv.org/abs/1203.0002"
     comment: "(v1) See section 4 table 1"
@@ -30,8 +30,8 @@ references:
     link: ""
     comment: "Space telescope"
   sky_brightness:
-    link: ""
-    comment: ""
+    link: "https://galsim-developers.github.io/GalSim/_build/html/real_gal.html"
+    comment: "Standard HST/ACS F814W zodiacal sky background used in GalSim COSMOS simulations"
   full_exposure_time:
     link: "https://iopscience.iop.org/article/10.1086/520086"
     comment: "See section 2.2"
