@@ -10,7 +10,7 @@ filters:
     name: "IE"
     sky_brightness: 22.3203
     full_exposure_time: 565
-    zeropoint: 25.91
+    zeropoint: 25.92
     psf_fwhm: 0.17
     effective_wavelength: 750.637
 references:

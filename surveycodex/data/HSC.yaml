@@ -38,7 +38,7 @@ filters:
     name: "y"
     sky_brightness: 17.9
     full_exposure_time: 1200
-    zeropoint: 27.33
+    zeropoint: 27.34
     psf_fwhm: 0.68
     effective_wavelength: 978.695
 references:
@@ -58,8 +58,8 @@ references:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters"
     comment: ""
   sky_brightness:
-    link: "https://www.naoj.org/Observing/Instruments/SCam/exptime.html"
-    comment: ""
+    link: "https://web.archive.org/web/20211206142259/https://www.naoj.org/Observing/Instruments/SCam/exptime.html"
+    comment: "Suprime-Cam values used as approximation for HSC (archived page)"
   full_exposure_time:
     link: "https://arxiv.org/abs/2108.13045"
     comment: "(v1) See \"Wide\" in table 1"
@@ -72,11 +72,3 @@ references:
   effective_wavelength:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#hsc-filters"
     comment: "computed with speclite – see scripts/check_effective_wavelength.py"
-
-# Notes
-# -----
-# The reference link for sky_brightness for Suprime-Cam, should be approximately okay.
-# Here is the updated version for HSC as of July 2021
-# https://www.subarutelescope.org/Observing/Instruments/HSC/hsc_etc_report.html.
-# We could update the numbers to this version, although we need to
-# convert the unit from ADU/sec to mag/arcsec^2.
