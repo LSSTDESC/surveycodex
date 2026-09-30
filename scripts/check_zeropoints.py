@@ -12,6 +12,7 @@ SPECLITE_SURVEY_PREFIXES = {
     "HSC": "hsc2017",
     "LSST": "lsst2016",
     "PanSTARRS": "panstarrs",
+    "SDSS": "sdss2010",
 }
 
 EUCLID_FILTER_NAMES = {"IE": "VIS", "YE": "Y", "JE": "J", "HE": "H"}
