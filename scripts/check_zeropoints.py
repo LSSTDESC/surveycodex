@@ -8,9 +8,12 @@ import surveycodex
 SPECLITE_SURVEY_PREFIXES = {
     "DES": "decam2014",
     "Euclid_VIS": "Euclid",
+    "Euclid_NISP": "Euclid",
     "HSC": "hsc2017",
     "LSST": "lsst2016",
 }
+
+EUCLID_FILTER_NAMES = {"IE": "VIS", "YE": "Y", "JE": "J", "HE": "H"}
 
 
 def compute_zeropoint_mag(band_name, effective_area, exposure_time=1 * u.s):
@@ -42,10 +45,7 @@ def check_zeropoints(survey_name):
         print("------- | --------- | ---------")
 
         for filter_name in survey.available_filters:
-            if filter_name == "IE":
-                old_filter_name = "VIS"
-            else:
-                old_filter_name = filter_name
+            old_filter_name = EUCLID_FILTER_NAMES.get(filter_name, filter_name)
             speclite_filter_name = f"{speclite_prefix}-{old_filter_name}"
             speclite_zp = compute_zeropoint_mag(
                 speclite_filter_name, survey.effective_area
