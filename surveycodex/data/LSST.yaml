@@ -10,42 +10,42 @@ filters:
     name: "u"
     sky_brightness: 22.99
     full_exposure_time: 1680
-    zeropoint: 26.40
+    zeropoint: 26.44
     psf_fwhm: 0.90
     effective_wavelength: 368.141
   g:
     name: "g"
     sky_brightness: 22.26
     full_exposure_time: 2400
-    zeropoint: 28.26
+    zeropoint: 28.29
     psf_fwhm: 0.86
     effective_wavelength: 486.412
   r:
     name: "r"
     sky_brightness: 21.20
     full_exposure_time: 5520
-    zeropoint: 28.10
+    zeropoint: 28.13
     psf_fwhm: 0.81
     effective_wavelength: 624.976
   i:
     name: "i"
     sky_brightness: 20.48
     full_exposure_time: 5520
-    zeropoint: 27.78
+    zeropoint: 27.81
     psf_fwhm: 0.79
     effective_wavelength: 756.469
   z:
     name: "z"
     sky_brightness: 19.60
     full_exposure_time: 4800
-    zeropoint: 27.39
+    zeropoint: 27.42
     psf_fwhm: 0.77
     effective_wavelength: 870.164
   y:
     name: "y"
     sky_brightness: 18.61
     full_exposure_time: 4800
-    zeropoint: 26.56
+    zeropoint: 26.59
     psf_fwhm: 0.76
     effective_wavelength: 972.202
 references:
@@ -53,8 +53,8 @@ references:
     link: "https://www.lsst.org/about/camera/features"
     comment: "See Technical details."
   gain:
-    link: "https://github.com/LSSTDESC/imSim/blob/main/imsim/stamp.py#L416"
-    comment: ""
+    link: "https://github.com/LSSTDESC/imSim/blob/main/imsim/readout.py"
+    comment: "In imSim, the e-image is in electrons and gain is applied per-amplifier from the camera model during readout. A gain of 1.0 is the simulation convention for the e-image."
   mirror_diameter:
     link: "https://www.lsst.org/about/tel-site/optical_design"
     comment: ""
