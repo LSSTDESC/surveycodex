@@ -1,0 +1,88 @@
+name: "Roman_WFI_Deep"
+description: "Roman High-Latitude Wide-Area Survey (HLWAS) deep tier done with the Nancy Grace Roman Space Telescope and the Wide Field Instrument (WFI)"
+pixel_scale: 0.11
+gain: 1.67
+mirror_diameter: 2.4
+obscuration: 0.20252763
+zeropoint_airmass: 0.0
+filters:
+  F087:
+    name: "F087"
+    sky_brightness: 22.93
+    full_exposure_time: 4410
+    zeropoint: 26.23
+    psf_fwhm: 0.073
+    effective_wavelength: 881.180
+  F106:
+    name: "F106"
+    sky_brightness: 22.92
+    full_exposure_time: 4410
+    zeropoint: 26.32
+    psf_fwhm: 0.087
+    effective_wavelength: 1073.633
+  F129:
+    name: "F129"
+    sky_brightness: 22.96
+    full_exposure_time: 4410
+    zeropoint: 26.32
+    psf_fwhm: 0.106
+    effective_wavelength: 1296.861
+  F146:
+    name: "F146"
+    sky_brightness: 23.01
+    full_exposure_time: 5292
+    zeropoint: 27.54
+    psf_fwhm: 0.105
+    effective_wavelength: 1536.573
+  F158:
+    name: "F158"
+    sky_brightness: 23.06
+    full_exposure_time: 4410
+    zeropoint: 26.32
+    psf_fwhm: 0.128
+    effective_wavelength: 1596.115
+  F184:
+    name: "F184"
+    sky_brightness: 23.19
+    full_exposure_time: 4410
+    zeropoint: 25.85
+    psf_fwhm: 0.146
+    effective_wavelength: 1850.203
+  F213:
+    name: "F213"
+    sky_brightness: 23.34
+    full_exposure_time: 4410
+    zeropoint: 25.81
+    psf_fwhm: 0.169
+    effective_wavelength: 2144.099
+references:
+  pixel_scale:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/WFI_overview.yaml"
+    comment: "focal_plane_array.spatial_sampling"
+  gain:
+    link: "https://roman-docs.stsci.edu/simulation-tools/roman-wfi-exposure-time-calculator/etc-appendix-inputs-and-calculations"
+    comment: "IPC-corrected gain, i.e. the typical 1.8 e-/DN divided by the GSFC IPC correction factor of 1.08"
+  mirror_diameter:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/Observatory/MissionandObservatoryTechnicalOverview/MissionandObservatory.yaml"
+    comment: "Telescope_Parameters.primary_mirror_diameter – the aperture stop effective diameter is 2.36 m"
+  obscuration:
+    link: "https://roman-docs.stsci.edu/simulation-tools/roman-wfi-exposure-time-calculator/etc-appendix-inputs-and-calculations"
+    comment: "Using the collecting area coll_area = 36076.8 cm^2, the obscuration is 1-36076.8/(pi*240*240/4)"
+  zeropoint_airmass:
+    link: ""
+    comment: "Space telescope"
+  sky_brightness:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/Imaging/ZodiacalLight/zodiacal_light.ecsv"
+    comment: "Minimum zodiacal light count rate per pixel converted with the filter zeropoint and the pixel scale – internal thermal background excluded"
+  full_exposure_time:
+    link: "https://roman-docs.stsci.edu/roman-community-defined-surveys/high-latitude-wide-area-survey"
+    comment: "HLWAS deep tier: 294 s per dither, 3 dithers, 5 passes (6 passes for F146) – see 'Details of Deep Tier Observations'"
+  zeropoint:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/Imaging/ZeroPoints/Roman_zeropoints_20240301.ecsv"
+    comment: "ABMag zeropoint of detector WFI01 (SCA1), from the effective area curves of 2024-03-01"
+  psf_fwhm:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/Imaging/FiltersSummary/filter_parameters.ecsv"
+    comment: "Simulated on SCA1 near the centre of the WFI field of view with a K0V input spectrum"
+  effective_wavelength:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/Imaging/EffectiveAreas/Roman_effarea_v8_SCA01_20240301.ecsv"
+    comment: "Photon-weighted mean wavelength of the SCA1 effective area curve, following the speclite convention"

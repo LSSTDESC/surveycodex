@@ -1,0 +1,60 @@
+name: "Roman_WFI"
+description: "Roman High-Latitude Wide-Area Survey (HLWAS) medium tier done with the Nancy Grace Roman Space Telescope and the Wide Field Instrument (WFI)"
+pixel_scale: 0.11
+gain: 1.67
+mirror_diameter: 2.4
+obscuration: 0.20252763
+zeropoint_airmass: 0.0
+filters:
+  F106:
+    name: "F106"
+    sky_brightness: 22.92
+    full_exposure_time: 642
+    zeropoint: 26.32
+    psf_fwhm: 0.087
+    effective_wavelength: 1073.633
+  F129:
+    name: "F129"
+    sky_brightness: 22.96
+    full_exposure_time: 642
+    zeropoint: 26.32
+    psf_fwhm: 0.106
+    effective_wavelength: 1296.861
+  F158:
+    name: "F158"
+    sky_brightness: 23.06
+    full_exposure_time: 642
+    zeropoint: 26.32
+    psf_fwhm: 0.128
+    effective_wavelength: 1596.115
+references:
+  pixel_scale:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/WFI_overview.yaml"
+    comment: "focal_plane_array.spatial_sampling"
+  gain:
+    link: "https://roman-docs.stsci.edu/simulation-tools/roman-wfi-exposure-time-calculator/etc-appendix-inputs-and-calculations"
+    comment: "IPC-corrected gain, i.e. the typical 1.8 e-/DN divided by the GSFC IPC correction factor of 1.08"
+  mirror_diameter:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/Observatory/MissionandObservatoryTechnicalOverview/MissionandObservatory.yaml"
+    comment: "Telescope_Parameters.primary_mirror_diameter – the aperture stop effective diameter is 2.36 m"
+  obscuration:
+    link: "https://roman-docs.stsci.edu/simulation-tools/roman-wfi-exposure-time-calculator/etc-appendix-inputs-and-calculations"
+    comment: "Using the collecting area coll_area = 36076.8 cm^2, the obscuration is 1-36076.8/(pi*240*240/4)"
+  zeropoint_airmass:
+    link: ""
+    comment: "Space telescope"
+  sky_brightness:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/Imaging/ZodiacalLight/zodiacal_light.ecsv"
+    comment: "Minimum zodiacal light count rate per pixel converted with the filter zeropoint and the pixel scale – internal thermal background excluded"
+  full_exposure_time:
+    link: "https://roman-docs.stsci.edu/roman-community-defined-surveys/high-latitude-wide-area-survey"
+    comment: "HLWAS medium tier: 107 s per dither, 3 dithers, 2 passes"
+  zeropoint:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/Imaging/ZeroPoints/Roman_zeropoints_20240301.ecsv"
+    comment: "ABMag zeropoint of detector WFI01 (SCA1), from the effective area curves of 2024-03-01"
+  psf_fwhm:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/Imaging/FiltersSummary/filter_parameters.ecsv"
+    comment: "Simulated on SCA1 near the centre of the WFI field of view with a K0V input spectrum"
+  effective_wavelength:
+    link: "https://github.com/RomanSpaceTelescope/roman-technical-information/blob/main/roman_technical_information/data/WideFieldInstrument/Imaging/EffectiveAreas/Roman_effarea_v8_SCA01_20240301.ecsv"
+    comment: "Photon-weighted mean wavelength of the SCA1 effective area curve, following the speclite convention"
