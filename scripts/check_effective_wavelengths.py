@@ -35,7 +35,17 @@ def check_effective_wavelengths(survey_name):
         for filter_name in survey.available_filters:
             old_filter_name = EUCLID_FILTER_NAMES.get(filter_name, filter_name)
             speclite_filter_name = f"{speclite_prefix}-{old_filter_name}"
-            speclite_filter = load_filter(speclite_filter_name)
+            try:
+                speclite_filter = load_filter(speclite_filter_name)
+            except ValueError:
+                # The speclite version installed in this environment does not
+                # provide this filter group (e.g. older speclite releases
+                # required for Python < 3.10 do not ship all filter groups).
+                print(
+                    f"{speclite_prefix} filter group not available in the "
+                    "installed version of speclite"
+                )
+                break
             speclite_eff_wl = speclite_filter.effective_wavelength.to(u.nm)
             current_eff_wl = survey.get_filter(filter_name).effective_wavelength
 
