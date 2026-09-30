@@ -7,7 +7,7 @@ _TELESCOPE = "🔭️ "
 
 
 def _rich_survey_name(survey):
-    if survey.name in ["Euclid_VIS", "COSMOS", "Roman_WFI"]:
+    if survey.name in ["Euclid_VIS", "COSMOS", "Roman_WFI", "Roman_WFI_Deep"]:
         icon = _SATELLITE
     else:
         icon = _TELESCOPE
