@@ -34,6 +34,13 @@ filters:
     zeropoint: 26.58
     psf_fwhm: 0.84
     effective_wavelength: 919.646
+  Y:
+    name: "Y"
+    sky_brightness: 17.96
+    full_exposure_time: 450
+    zeropoint: 25.56
+    psf_fwhm: 0.90
+    effective_wavelength: 989.297
 references:
   pixel_scale:
     link: "http://www.ctio.noirlab.edu/noao/content/DECam-What"
@@ -55,7 +62,7 @@ references:
     comment: "(v3) See table 1"
   full_exposure_time:
     link: "https://arxiv.org/abs/1801.03181"
-    comment: "(v3) See section 2.2 page 5. Coadds of 10 x 90s exposures"
+    comment: "(v3) See section 2.2 page 5. Coadds of 10 x 90s exposures for g/r/i/z. Y-band used 10 x 45s exposures (450s total) during Y1-Y3 (the data release covered by this paper); footnote 9 notes Y exposure time was raised to 90s from Y4 onward while keeping the same 450s cumulative target -- so the 900s value used for g/r/i/z is not applicable to Y"
   zeropoint:
     link: "https://speclite.readthedocs.io/en/latest/filters.html#decam-2014-filters"
     comment: "computed with speclite – see scripts/check_zeropoints.py"
