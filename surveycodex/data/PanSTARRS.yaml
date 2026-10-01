@@ -60,10 +60,10 @@ references:
     comment: "(v4) Chambers et al. 2016, Table 2: Primary mirror 1800 mm diameter"
   obscuration:
     link: "https://arxiv.org/abs/1612.05560"
-    comment: "(v4) Chambers et al. 2016, Table 2: effective aperture is quoted as 0.65 x pi x (92.2 cm)^2 = 17284 cm^2 including diffraction and obscuration; obscuration = 1 - 17284cm^2 / (pi x 90cm^2) computed from the 1.8m primary mirror"
+    comment: "(v4) Chambers et al. 2016, Table 2: effective aperture is quoted as 0.65 x pi x (92 cm)^2 = 17284 cm^2 including diffraction and obscuration; obscuration = 1 - 17284cm^2 / (pi x 90cm^2) computed from the 1.8m primary mirror"
   zeropoint_airmass:
     link: "https://arxiv.org/abs/1203.0297"
-    comment: "Tonry et al. 2012, Section 2.6 (description preceding Table 4): PS1 natural-system zeropoints are defined for a star producing 1 e-/sec through 1.2 airmasses of extinction. speclite's panstarrs filters do not carry an airmass metadata entry (load_filter('panstarrs-r').meta['airmass'] is None), so this value was independently verified in the primary photometric-system paper rather than reused from another survey"
+    comment: "Tonry et al. 2012, Section 3 (description preceding Table 4): PS1 natural-system zeropoints are defined for a star producing 1 e-/sec through 1.2 airmasses of extinction. speclite's panstarrs filters do not carry an airmass metadata entry (load_filter('panstarrs-r').meta['airmass'] is None), so this value was independently verified in the primary photometric-system paper rather than reused from another survey"
   sky_brightness:
     link: "https://arxiv.org/abs/1203.0297"
     comment: "Tonry et al. 2012, Table 4, column mu_obs (observed sky brightness, AB mag/arcsec2). Single consistent source covering all 6 filters including w, which is absent from the 3pi-survey-only tables of Chambers et al. 2016"
