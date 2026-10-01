@@ -11,6 +11,7 @@ SPECLITE_SURVEY_PREFIXES = {
     "Euclid_NISP": "Euclid",
     "HSC": "hsc2017",
     "LSST": "lsst2016",
+    "PanSTARRS": "panstarrs",
 }
 
 EUCLID_FILTER_NAMES = {"IE": "VIS", "YE": "Y", "JE": "J", "HE": "H"}
@@ -47,9 +48,22 @@ def check_zeropoints(survey_name):
         for filter_name in survey.available_filters:
             old_filter_name = EUCLID_FILTER_NAMES.get(filter_name, filter_name)
             speclite_filter_name = f"{speclite_prefix}-{old_filter_name}"
-            speclite_zp = compute_zeropoint_mag(
-                speclite_filter_name, survey.effective_area
-            )
+            try:
+                speclite_zp = compute_zeropoint_mag(
+                    speclite_filter_name, survey.effective_area
+                )
+            except ValueError as error:
+                if str(error).startswith("No such group"):
+                    # The speclite version installed in this environment does
+                    # not provide this filter group (e.g. older speclite
+                    # releases required for Python < 3.10 do not ship all
+                    # filter groups).
+                    print(
+                        f"{speclite_prefix} filter group not available in "
+                        "the installed version of speclite"
+                    )
+                    break
+                raise
 
             surveycodex_filter = survey.get_filter(filter_name)
             current_zp = surveycodex_filter.zeropoint

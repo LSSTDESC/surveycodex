@@ -1,0 +1,81 @@
+name: "PanSTARRS"
+description: "Panoramic Survey Telescope and Rapid Response System 1 (Pan-STARRS1, PS1) wide-field survey done with the 1.8m PS1 telescope at Haleakala Observatory, Hawaii, and the Gigapixel Camera #1 (GPC1)"
+pixel_scale: 0.258
+gain: 0.97
+mirror_diameter: 1.8
+obscuration: 0.32078172
+zeropoint_airmass: 1.2
+filters:
+  g:
+    name: "g"
+    sky_brightness: 21.92
+    full_exposure_time: 516
+    zeropoint: 25.15
+    psf_fwhm: 1.47
+    effective_wavelength: 490.014
+  r:
+    name: "r"
+    sky_brightness: 20.83
+    full_exposure_time: 480
+    zeropoint: 25.35
+    psf_fwhm: 1.31
+    effective_wavelength: 624.127
+  i:
+    name: "i"
+    sky_brightness: 19.79
+    full_exposure_time: 540
+    zeropoint: 25.33
+    psf_fwhm: 1.19
+    effective_wavelength: 756.377
+  z:
+    name: "z"
+    sky_brightness: 19.24
+    full_exposure_time: 360
+    zeropoint: 24.92
+    psf_fwhm: 1.14
+    effective_wavelength: 869.008
+  y:
+    name: "y"
+    sky_brightness: 18.24
+    full_exposure_time: 360
+    zeropoint: 23.93
+    psf_fwhm: 1.09
+    effective_wavelength: 964.461
+  w:
+    name: "w"
+    sky_brightness: 20.62
+    full_exposure_time: 45
+    zeropoint: 26.63
+    psf_fwhm: 1.31
+    effective_wavelength: 657.929
+references:
+  pixel_scale:
+    link: "https://arxiv.org/abs/1612.05560"
+    comment: "(v4) Chambers et al. 2016, Section 2.4 and Table 3: 10 micron pixels subtend 0.258 arcsec/pixel on GPC1"
+  gain:
+    link: "https://arxiv.org/abs/1203.0297"
+    comment: "Tonry et al. 2012, Section 2.5 (page 15): gain measured to be 0.97 e-/ADU for the OTA34/cell33 amplifier used for the standard-star calibration"
+  mirror_diameter:
+    link: "https://arxiv.org/abs/1612.05560"
+    comment: "(v4) Chambers et al. 2016, Table 2: Primary mirror 1800 mm diameter"
+  obscuration:
+    link: "https://arxiv.org/abs/1612.05560"
+    comment: "(v4) Chambers et al. 2016, Table 2: effective aperture is quoted as 0.65 x pi x (92 cm)^2 = 17284 cm^2 including diffraction and obscuration; obscuration = 1 - 17284cm^2 / (pi x 90cm^2) computed from the 1.8m primary mirror"
+  zeropoint_airmass:
+    link: "https://arxiv.org/abs/1203.0297"
+    comment: "Tonry et al. 2012, Section 3 (description preceding Table 4): PS1 natural-system zeropoints are defined for a star producing 1 e-/sec through 1.2 airmasses of extinction. speclite's panstarrs filters do not carry an airmass metadata entry (load_filter('panstarrs-r').meta['airmass'] is None), so this value was independently verified in the primary photometric-system paper rather than reused from another survey"
+  sky_brightness:
+    link: "https://arxiv.org/abs/1203.0297"
+    comment: "Tonry et al. 2012, Table 4, column mu_obs (observed sky brightness, AB mag/arcsec2). Single consistent source covering all 6 filters including w, which is absent from the 3pi-survey-only tables of Chambers et al. 2016"
+  full_exposure_time:
+    link: "https://arxiv.org/abs/1612.05560"
+    comment: "(v4) g/r/i/z/y: Chambers et al. 2016 Table 11 nominal single-exposure time (43/40/45/30/30 s) x 12 dithered visits over the survey lifetime (Section 3.2.3: 'Over 3.5 years this would give ... 12 exposures in each band'). w: Section 3.4 (Solar System Survey) is not populated in this paper and no analogous stacked-visit design is documented for wP1, so the single nominal exposure time of 45 s (Denneau et al. 2013, arXiv:1302.7281, Table 1, 'Exposure times as of October 2012') is used instead"
+  zeropoint:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#panstarrs-filters"
+    comment: "computed with speclite – see scripts/check_zeropoints.py"
+  psf_fwhm:
+    link: "https://arxiv.org/abs/1612.05560"
+    comment: "(v4) g/r/i/z/y: Chambers et al. 2016 Table 11, median of the PSF FWHM distribution. w: Table 11 has no wP1 row (w is not part of the 3pi survey); approximated with the rP1 median FWHM (1.31 arcsec) since wP1's effective wavelength (608 nm, Tonry et al. 2012 Table 4) is closest to rP1 (617 nm) among the tabulated 3pi filters and no direct wP1 seeing measurement was found in the literature"
+  effective_wavelength:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#panstarrs-filters"
+    comment: "computed with speclite – see scripts/check_effective_wavelength.py"
