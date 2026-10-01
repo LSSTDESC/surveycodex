@@ -1,0 +1,60 @@
+name: "Euclid_NISP"
+description: "Euclid wide-field survey done with the Euclid space telescope and the near-infrared spectrometer and photometer (NISP), photometric channel"
+pixel_scale: 0.30
+gain: 2.0
+mirror_diameter: 1.2
+obscuration: 0.13
+zeropoint_airmass: 0.0
+filters:
+  YE:
+    name: "YE"
+    sky_brightness: 22.1
+    full_exposure_time: 112
+    zeropoint: 24.99
+    psf_fwhm: 0.477
+    effective_wavelength: 1089.014
+  JE:
+    name: "JE"
+    sky_brightness: 22.2
+    full_exposure_time: 112
+    zeropoint: 25.17
+    psf_fwhm: 0.486
+    effective_wavelength: 1379.127
+  HE:
+    name: "HE"
+    sky_brightness: 22.3
+    full_exposure_time: 112
+    zeropoint: 25.11
+    psf_fwhm: 0.492
+    effective_wavelength: 1785.975
+references:
+  pixel_scale:
+    link: "https://arxiv.org/abs/2108.01201"
+    comment: "Euclid preparation I. The Euclid Wide Survey (Scaramella et al. 2022), Sect. 3.2: NISP has a plate scale of 0.3 arcsec/pixel"
+  gain:
+    link: "https://arxiv.org/abs/2405.13496"
+    comment: "Euclid: ERO -- compact- and diffuse-emission photometry pipeline, Sect. 4.3.7: NISP's average gain is 2 electrons per ADU"
+  mirror_diameter:
+    link: "https://arxiv.org/abs/1608.08603"
+    comment: "(v1) See section 3.1 -- NISP shares the same 1.2 m Euclid telescope as VIS, split by a dichroic"
+  obscuration:
+    link: "https://arxiv.org/abs/1608.08603"
+    comment: "(v1) See section 3.1 -- same shared telescope as VIS"
+  zeropoint_airmass:
+    link: ""
+    comment: "Space telescope"
+  sky_brightness:
+    link: "https://arxiv.org/abs/2405.13496"
+    comment: "Euclid: ERO -- compact- and diffuse-emission photometry pipeline, Table 2: median in-flight sky background per band from the 17 ERO fields"
+  full_exposure_time:
+    link: "https://arxiv.org/abs/2108.01201"
+    comment: "Euclid preparation I. The Euclid Wide Survey (Scaramella et al. 2022), Sect. 4.1: each of the three NISP photometric images (Y, J, H) in the reference observing sequence lasts 112 s -- single-pointing exposure, matching the convention used for Euclid_VIS's full_exposure_time"
+  zeropoint:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html"
+    comment: "computed with speclite – see scripts/check_zeropoints.py"
+  psf_fwhm:
+    link: "https://arxiv.org/abs/2405.13496"
+    comment: "Euclid: ERO -- compact- and diffuse-emission photometry pipeline, Table 2: median in-flight FWHM per band, measured on stacked ERO survey images"
+  effective_wavelength:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html"
+    comment: "computed with speclite – see scripts/check_effective_wavelength.py"
