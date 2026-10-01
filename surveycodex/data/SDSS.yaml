@@ -1,0 +1,74 @@
+name: "SDSS"
+description: "Sloan Digital Sky Survey (SDSS) done with the 2.5m SDSS telescope at Apache Point Observatory and the SDSS imaging camera (Gunn et al. 1998)"
+pixel_scale: 0.396
+gain: 6.0
+mirror_diameter: 2.5
+obscuration: 0.27
+zeropoint_airmass: 1.3
+filters:
+  u:
+    name: "u"
+    sky_brightness: 22.01
+    full_exposure_time: 54.1
+    zeropoint: 23.58
+    psf_fwhm: 1.55
+    effective_wavelength: 361.437
+  g:
+    name: "g"
+    sky_brightness: 21.84
+    full_exposure_time: 54.1
+    zeropoint: 25.73
+    psf_fwhm: 1.43
+    effective_wavelength: 474.923
+  r:
+    name: "r"
+    sky_brightness: 20.84
+    full_exposure_time: 54.1
+    zeropoint: 25.62
+    psf_fwhm: 1.32
+    effective_wavelength: 620.583
+  i:
+    name: "i"
+    sky_brightness: 20.16
+    full_exposure_time: 54.1
+    zeropoint: 25.28
+    psf_fwhm: 1.25
+    effective_wavelength: 752.562
+  z:
+    name: "z"
+    sky_brightness: 18.96
+    full_exposure_time: 54.1
+    zeropoint: 23.30
+    psf_fwhm: 1.18
+    effective_wavelength: 894.738
+references:
+  pixel_scale:
+    link: "https://arxiv.org/abs/1805.02845"
+    comment: "Xin et al. 2018 (AJ), Sec 1: 'the exposure time is 54.1 seconds because the sensor size is 2k by 2k pixels, with 0.396 arcsec per pixel'. Matches the SDSS camera design value of Gunn et al. 1998 (https://arxiv.org/abs/astro-ph/9809085), which quotes an image scale of 16.5 arcsec/mm, i.e. 0.4 arcsec per 24-micron pixel (rounded)."
+  gain:
+    link: "https://arxiv.org/abs/astro-ph/9809085"
+    comment: "Gunn et al. 1998, Sec 7 (the electronics): the conversion gain is set nominally at 2 e-/ADU for the u' band, 5 e-/ADU for g', and 6 e-/ADU for the other bands (r', i', z'). We use 6 e-/ADU, the value shared by 3 of the 5 bands (including the r-band reference filter), as the representative survey-level gain."
+  mirror_diameter:
+    link: "https://arxiv.org/abs/astro-ph/9809085"
+    comment: "Gunn et al. 1998, Sec 1: 'The SDSS telescope has a diameter of 2.5m with a faster final focal ratio f/5 and a slightly larger field (3 deg).'"
+  obscuration:
+    link: "https://arxiv.org/abs/astro-ph/9809085"
+    comment: "Gunn et al. 1998, Sec 3 (Eq. 2): 'a 27% obscuration of incoming flux by the secondary mirror and the light baffles are taken into account.'"
+  zeropoint_airmass:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#sdss-filters"
+    comment: "sdss2010 filters use a reference atmosphere with airmass 1.3: 'calculated as the reference response multiplied by the reference APO atmospheric transmission at an airmass 1.3'"
+  sky_brightness:
+    link: "https://www.sdss4.org/dr17/imaging/other_info/"
+    comment: "SDSS DR17 official imaging data-quality documentation. Median (50th percentile) sky brightness per filter for moon-down observations, from the 'Seeing and Sky Brightness' quantile table."
+  full_exposure_time:
+    link: "https://arxiv.org/abs/1805.02845"
+    comment: "Xin et al. 2018 (AJ), Sec 1: the SDSS camera operates in TDI drift-scan mode with a single-pass exposure time of 54.1s per band, set by the 2048-pixel CCD size at 0.396 arcsec/pixel. Consistent with the ~54s value in Gunn et al. 1998 (https://arxiv.org/abs/astro-ph/9809085), Sec 3."
+  zeropoint:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#sdss-filters"
+    comment: "computed with speclite – see scripts/check_zeropoints.py"
+  psf_fwhm:
+    link: "https://arxiv.org/abs/1805.02845"
+    comment: "Derived from the official SDSS median r-band seeing of 1.32 arcsec (https://www.sdss4.org/dr17/imaging/other_info/), scaled to each band's speclite effective_wavelength via a power law FWHM ~ lambda^alpha. Xin et al. 2018 finds the data significantly deviate from the theoretical Kolmogorov value (alpha=-0.2, their Eq. 7) and are better described by a von Karman atmosphere with alpha closer to -0.3 (Sec 4.1, Fig. 5) -- we use alpha=-0.3 here, not the Kolmogorov value. The paper also notes the z-band specifically does not follow the fitted power law as well as u/g/r/i (its refit excludes z entirely), so the z-band value here carries extra, unquantified uncertainty beyond the other four bands."
+  effective_wavelength:
+    link: "https://speclite.readthedocs.io/en/latest/filters.html#sdss-filters"
+    comment: "computed with speclite – see scripts/check_effective_wavelengths.py"
